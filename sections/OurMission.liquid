@@ -1,0 +1,23 @@
+
+<section class="OurMission">
+    <div class="OurMission__Container">
+            <h2 class="OurMission__Title">{{section.settings.missionheading}}</h2>
+        <p class="OurMission__Details">{{section.settings.missiondetails}} </p>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Our Mission", "tag": "section",
+"settings": [
+    {
+    "type": "text",
+    "id": "missionheading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "missiondetails",
+    "label": "Content"
+   }
+], "presets": [ { "name": "Our Mission", "category": "Section" } ] } {%
+endschema %}

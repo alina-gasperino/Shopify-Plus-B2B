@@ -1,0 +1,32 @@
+<section class="SimpleContent">
+  <div class="SimpleContent__Container">
+    <div class="SimpleContent__Title-inner">
+      <h1 class="SimpleContent__Title">{{ section.settings.titleheading }}</h1>
+    </div>
+    <div class="SimpleContent__Block">
+      {% for block in section.blocks %}
+      <div class="SimpleContent__Block-inner">
+        <h3 class="SimpleContent__Head">{{ block.settings.simplehead }}</h3>
+        <p class="SimpleContent__Details">{{ block.settings.simpledetails }}</p>
+      </div>
+      {% endfor %}
+      <div class="SimpleContent__Call-btn">
+        <a
+          href="{{ section.settings.btn_simple_url }}"
+          class="SimpleContent__Button btn"
+        >
+          {{ section.settings.btn_simple }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %} { "name": "Simple Content",  "tag":
+"section", "settings": [ { "type": "text", "id": "titleheading", "label":
+"Heading" }, { "type": "text", "id": "btn_simple", "label": "Button Name" }, {
+"type": "url", "id": "btn_simple_url", "label": "Button URL" } ], "blocks": [ {
+"type": "block", "name": "Block", "settings": [ { "type": "text", "id":
+"simplehead", "label": "Head" }, { "type": "text", "id": "simpledetails",
+"label": "Details" } ] } ], "presets": [ { "name": "Simple Content", "category":
+"Section" } ] } {% endschema %}

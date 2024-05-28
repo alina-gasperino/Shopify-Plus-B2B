@@ -1,0 +1,95 @@
+<div id="product-how-it-works" class="product-how-it-works">
+  <div class="phiw__inner">
+
+    <div class="phiw__column phiw__column--text">
+
+      <div class="phiw__text-box">
+        <div class="phiw__title-wrap">
+          <p class="phiw__title">
+            {{ section.settings.title }}
+          </p>
+        </div>
+        <div class="phiw__text-wrap">
+          <p class="phiw__text">
+            {{ section.settings.text }}
+          </p>
+        </div>
+
+        <div class="phiw__steps-wrap">
+          {% for field in product.metafields.how-it-works %}
+            {% assign index = forloop.index %}
+              {% if index == 1 %}
+                {% assign stepWord = 'One' %}
+              {% elsif index == 2 %}
+                {% assign stepWord = 'Two' %}
+              {% elsif index == 3 %}
+                {% assign stepWord = 'Three' %}
+              {% elsif index == 4 %}
+                {% assign stepWord = 'Four' %}
+              {% elsif index == 5 %}
+                {% assign stepWord = 'Five' %}
+              {% elsif index == 6 %}
+                {% assign stepWord = 'Six' %}
+              {% endif %}
+            <div class="phiw__step">
+              <div class="phiw__step-content">
+
+                <div class="phiw__step-indicator-wrap">
+                  <div class="phiw__step-indicator"></div>
+                </div>
+
+                <div class="phiw__step-text-wrap">
+                  <p class="phiw__step-title">
+                    Step {{ stepWord }}
+                  </p>
+                  <p class="phiw__step-text">
+                    {{ field | last }}
+                  </p>
+                </div>
+              </div>
+              <div class="phiw__step-spacer">
+                <div class="phiw__step-spacer-line"></div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="phiw__column phiw__column--image">
+      <div class="phiw__image-wrap">
+        <img src="{{ section.settings.image | img_url: 'master' }}" class="phiw__image">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "How It Works",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "How It Works"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Section Description",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Section Image"
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% comment %}  {% endcomment %}

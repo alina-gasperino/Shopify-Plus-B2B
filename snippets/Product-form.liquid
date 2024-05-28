@@ -1,0 +1,118 @@
+{% assign is_sub = false %}
+{% for variant in product.variants %}
+  {% if variant.selling_plan_allocations != blank %}
+    {% for allocation in variant.selling_plan_allocations %}
+      {% if allocation.selling_plan.name != "Pre-order" %}
+        {% assign is_sub = true %}
+      {% endif %}
+      {% assign subs_price = allocation.price | money %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="form_buy" class="pdp__form">
+  <div class="select__options-dropdown" {% if product.variants.size==1 and product.variants.first.title
+    contains 'Default' %}style="display:none" {% endif %}>
+
+    <select name="id" id="productSelect" class="pdp__form-select" style="display: none;">
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          <option {% if variant==product.selected_variant %} selected="selected" {% endif %}
+            data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price |
+            money_with_currency }}</option>
+        {% else %}
+          <option disabled="disabled">
+            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+  {% if is_sub %}
+    {% unless customer.tags contains "b2b" %}
+      <div class="subs__radio-wrapper">
+        <div class="subs__radio-item">
+          <input type="radio" name="subs" class="subs__radio" id="one_time" value="one_time" data-price="{{ product.selected_or_first_available_variant.price | money }}" checked>
+  
+          <label for="one_time" class="subs__label">
+            <span class="subs__label-title">One-Time Purchase</span>
+  
+            <span class="subs__label-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          </label>
+        </div>
+  
+        <div class="subs__radio-item">
+          <input type="radio" name="subs" class="subs__radio" id="subscription" value="subscription" data-price="{{ subs_price }}">
+  
+          <label for="subscription" class="subs__label">
+            <span class="subs__label-title">Save When You Subscribe</span>
+  
+            <span class="subs__label-price">{{ subs_price }}</span>
+          </label>
+  
+          <div class="subs__select-wrapper">
+            <select class="subs__select" name="subscription_time" id="subscription_time">
+              {% for variant in product.variants %}
+                {% if variant.selling_plan_allocations != blank %}
+                  {% for allocation in variant.selling_plan_allocations %}
+                    {% if allocation.selling_plan.name != "Pre-order" %}
+                      <option value="{{ allocation.selling_plan.id }}">
+                        {{ allocation.selling_plan.name }}
+                      </option>
+                    {% endif %}                    
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+    {% endunless %}
+  {% endif %}
+  
+  <div class="pdp__form-bottom" id="pdp__bottom">
+    <div id="product-quantity-selector" class="pdp__quantity-selector">  
+      <input class="pdp__quantity js-pdp__quantity" style="display: none !important" type="number" value="1" min="1" max="100000" name="quantity" inputmode="numeric" pattern="[0-9]*"/>
+
+      <div class="pdp__quantity-control">
+        <span class="pdp__quantity-button js-qty-btn" data-attr="-">-</span>
+        
+        <p class="pdp__quantity-input js-pdp__quantity-input">1</p>
+        
+        <span class="pdp__quantity-button js-qty-btn" data-attr="+">+</span>
+      </div>
+    </div>
+
+    {% if product.available %}
+      {% if is_sub %}
+        <span class="pdp__btn btn btn--big btn--full-width pdp__submit js-sub-submit" data-id="{{ product.first_available_variant.id }}">
+          <span class="pdp__btn-price js-sub-btn-price">{{ product.selected_or_first_available_variant.price | money }}</span><span class="grid-item__btn-separator">|</span>
+          <span class="pdp__btn-text">Add to Cart</span>
+        </span>
+      {% else %}
+        <button type="submit" name="add" class="pdp__btn btn btn--big btn--full-width pdp__submit">
+          <span class="pdp__btn-price" data-price="{{- product.selected_or_first_available_variant.price -}}">{{ product.selected_or_first_available_variant.price | money }} |</span>
+          <span class="pdp__btn-text">Add to Cart</span>
+        </button>
+      {% endif %}
+    {% else %}
+    
+
+      <button type="submit" name="add" {% unless current_variant.available %}disabled="disabled"
+        {% endunless %}
+        class="pdp__btn btn btn--black btn--disabled btn--full_width pdp__submit {% unless current_variant.available %} btn--secondary-accent{% endunless %}"
+        data-loading-text="{{ 'products.product.loading' | t }}">
+
+        <span class="Product-details-btn-text">
+          {% unless current_variant.available %}
+          {{ 'products.product.sold_out' | t }}
+          {% else %}
+          {{ 'products.product.add_to_cart' | t }}
+        </span>
+        {% endunless %}
+      </button>
+
+    {% endif %}
+
+  </div>
+</form>

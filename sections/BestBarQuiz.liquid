@@ -1,0 +1,540 @@
+
+{% capture wpd_discounted_prices %}{%- render 'wcp_discount'  wcp_discount:product , wpd_is_render:'yes' -%}{% endcapture %}
+    
+    {%- capture wcp_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price' -%}{%- endcapture -%}
+    {% assign  wcp_price = wcp_price | minus: 0 %}
+    
+    {%- capture wcp_compare_at_price  -%}{%- render 'wcp_render_discount', wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price' -%}{%- endcapture -%}
+    {% if wcp_compare_at_price != blank %}
+        {% assign  wcp_compare_at_price = wcp_compare_at_price | minus: 0 %}
+    {% else %}
+    {% assign  wcp_compare_at_price = nil %}
+    {% endif %}
+    
+    {%- capture wcp_compare_at_price_min  -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price_min' -%}{%- endcapture -%}
+    {% assign  wcp_compare_at_price_min = wcp_compare_at_price_min | minus: 0 %}
+    
+    {%- capture wcp_compare_at_price_max  -%}{%- render 'wcp_render_discount', wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price_max' -%}{%- endcapture -%}
+    {% assign  wcp_compare_at_price_max = wcp_compare_at_price_max | minus: 0 %}
+    
+    {%- capture wcp_price_min -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price_min' -%}{%- endcapture -%}
+    {% assign  wcp_price_min = wcp_price_min | minus: 0 %}
+    
+    {%- capture wcp_price_max -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price_max' -%}{%- endcapture -%}
+    {% assign  wcp_price_max = wcp_price_max | minus: 0 %}
+    
+    
+    {%- capture v_discount_tag -%}{%-render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'v_discount_tag'-%}{%- endcapture -%}
+    {% assign v_discount_tag = v_discount_tag | strip %}
+    
+    {%- capture p_discount_tag -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'p_discount_tag' -%}{%- endcapture -%}
+    {% assign p_discount_tag = p_discount_tag | strip %}
+    
+    {% assign raw_set_prices = product.metafields.wcp_set_prices.wcp_set_prices %}
+    {% assign set_prices_array = blank %}
+    {% if raw_set_prices %}
+        {% assign set_prices_array = raw_set_prices | split: ',' %}
+    {% endif %}
+    
+    {%- capture wcp_discount_value -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_discount_value' -%}{%- endcapture -%}
+    
+    {% capture wcp_v_discounted_prices %}{%- render 'wcp_variant' , wcp_variant:product.selected_or_first_available_variant , set_prices_array:set_prices_array , wpd_is_render:'yes', v_discount_tag : v_discount_tag , wcp_discount_value : wcp_discount_value -%}{%- endcapture -%}
+    
+    {%- capture wcp_v_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wcp_v_discounted_prices, price_variable:'wcp_v_price' -%}{%- endcapture -%}
+    {% assign  wcp_v_price = wcp_v_price | minus: 0 %}
+    
+    {%- capture wcp_v_compare_at_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wcp_v_discounted_prices, price_variable:'wcp_v_compare_at_price' -%}{%- endcapture -%}
+    {% if wcp_v_compare_at_price != blank %}
+        {% assign  wcp_v_compare_at_price = wcp_v_compare_at_price | minus: 0 %}
+    {% else %}
+    {% assign  wcp_v_compare_at_price = nil %}
+    {% endif %}
+
+
+<style>
+.ProductCollection__Product-inner {
+    max-width:1240px;
+    margin:0 auto;
+}
+.ProductCollection__Product {
+    height:0;
+    opacity:0;
+    position:absolute;
+    top:-100%;
+}
+.ProductCollection__Product.active {
+    position:relative;
+  height:auto;
+  opacity:1;
+  top:0;
+    
+}
+.row_wrapper {
+    display:flex;
+    width:100%;
+    align-items:flex-start;
+
+} 
+.ProductCollection__Product {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding:0 15px;
+}
+.ProductCollection__Product-block {
+    background:rgb(255 250 237);
+}
+.left_col {
+    width: 100%;
+    max-width: 50%;
+    flex: 0 0 50%;
+}
+</style>
+<div class="BestBarQuiz__QuizSteps">
+
+    <section class="BestBarQuiz">
+        <div class="BestBarQuiz__Container">
+            <h2 class="BestBarQuiz__Head">{{section.settings.bestbarhead}}</h2>
+            <div class="BestBarQuiz__DetailsWrap">
+                {% for block in section.blocks %}
+                <p class="BestBarQuiz__Details">{{block.settings.bestdetails}}</p>
+                {% endfor %}
+            </div>
+            <div class="BestBarQuiz__ButtonWrap">
+                <a href="Javascript:void(0)" class="BestBarQuiz__Button btn">{{section.settings.bestbarbutton}}</a>
+            </div>
+        </div>
+    </section> 
+
+    <section class="QuizStep Step1">
+        <div class="QuizStep__Container">
+            <h4 class="QuizStep__Question">Select which choice best describes yourself?</h4>
+            <div class="QuizStep__AnswerWrap">
+                <div class="QuizStep__Answer" data-id="athlete">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Athlete.png?v=1662381955" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Athlete</h6>
+                </div>
+                <div class="QuizStep__Answer" data-id="working_mom">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Mom.png?v=1662381954" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Working Mom</h6>
+                </div>
+                <div class="QuizStep__Answer"  data-id="college_student">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Student.png?v=1662381955" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">College Student</h6>
+                </div>
+                <div class="QuizStep__Answer"  data-id="wholefood_shopper">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Shopper.png?v=1662381954" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Wholefood Shopper</h6>
+                </div>
+            </div>
+            <div class="QuizStep__ButtonWrap">
+                <a href="Javascript:void(0)" class="btn QuizStep__NextButton">Next</a>
+            </div>
+            <div class="QuizStep__ProgressBar">
+                <div class="QuizStep__Progress">
+                </div>
+            </div>
+            <div class="QuizStep__CountWrap">
+                <p class="QuizStep__Count">Step <span class="QuizStep__CurrentStep">1</span> of <span class="QuizStep__TotalStep">4</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="QuizStep Step2">
+        <div class="QuizStep__Container">
+            <h4 class="QuizStep__Question">What flavor palette do you like?</h4>
+            <div class="QuizStep__AnswerWrap">
+                <div class="QuizStep__Answer" data-id="sweet">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Sweet.png?v=1662441774" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Sweet</h6>
+                </div>
+                <div class="QuizStep__Answer" data-id="salty">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Salty.png?v=1662441774" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Salty</h6>
+                </div>
+                <div class="QuizStep__Answer" data-id="savory">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Savory.png?v=1662441775" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Savory</h6>
+                </div>
+                <div class="QuizStep__Answer" data-id="fruity">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Fruity.png?v=1662441774" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Fruity</h6>
+                </div>
+                <div class="QuizStep__Answer"  data-id="chocolatey">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Chocolate.png?v=1662441775" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Chocolatey</h6>
+                </div>
+                <div class="QuizStep__Answer"  data-id="lick_the_spoon">
+                    <div class="QuizStep__ImgWrap">
+                        <img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Lick_the_spoon.png?v=1662441774" alt="" loading="lazy" class="QuizStep__Img">
+                    </div>
+                    <h6 class="QuizStep__AnswerDetails">Lick The Spoon</h6>
+                </div>
+            </div>
+            <div class="QuizStep__ButtonWrap">
+                <a href="Javascript:void(0)" class="btn QuizStep__BackButton">Back</a>
+                <a href="Javascript:void(0)" class="btn QuizStep__NextButton">Next</a>
+            </div>
+            <div class="QuizStep__ProgressBar">
+                <div class="QuizStep__Progress">
+                </div>
+            </div>
+            <div class="QuizStep__CountWrap">
+                <p class="QuizStep__Count">Step <span class="QuizStep__CurrentStep">2</span> of <span class="QuizStep__TotalStep">4</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="QuizStep Step3">
+        <div class="QuizStep__Container">
+            <h4 class="QuizStep__Question">How frequently do you think you’d be eating these bars?</h4>
+            <div class="QuizStep__EatProgress">
+                <ul class="QuizStep__EatDetailsWrap">
+                    <li class="QuizStep__EatDetails" data-id="Everyday">Everyday</li>
+                    <li class="QuizStep__EatDetails" data-id="Every-Other-Day">Every Other Day</li>
+                    <li class="QuizStep__EatDetails" data-id="Every-Other-Week">Every Other Week</li>
+                    <li class="QuizStep__EatDetails" data-id="Couple-Times-A-Week">Couple Times A Week</li>
+                </ul>
+            </div>
+            <div class="QuizStep__ButtonWrap">
+                <a href="Javascript:void(0)" class="btn QuizStep__BackButton">Back</a>
+                <a href="Javascript:void(0)" class="btn QuizStep__NextButton">Next</a>
+            </div>
+            <div class="QuizStep__ProgressBar">
+                <div class="QuizStep__Progress">
+                </div>
+            </div>
+            <div class="QuizStep__CountWrap">
+                <p class="QuizStep__Count">Step <span class="QuizStep__CurrentStep">3</span> of <span class="QuizStep__TotalStep">4</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="QuizStep Step4">
+        <div class="QuizStep__Container">
+            <h6 class="QuizStep__Greetings">Thank you!</h6>
+            <h4 class="QuizStep__Question">Receive 15% off your first order when you sign up with your email</h4>
+            <div class="QuizStep__EmailWrap">
+                <input type="email" placeholder="Email Address" class="QuizStep__Email">
+            </div>
+            <div class="QuizStep__ButtonWrap">
+                <a href="Javascript:void(0)" class="btn QuizStep__DiscountButton">Apply Discount</a>
+            </div>
+            <div class="QuizStep__SkipResult">
+                <a href="javascript:;" class="QuizStep__Skip">{{section.settings.result}}</a>
+            </div>
+            <div class="QuizStep__ProgressBar">
+                <div class="QuizStep__Progress">
+                </div>
+            </div>
+            <div class="QuizStep__CountWrap">
+                <p class="QuizStep__Count">Step <span class="QuizStep__CurrentStep">4</span> of <span class="QuizStep__TotalStep">4</span></p>
+            </div>
+        </div>
+    </section>
+    <div class="ResultSection">
+        <div class="ProductCollection__Product-inner">
+            {%- for product in collections.all.products -%}
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block">
+                <div class="row_wrapper">               
+                    <div class="left_col">
+                        <div class="ProductCollection__Product-img-box ProductCollection__Product-img-box-purple">
+                            <img
+                            src="{{product.featured_image | img_url: 'master'}}" alt="{{product.title}}"
+                            class="ProductCollection__Image"
+                            />
+                            <div  class="ProductCollection__Product-img-tag ProductCollection__Product-img-tag-pista">
+                            <p class="ProductCollection__Product-img-tag-text">
+                                Best Seller
+                            </p>
+                            </div>
+                        </div>
+                        <div class="ProductCollection__Product-block-heading">
+                            <h2 class="ProductCollection__Product-block-title">
+                            {{product.title}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="right_col">
+                        <h4>Because you selected</h4>
+                        <div class="selected_option">
+                            <div class="step-1-data">
+                                <div class="step-image-wrapper">
+                                </div>
+                                <div class="step-title">
+                                </div>
+                            </div>
+                            <div class="step-2-data">
+                                <div class="step-image-wrapper">
+                                </div>
+                                <div class="step-title">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="ProductCollection__Product-cart-block">
+                        <a
+                        href="javascript:void(0)"
+                        class="ProductCollection__Product-cart-btn btn"
+                        >{{ wcp_price | money }} | Add To Cart</a
+                        >
+                    </div>
+                  {% if product.metafields.subscriptions.is_subscription_only == 'true' or product.tags contains 'Subscription Only' or product.tags contains 'subscription only' or product.tags contains 'Subscription only' or product.tags contains 'subscriptiononly' %}{%endif%}
+                </div>
+              </div>
+              
+              {% endfor %}
+         </div>
+    </div>
+    <div class="result_area">
+        <div class="step1">
+
+        </div>
+        <div class="step2">
+        </div>
+        <div class="step3">
+
+        </div>
+        <div class="step4">
+        </div>
+    </div>
+</div>
+
+<script>
+
+$(document).ready(function () {
+  $(".QuizStep__Answer").click(function () {
+    $(".QuizStep__Answer").removeClass("selected");
+    $(".QuizStep__Answer").children(".QuizStep__ImgWrap").removeClass("selected");
+    if($(this).hasClass("selected") == 0){
+    $(this).addClass("selected");
+    var step1data = $(this).parents(".QuizStep.Step1").find(".selected").attr("data-id");
+    var step2data = $(this).parents(".QuizStep.Step2").find(".selected").attr("data-id");
+    var step3data = $(this).parents(".QuizStep.Step3").find(".active").attr("data-id");
+    console.log(step2data);
+    console.log(step3data);
+    $(".result_area .step1").html(step1data);
+    $(".result_area .step2").html(step2data);
+    $(this).children(".QuizStep__ImgWrap").addClass("selected");
+    
+    } else {
+    $(".QuizStep__Answer").removeClass("selected");
+    }
+  });
+  $(".QuizStep__EatDetails").click(function () {
+    $(".QuizStep__EatDetails").removeClass("active");
+    if($(this).hasClass("active") == 0){
+    $(this).addClass("active");
+    var step3data = $(this).parents(".QuizStep.Step3").find(".active").attr("data-id");
+    console.log(step3data);
+    $(".result_area .step3").html(step3data);
+    
+    } else {
+    $(".QuizStep__EatDetails").removeClass("active");
+    }
+  });
+   if($(".Step2.QuizStep").is(":visible")){
+        $(".QuizStep__ButtonWrap").on("click" , function(){
+       $(".ProductCollection__Product-block-title:contains('Glo Birthday Cake Vegan Protein Bar')").parents(".ProductCollection__Product").addClass("active"); 
+    });
+    }
+ $(".QuizStep__Skip").on("click" , function(){
+    if($(".step1").text() == "athlete"){
+        var str = $(".ProductCollection__Product-block-title:contains('Glo Mixed Nuts, Caramel & Sea Salt Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-1-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Athlete.png?v=1662381955" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-1-data .step-title").append('<span>Athlete</span>');
+    } else if($(".step1").text() == "working_mom") {
+         var str =  $(".ProductCollection__Product-block-title:contains('Double Chocolate Brownie Batter Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-1-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Mom.png?v=1662381954" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-1-data .step-title").append('<span>Working Mom</span>');
+
+    } else if($(".step1").text() == "college_student") {
+
+    } else if($(".step1").text() == "wholefood_shopper"){     
+        var str =  $(".ProductCollection__Product-block-title:contains('Glo Peanut Butter, Dark Chocolate & Sea Salt Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-1-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Shopper.png?v=1662381954" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-1-data .step-title").append('<span>Wholefood Shopper</span>');
+    } 
+
+    if($(".step2").text() == "sweet"){
+        var str =  $(".ProductCollection__Product-block-title:contains('Glo Birthday Cake Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Sweet.png?v=1662441774" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>Sweet</span>');
+    } else if($(".step2").text() == "salty"){
+        var str =  $(".ProductCollection__Product-block-title:contains('Glo Mixed Nuts, Caramel & Sea Salt Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Sweet.png?v=1662441774" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>Sweet</span>');
+    } else if($(".step2").text() == "savory"){
+        
+        var str =  $(".ProductCollection__Product-block-title:contains('Glo Creamy Peanut Butter & Sea Salt Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Savory.png?v=1662441775" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>Savory</span>');
+    } else if($(".step2").text() == "fruity"){
+        var str = $(".ProductCollection__Product-block-title:contains('Glo Chocolate Chip Cookie Dough Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Fruity.png?v=1662441774" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>Fruity</span>');
+    } else if($(".step2").text() == "chocolatey"){
+        var str = $(".ProductCollection__Product-block-title:contains('Double Chocolate Brownie Batter Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Chocolate.png?v=1662441775" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>chocolatey</span>');
+    } else if($(".step2").text() == "lick_the_spoon"){
+        var str = $(".ProductCollection__Product-block-title:contains('Glo Peanut Butter, Dark Chocolate & Sea Salt Vegan Protein Bar')")
+        str.parents(".ProductCollection__Product").addClass("active");
+        str.parents(".ProductCollection__Product").find(".step-2-data  .step-image-wrapper").append('<img src="https://cdn.shopify.com/s/files/1/1803/1651/files/Lick_the_spoon.png?v=1662441774" alt=""  class="QuizStep__Img">')
+        str.parents(".ProductCollection__Product").find(".step-2-data .step-title").append('<span>Lick The Spoon</span>');
+    }
+   
+
+    if($(".step3").text() == "Everyday"){
+        $(".ProductCollection__Product-block-title:contains('Glo Birthday Cake Vegan Protein Bar')").parents(".ProductCollection__Product").addClass("active");
+    } else if($(".step3").text() == "Every-Other-Day"){
+        $(".ProductCollection__Product-block-title:contains('Glo Peanut Butter, Dark Chocolate & Sea Salt Vegan Protein Bar')").parents(".ProductCollection__Product").addClass("active");
+    } else if($(".step3").text() == "Every-Other-Week"){
+      
+    } else if($(".step3").text() == "Couple-Times-A-Week"){
+     
+    }
+    
+ })
+});
+
+jQuery(document).ready(function () {
+    var current_fs, next_fs, previous_fs; 
+    var opacity;
+
+    jQuery(".BestBarQuiz__Button").click(function(){
+        jQuery(".BestBarQuiz").hide();
+        jQuery(".Step1").show();
+    });
+
+    jQuery(".QuizStep__NextButton").click(function () {
+        current_fs = jQuery(this).parent().parent().parent();
+        next_fs = jQuery(this).parent().parent().parent().next();
+
+
+        next_fs.show();
+        current_fs.animate({opacity:0
+        },
+            {
+                step: function (now) {
+
+                    opacity = 1 - now;
+
+                    current_fs.css({
+                        display: "none",
+                        position: "relative",
+                    });
+                    next_fs.css({ opacity: opacity });
+                },
+                duration: 600,
+            }
+        );
+    });
+
+    jQuery(".QuizStep__BackButton").click(function () {
+        current_fs = jQuery(this).parent().parent().parent();
+        previous_fs = jQuery(this).parent().parent().parent().prev();
+
+        previous_fs.show();
+
+        current_fs.animate(
+            { opacity: 0 },
+            {
+                step: function (now) {
+
+                    opacity = 1 - now;
+
+                    current_fs.css({
+                        display: "none",
+                        position: "relative",
+                    });
+                    previous_fs.css({ opacity: opacity });
+                },
+                duration: 600,
+            }
+        );
+    });
+
+    jQuery(".QuizStep__EatDetailsWrap .QuizStep__EatDetails:first-child").addClass("active");
+    jQuery(".QuizStep__EatDetailsWrap .QuizStep__EatDetails").click(function(){
+        jQuery(".QuizStep__EatDetailsWrap .QuizStep__EatDetails").removeClass("active");
+        jQuery(this).addClass("active");
+    });
+});
+
+</script>
+
+
+{% schema %} { "name": "BestBarQuiz", "tag":
+"section", "settings": [
+{
+    "type": "text",
+    "id": "bestbarhead",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "bestbarbutton",
+    "label": "Button Name"
+   },
+   {
+    "type": "url",
+    "id": "resulturl",
+    "label": "Quiz Result URL"
+},
+{
+    "type": "text",
+    "id": "result",
+    "label": "URL Name"
+}
+],
+
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+	{
+      "type": "text",
+      "id": "bestdetails",
+      "label": "Title"
+    }
+]
+}
+],
+"presets": [ { "name": "BestBarQuiz", "category":
+"Section" } ] } {% endschema %}
+{%- assign wcp_prd_var = product -%}
+{%- unless wcp_prd_var == empty -%}
+            <script type='application/json' class='{%- for wcp_v in wcp_prd_var.variants -%} wcp_json_{{wcp_v.id}} {%- endfor -%} wcp_json_{{ wcp_prd_var.id }} wcp_json' id='wcp_json_{{ wcp_prd_var.id }}' > 
+                {%- render 'wcp_product_json' with wcp_prd_var -%}
+            </script>
+{%- endunless -%}

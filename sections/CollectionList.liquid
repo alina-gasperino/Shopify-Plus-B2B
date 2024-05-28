@@ -1,0 +1,61 @@
+{%- assign limit = 5000 -%}
+
+{% paginate collections by limit %}
+
+<div class="list-collections__container">
+  <div class="list-collections__header">
+    <h1 class="list-collections__title h3">{{ section.settings.title }}</h1>
+
+    <p class="list-collections__copy">{{ section.settings.copy }}</p>
+  </div>
+
+  <div class="list-collections__grid">
+    {% for collection in collections %}
+      {% if collection.metafields.custom.show_collection %}
+      <a class="list-collections__item" href="{{ collection.url }}">
+        {% if collection.metafields.huemor.collections_page_bg != blank %}
+          <img class="list-collections__item-image" src="{{ collection.metafields.huemor.collections_page_bg | img_url: '526x724', crop: 'center' }}" alt="{{ collection.title }}">
+        {% else %}
+          <img class="list-collections__item-image" src="{{ collection.products.first.featured_image | img_url: '526x724', crop: 'center' }}" alt="{{ collection.title }}">
+        {% endif %}
+        
+
+        <div class="list-collections__item-content">
+          <span class="link">{{ collection.title }}</span>
+        </div>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if paginate.next %}
+    {% render 'Pagination-pagination' paginate:paginate %}
+  {% endif %}   
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "List Collections",
+    "tag": "section",
+    "class": "list-collections",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }
+    ]
+  }
+{% endschema %}

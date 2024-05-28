@@ -1,0 +1,71 @@
+<section class="HighlightedBenefits">
+  <div class="HighlightedBenefits__Container">
+    <h1 class="HighlightedBenefits__Head">{{section.settings.heading}}</h1>
+    <div class="HighlightedBenefits__Layout-main">
+
+      {% for block in section.blocks %}
+      <div class="HighlightedBenefits__Layout-inner">
+        <div class="HighlightedBenefits__Details">
+          <div class="HighlightedBenefits__Icon">
+            <img src="{{ block.settings.image | img_url:'160x160' }}" loading="lazy" alt="" class="HighlightedBenefits__Dollor"/>
+          </div>
+          <h3 class="HighlightedBenefits__Title">{{block.settings.title}}</h3>
+          <p class="HighlightedBenefits__Content">
+            {{block.settings.content}}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+      
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .HighlightedBenefits {
+    background-image: url({{ section.settings.images | img_url:'master' }});
+    padding: 126px 0 100px;
+}
+</style>
+
+{% schema %} { "name": "Highlighted Benefits",  "tag":
+"section", "settings": 
+[
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+  }
+],
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+	{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+        "type": "text",
+        "id": "content",
+        "label": "Content"
+      }
+]
+}
+],
+"presets": [ { "name": "Highlighted Benefits",
+"category": "Section" } ] } {% endschema %}

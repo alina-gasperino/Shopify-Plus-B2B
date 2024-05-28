@@ -1,0 +1,57 @@
+<div class="user-form__container">
+  <div class="user-form__content">
+    <h1 class="user-form__title heading-stars heading-stars-space">{{ 'customer.register.title' | t }}</h1>
+
+    <p class="user-form__copy">{{ section.settings.copy }}</p>
+
+    {% form 'create_customer' %}
+      {{ form.errors | default_errors }}
+
+      <div class="field-wrapper field-wrapper--first-name">
+        <label class="input-label" for="customer[first_name]">{{ 'customer.register.first_name' | t }}</label>
+
+        <input class="input-field" type="text" name="customer[first_name]" placeholder="" required/>
+      </div>
+
+      <div class="field-wrapper field-wrapper--last-name">
+        <label class="input-label" for="customer[last_name]">{{ 'customer.register.last_name' | t }}</label>
+
+        <input class="input-field" type="text" name="customer[last_name]" placeholder="" required/>
+      </div>
+
+      <div class="field-wrapper field-wrapper--email">
+        <label class="input-label" for="customer[email]">{{ 'customer.register.email' | t }}</label>
+
+        <input class="input-field" type="email" name="customer[email]" placeholder="" autocomplete="off" required/>
+      </div>
+
+      <div class="field-wrapper field-wrapper--password">
+        <label class="input-label" for="customer[password]">{{ 'customer.register.password' | t }}</label>
+        
+        <input class="input-field" type="password" name="customer[password]" placeholder="" autocomplete="off" required/>
+      </div>
+
+      <div class="form-button form-button--register">
+        <input class="btn" type="submit" value="Sign Up" />
+      </div>
+
+      <div class="form-after"><a class="form-link form-link--register" href="/account">Already have an account? <span class="underline">Sign In</span></a></div>
+    {% endform %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Register",
+    "tag": "section",
+    "class": "user-form",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      }
+    ]
+  }
+{% endschema %}

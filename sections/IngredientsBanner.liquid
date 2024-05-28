@@ -1,0 +1,35 @@
+<section class="IngredientsHero">
+    <div class="IngredientsHero__Container">
+        <h2 class="IngredientsHero__Head">{{section.settings.ingredientshead}}</h2>
+        <p class="IngredientsHero__Details">{{section.settings.ingredientsdetails}}</p>
+        <div class="IngredientsHero__ButtonWrap">
+            <a href="{{section.settings.ingredientsbtn_url}}" class="IngredientsHero__Button btn">{{section.settings.ingredientsbtn_name}}</a>
+        </div>
+    </div>
+</section>
+
+{% schema %} { "name": "Ingredients Banner", "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "ingredientshead",
+    "label": "Heading"
+},
+{
+    "type": "text",
+    "id": "ingredientsdetails",
+    "label": "Content"
+},
+ {
+    "type": "text",
+    "id": "ingredientsbtn_name",
+    "label": "Button Name"
+   },
+   {
+    "type": "url",
+    "id": "ingredientsbtn_url",
+    "label": "Button URL"
+   }
+], 
+"presets": [ { "name": "Ingredients Banner", "category": "Section" } ] } {%
+endschema %}

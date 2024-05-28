@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16630494451a89b6fa": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Event Sponsorship",
+        "content1": "Feature Raw Rev at your next big event to spread healthy–and delicious–eating and empowerment!",
+        "images": "shopify:\/\/shop_images\/Artboard_1_7d4e7526-a9ea-44fa-b3ad-f76d782e8b38.png"
+      }
+    },
+    "d9940796-02d7-443a-8155-557ce960b6e1": {
+      "type": "WholesaleMember",
+      "settings": {
+        "heading_stars": true,
+        "title": "Here’s How It Works",
+        "subtitle": "RAW REV BARS FUEL THOUSANDS OF ATHLETES, PARENTS, AND PROFESSIONALS EVERYDAY.",
+        "copy": "We’re all about giving back to the community and helping everyone push the limits to achieve that next milestone. Tell us the inspiring story that drives you–we’re always eager to help you achieve your dreams. Get started by filling out our form below!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16630494451a89b6fa",
+    "d9940796-02d7-443a-8155-557ce960b6e1"
+  ]
+}

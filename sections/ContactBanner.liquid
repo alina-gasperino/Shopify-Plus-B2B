@@ -1,0 +1,25 @@
+<section class="ContactBanner">
+  <div class="ContactBanner__Container">
+    <h1 class="ContactBanner__Head">
+        {{section.settings.contacthead}}
+    </h1>
+    <p class="ContactBanner__Details">
+      {{section.settings.contactdetails}}
+    </p>
+  </div>
+</section>
+
+{% schema %} { "name": "Contact Banner",  "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "contacthead",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "contactdetails",
+    "label": "Content Part 1"
+   }
+], "presets": [ { "name": "Contact Banner", "category": "Section" } ] } {%
+endschema %}

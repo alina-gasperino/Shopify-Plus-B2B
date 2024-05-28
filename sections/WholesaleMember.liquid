@@ -1,0 +1,52 @@
+<div id="wholesale-signup">
+  <div class="wholesale-signup__container">
+    <h2 class="wholesale-signup__title {% if section.settings.heading_stars %}heading-stars{% endif %}">{{ section.settings.title }}</h2>
+
+    {% if section.settings.subtitle %}
+      <p class="wholesale-signup__subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <p class="wholesale-signup__copy">{{ section.settings.copy }}</p>
+
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({region: "na1", portalId: "22481551", formId: "e34abf9a-3439-498d-96f9-5a25a453f426"});
+    </script>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Wholesale Sign Up",
+    "tag": "section",
+    "class": "wholesale-signup",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "heading_stars",
+        "label": "Heading Stars"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      }, {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Wholesale Sign Up",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

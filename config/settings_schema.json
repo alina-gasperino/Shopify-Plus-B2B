@@ -1,0 +1,800 @@
+[
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Languages"
+      },
+      {
+        "type": "header",
+        "content": "Currency"
+      },
+      {
+        "type": "header",
+        "content": "Breadcrumbs"
+      },
+      {
+        "type": "checkbox",
+        "id": "breadcrumbs",
+        "label": "Enable Breadcrumbs",
+        "info": "If enabled, breadcrumbs will show on the product pages and collection pages."
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Select or upload the icon you would like to use as your favicon"
+      }
+    ]
+  },
+  {
+    "name": "Search Engines",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Most SEO-related configuration is present on individual page settings."
+      },
+      {
+        "type": "checkbox",
+        "id": "noindex",
+        "label": "Disable search indexing",
+        "info": "This will prevent your site from being indexed by search engines. Use with caution."
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Site Fonts"
+      },
+      {
+        "type": "font_picker",
+        "id": "headline-large-font",
+        "label": "Headline Large Font",
+        "default": "helvetica_n4",
+        "info": "Used on h1, h2, h3."
+      },
+      {
+        "type": "font_picker",
+        "id": "headline-small-font",
+        "label": "Headline Small Font",
+        "default": "helvetica_n4",
+        "info": "Used on h4, h5, h6"
+      },
+      {
+        "type": "font_picker",
+        "id": "paragraph-btn-font",
+        "label": "Paragraph Button Font",
+        "default": "helvetica_n4",
+        "info": "Used on buttons and a minor areas throughout site."
+      },
+      {
+        "type": "font_picker",
+        "id": "paragraph-font",
+        "label": "Paragraph Font",
+        "default": "helvetica_n4",
+        "info": "Used on p"
+      },
+      {
+        "type": "header",
+        "content": "H1 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h1-desktop-font-size",
+        "label": "H1 Font Size (Desktop\/Large)",
+        "default": "40px"
+      },
+      {
+        "type": "text",
+        "id": "h1-mobile-font-size",
+        "label": "H1 Font Size (Mobile\/Small)",
+        "default": "34px"
+      },
+      {
+        "type": "text",
+        "id": "h1-desktop-line-height",
+        "label": "H1 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h1-mobile-line-height",
+        "label": "H1 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h1-desktop-letter-spacing",
+        "label": "H1 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h1-mobile-letter-spacing",
+        "label": "H1 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "H2 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h2-desktop-font-size",
+        "label": "H2 Font Size (Desktop\/Large)",
+        "default": "36px"
+      },
+      {
+        "type": "text",
+        "id": "h2-mobile-font-size",
+        "label": "H2 Font Size (Mobile\/Small)",
+        "default": "32px"
+      },
+      {
+        "type": "text",
+        "id": "h2-desktop-line-height",
+        "label": "H2 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h2-mobile-line-height",
+        "label": "H2 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h2-desktop-letter-spacing",
+        "label": "H2 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h2-mobile-letter-spacing",
+        "label": "H2 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "H3 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h3-desktop-font-size",
+        "label": "H3 Font Size (Desktop\/Large)",
+        "default": "32px"
+      },
+      {
+        "type": "text",
+        "id": "h3-mobile-font-size",
+        "label": "H3 Font Size (Mobile\/Small)",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "h3-desktop-line-height",
+        "label": "H3 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h3-mobile-line-height",
+        "label": "H3 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h3-desktop-letter-spacing",
+        "label": "H3 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h3-mobile-letter-spacing",
+        "label": "H3 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "H4 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h4-desktop-font-size",
+        "label": "H4 Font Size (Desktop\/Large)",
+        "default": "28px"
+      },
+      {
+        "type": "text",
+        "id": "h4-mobile-font-size",
+        "label": "H4 Font Size (Mobile\/Small)",
+        "default": "28px"
+      },
+      {
+        "type": "text",
+        "id": "h4-desktop-line-height",
+        "label": "H4 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h4-mobile-line-height",
+        "label": "H4 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h4-desktop-letter-spacing",
+        "label": "H4 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h4-mobile-letter-spacing",
+        "label": "H4 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "H5 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h5-desktop-font-size",
+        "label": "H5 Font Size (Desktop\/Large)",
+        "default": "18px"
+      },
+      {
+        "type": "text",
+        "id": "h5-mobile-font-size",
+        "label": "H5 Font Size (Mobile\/Small)",
+        "default": "18px"
+      },
+      {
+        "type": "text",
+        "id": "h5-desktop-line-height",
+        "label": "H5 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h5-mobile-line-height",
+        "label": "H5 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h5-desktop-letter-spacing",
+        "label": "H5 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h5-mobile-letter-spacing",
+        "label": "H5 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "H6 Elements"
+      },
+      {
+        "type": "text",
+        "id": "h6-desktop-font-size",
+        "label": "H6 Font Size (Desktop\/Large)",
+        "default": "14px"
+      },
+      {
+        "type": "text",
+        "id": "h6-mobile-font-size",
+        "label": "H6 Font Size (Mobile\/Small)",
+        "default": "14px"
+      },
+      {
+        "type": "text",
+        "id": "h6-desktop-line-height",
+        "label": "H6 Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h6-mobile-line-height",
+        "label": "H6 Line Height (Mobile\/Small)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "h6-desktop-letter-spacing",
+        "label": "H6 Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "text",
+        "id": "h6-mobile-letter-spacing",
+        "label": "H6 Letter Spacing (Mobile\/Small)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "P Elements"
+      },
+      {
+        "type": "text",
+        "id": "p-font-size",
+        "label": "P Font Size (Desktop\/Large)",
+        "default": "18px"
+      },
+      {
+        "type": "text",
+        "id": "p-line-height",
+        "label": "P Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "p-letter-spacing",
+        "label": "P Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      },
+      {
+        "type": "header",
+        "content": "P-Small Elements"
+      },
+      {
+        "type": "text",
+        "id": "p-small-font-size",
+        "label": "P-Small Font Size (Desktop\/Large)",
+        "default": "14px"
+      },
+      {
+        "type": "text",
+        "id": "p-small-line-height",
+        "label": "P-Small Line Height (Desktop\/Large)",
+        "default": "1.5"
+      },
+      {
+        "type": "text",
+        "id": "p-small-letter-spacing",
+        "label": "P-Small Letter Spacing (Desktop\/Large)",
+        "default": ".45px"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color",
+        "default": "#FFF003"
+      },
+      {
+        "type": "color",
+        "id": "color_black",
+        "label": "Primary Black",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_white",
+        "label": "Primary White",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "color_grey",
+        "label": "Primary Grey",
+        "default": "#F5F5F5"
+      },
+      {
+        "type": "header",
+        "content": "Accent Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_accent-1",
+        "label": "Accent Color 1",
+        "default": "#F5DAE0"
+      },
+      {
+        "type": "color",
+        "id": "color_accent-2",
+        "label": "Accent Color 2",
+        "default": "#73ADD2"
+      },
+      {
+        "type": "color",
+        "id": "color_accent-3",
+        "label": "Accent Color 3",
+        "default": "#114B5F"
+      },
+      {
+        "type": "header",
+        "content": "Site Background Color"
+      },
+      {
+        "type": "color",
+        "id": "color-site-background",
+        "label": "Site Background Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text_black",
+        "label": "Dark Body Text",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text_white",
+        "label": "Light Body Text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "text-highlight-color",
+        "label": "Text Hi Light Color",
+        "default": "#FFF003"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "bg-color_announcement-bar",
+        "label": "Announcement Bar Background Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_announcement-bar",
+        "label": "Announcement Bar Text Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "bg-color_site-header",
+        "label": "Main Background",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "bg-color_site-header-top",
+        "label": "Top Row Background",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "color_site-header-top",
+        "label": "Top Row Text",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "bg-color_site-header-bottom",
+        "label": "Bottom Row Background",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_site-header-bottom",
+        "label": "Bottom Row Text",
+        "default": "#FFF"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_top-bg",
+        "label": "Footer Background",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_bottom-bg",
+        "label": "Footer Background",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text_top",
+        "label": "Footer Text Top",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text_bottom",
+        "label": "Footer Text Bottom",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_social_link",
+        "label": "Social Icons",
+        "default": "#bbbbbb"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Announcement Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement-bar",
+        "label": "Enable Announcement Bar"
+      },
+      {
+        "type": "text",
+        "id": "announcement-bar-height",
+        "label": "Announcement Bar Height",
+        "default": "30px"
+      },
+      {
+        "type": "text",
+        "id": "announcement-bar-text",
+        "default": "Say Something!",
+        "label": "Announcement Bar Text"
+      },
+      {
+        "type": "header",
+        "content": "Header Settings"
+      },
+      {
+        "type": "select",
+        "id": "header-position",
+        "label": "Header Position",
+        "options": [
+          {
+            "value": "relative",
+            "label": "Relative"
+          },
+          {
+            "value": "fixed",
+            "label": "Fixed"
+          }
+        ],
+        "default": "relative"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-z-index",
+        "label": "Header Z Index",
+        "default": "100"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-max-width",
+        "label": "Site Header Max Width",
+        "default": "1140px"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-top-row-height",
+        "label": "Site Header Top Row Height",
+        "default": "70px"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-top-row-height--mobile",
+        "label": "Site Header Mobile Top Row Height",
+        "default": "60px"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-bottom-row-height",
+        "label": "Site Header Bottom Row Height",
+        "default": "40px"
+      },
+      {
+        "type": "text",
+        "id": "siteHeader-bottom-row-height--mobile",
+        "label": "Site Header Mobile Bottom Row Height",
+        "default": "40px"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_footer_email",
+        "label": "Email"
+      },
+      {
+        "type": "text",
+        "id": "contact_footer_hours",
+        "label": "Hours of Operation"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_display_quicklinks",
+        "label": "Show quick links"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_quicklinks_linklist",
+        "label": "Quick links link list"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_quicklinks_linklist2",
+        "label": "Quick links link list 2"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_quicklinks_linklist3",
+        "label": "Quick links link list 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_display_social",
+        "label": "Show social media links"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter link"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook link"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_display_newsletter",
+        "label": "Show Newsletter Field"
+      },
+      {
+        "type": "text",
+        "id": "mailing_list_form_action",
+        "label": "MailChimp Form Action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "text",
+        "id": "footer_legal_left",
+        "label": "Footer Legal Left"
+      },
+      {
+        "type": "text",
+        "id": "footer_legal_right",
+        "label": "Footer Legal Right"
+      }
+    ]
+  },
+  {
+    "name": "Product Pages",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social Media Meta Tags"
+      },
+      {
+        "type": "paragraph",
+        "content": "Social meta tags include [Facebook](https:\/\/developers.facebook.com\/docs\/opengraph\/using-objects\/) and [Pinterest](https:\/\/developers.pinterest.com\/rich_pins\/) Open Graph Tags and [Twitter Cards](https:\/\/dev.twitter.com\/docs\/cards\/types\/product-card) . These are enabled by default to make the store more accessible on different platforms, and more readable for search engines."
+      },
+      {
+        "type": "text",
+        "id": "twittercard_handle",
+        "label": "The Site's Twitter Handle",
+        "info": "E.g. @Shopify. Required for Twitter Cards."
+      },
+      {
+        "type": "text",
+        "id": "product_unavailable_text",
+        "label": "Product Unavailable Text",
+        "info": "For products without pricing information, this text will be displayed instead."
+      }
+    ]
+  },
+  {
+    "name": "Collection Pages",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Filter Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_filter_display_types",
+        "label": "Allow filtering by Product Type"
+      },
+      {
+        "type": "text",
+        "id": "collection_filter_text_types",
+        "label": "\"Product Types\" text",
+        "default": "Product Types"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_filter_display_vendors",
+        "label": "Allow filtering by Product Vendor"
+      },
+      {
+        "type": "text",
+        "id": "collection_filter_text_vendors",
+        "label": "\"Vendors\" text",
+        "default": "Vendors"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_filter_display_tags",
+        "label": "Allow filtering by Product Tags"
+      },
+      {
+        "type": "text",
+        "id": "collection_filter_text_tags",
+        "label": "\"Tags\" text",
+        "default": "Tags"
+      },
+      {
+        "type": "text",
+        "id": "collection_btt_text",
+        "label": "Text to display on the back-to-top link",
+        "default": "Back To Top"
+      }
+    ]
+  },
+  {
+    "name": "Cart Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes",
+        "label": "Allow notes with orders"
+      },
+      {
+        "type": "checkbox",
+        "id": "ajax_cart",
+        "label": "Enable Ajaxify Cart",
+        "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)"
+      },
+      {
+        "type": "select",
+        "id": "ajax_cart_method",
+        "label": "Ajax Cart Type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Drawer"
+          },
+          {
+            "value": "flip",
+            "label": "Flip"
+          },
+          {
+            "value": "modal",
+            "label": "Modal"
+          }
+        ]
+      }
+    ]
+  }
+]

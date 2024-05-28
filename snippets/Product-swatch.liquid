@@ -1,0 +1,132 @@
+{% comment %}
+  Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
+{% endcomment %}
+
+{% unless classPrefix %}
+  {% assign classPrefix = '' %}
+{% endunless %}
+
+{% assign file_extension = 'png' %}
+
+{% if Product-swatch == blank %}
+<div class="swatch error">
+  <p>You must include the snippet swatch.liquid with the name of a product option.</p>
+  <p>Use: <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+  <p>Example: <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
+</div>
+{% else %}
+
+{% assign found_option = false %}
+{% assign is_color = false %}
+{% assign is_size = false %}
+{% assign option_index = 0 %}
+
+{% for option in product.options %}
+  {% if option == Product-swatch %}
+    {% assign found_option = true %}
+    {% assign option_index = forloop.index0 %}
+
+    {% assign downcased_option = Product-swatch | downcase | strip %}
+
+    {% if downcased_option contains 'color' %}
+      {% assign is_color = true %}
+    {% elsif downcased_option contains 'size' %}
+      {% assign is_size = true %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+{% unless found_option %}
+
+<div class="swatch error">
+  <p>You included the snippet swatch.liquid with the name of a product option — <code>'{{ swatch }}'</code> — that does not belong to your product.</p>
+  <p>Use <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+  <p>Example: <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
+  <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
+</div>
+
+{% else %}
+
+<div class="swatch" data-option-index="{{ option_index }}" data-swatch="{{- Product-swatch | downcase -}}">
+  {% unless is_color %}
+    <div class="swatch__header">
+      <h4 class="swatch__heading">{{ Product-swatch }} <span class="swatch__heading-selected"></span></h4>
+
+      <p id="productFilter-{{ option_index }}"></p>
+
+      {% if is_size %}
+        <a href="{{ section.settings.guide }}" target="popup" onclick="window.open('{{ section.settings.guide }}','popup','width=600,height=600'); return false;">Size Guide</a>
+      {% endif %}
+    </div>
+  {% endunless %}
+ 
+
+  {% assign values = '' %}
+
+  <div class="swatch__body">
+    {% assign scrollbar_loop = true %}
+
+    {% for variant in product.variants %}
+
+      {% assign value = variant.options[option_index] %}
+      {% unless values contains value %}
+        {% assign values = values | join: ',' %}
+        {% assign values = values | append: ',' | append: value %}
+        {% assign values = values | split: ',' %}
+        {% assign gender = value | split: '-' %}
+
+        {% if is_color %}
+          <!-- COLOR -->
+     
+          <!-- END COLOR -->
+        {% elsif is_size %}
+
+          <div class="swatch__options {% if value.size > 6 %}swatch__options--grid{% endif %}">
+            <div data-value="{{ value | escape }}" class="swatch__element swatch__element--{{ value | handle }} {% if variant.available %}swatch__element--available{% else %}swatch__element--sold-out{% endif %}" data-value-size="{{ value.size }}">
+                <input id="{{- classPrefix -}}swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}" />
+
+              {% if value != blank %}
+                <label for="{{- classPrefix -}}swatch-{{ option_index }}-{{ value | handle }}" class="swatch__options-label">
+                  <span class="swatch__options-value">{{ value }}</span>
+                </label>
+              {% else %}
+                  no value
+              {% endif %}
+
+            </div>
+          </div>
+
+        {% else %}
+          <!-- ELSE -->
+          <div class="swatch__options">
+            <div data-value="{{ value | escape }}" class="swatch__element swatch__element--{{ value | handle }} 
+            
+            {% if variant.available %}swatch__element--available{% else %}swatch__element--sold-out{% endif %}">
+              <input id="{{- classPrefix -}}swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}" />
+
+              {% if value != blank %}
+                <label for="{{- classPrefix -}}swatch-{{ option_index }}-{{ value | handle }}" class="swatch__options-label">
+                  <span class="swatch__options-value">{{ value }}</span>
+                </label>
+              {% else %}
+                  no value
+              {% endif %}
+
+            </div>
+          </div>
+          <!-- END ELSE -->
+        {% endif %}
+
+      {% endunless %}
+      
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endunless %}
+
+{% endif %}
+
+

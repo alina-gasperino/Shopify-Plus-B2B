@@ -1,0 +1,42 @@
+<div class="line__item" data-id="{{ item.id }}">
+  <div class="line__item-product">
+    <img class="line__item-image" src="{{ item.product.featured_image.src | product_img_url: '160x' }}" alt="{{ item.title | escape }}">
+
+    <div class="line__item-content">
+      <a class="line__item-title" href="{{ item.product.url }}">
+        {{ item.product.title }}
+      </a>
+
+      {% unless item.product.has_only_default_variant %}
+        <ul class="line__item-options">
+          {% for option in item.options_with_values %}
+            <li class="line__item-variant">{{ option.name }}: {{ option.value }}</li>
+          {% endfor %}
+        </ul>
+      {% endunless %}
+
+      <div class="line__item-bottom">
+        <div class="line__item__qty mobile-display-true">
+          <a {% if item.quantity > 1 %} href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | minus: 1 }}"{% endif %} class="line__item__qty-selector line__item__qty-selector-minus">-</a>
+      
+          <input class="line__item__qty-input" type="number" min="0" name="updates[]" id="updates_{{ item.key }}" pattern="[0-9]{10}" value="{{ item.quantity }}" onblur="this.form.submit();">
+      
+          <a href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | plus: 1 }}" class="line__item__qty-selector line__item__qty-selector-plus">+</a>
+        </div>
+        
+        <a class="line__item-removelink" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">remove</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="line__item__qty mobile-display-none">
+    <a {% if item.quantity > 1 %} href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | minus: 1 }}"{% endif %} class="line__item__qty-selector line__item__qty-selector-minus">-</a>
+
+    <input class="line__item__qty-input" type="number" min="0" name="updates[]" id="updates_{{ item.key }}" pattern="[0-9]{10}" value="{{ item.quantity }}" onblur="this.form.submit();">
+
+    <a href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | plus: 1 }}" class="line__item__qty-selector line__item__qty-selector-plus">+</a>
+  </div>
+
+  <div class="line__item-price mobile-display-none" data-title="Total Price: ">{{  wcp_v_price  | money }}</div>
+</div>

@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1660732973c507402e": {
+      "type": "BannerVideo",
+      "disabled": true,
+      "settings": {
+        "videourl": "http:\/\/commondatastorage.googleapis.com\/gtv-videos-bucket\/sample\/ElephantsDream.mp4",
+        "videoposter": "shopify:\/\/shop_images\/videoposter.png"
+      }
+    },
+    "166073103133f04262": {
+      "type": "ImgLeft",
+      "settings": {
+        "heading": "How It Started",
+        "content1": "In 2004, registered nurse Alice Benedetto found herself incredibly frustrated as she walked down the grocery aisles with her 2-year-old son. Every snack her son reached for was loaded with sugar. It was then that Alice knew there had to be a better solution. Armed with her mixing bowl, a dedication to health, and a New York City grit, Alice found a way. She began making vegan snacks in her kitchen from nuts, fruits, and seeds, and word quickly got out that there was a delicious way to eat nutritious food. Kids began ditching their sugary snacks in favor of Alice’s treats and the neighborhood parents kept asking about this magical snack that was keeping their kids away from sugar.",
+        "content2": "It was then that Raw Rev was born. With a focus on creating snacks that are as delicious as they are nutritious, Raw Rev is a beacon for those who believe healthy & happy should never be mutually exclusive. Because for us, “raw” is an attitude – a bold outlook on life and living it full of flavor. Join us in our mission to rewrite the rulebook on what nutrition should taste like.",
+        "images": "shopify:\/\/shop_images\/Alice_Portrait_077_e524acad-228b-4b8e-859e-8fd667e20742.jpg"
+      }
+    },
+    "16607375132fc07e38": {
+      "type": "StoryFaq",
+      "blocks": {
+        "1c181434-5d51-4915-9796-b3540f60bc0a": {
+          "type": "FAQs",
+          "settings": {
+            "question": "What does “Raw Rev” mean?",
+            "answer": "<p>We thought this might cross your mind! Well, long story short, Alice lived in NYC in the early 1990’s during a RAW food revolution! People were soaking raw organic cashews in bathtubs and hosting basement plant-based potlucks in secret Gotham locations!  During this time her entrepreneurial mind started dreaming up the beginnings of her first product line appropriately named: Raw Revolution.  Insiders always knew us as “Raw Rev”, so we decided to shorten it!<\/p>"
+          }
+        },
+        "564e37d6-46ff-402b-bc61-407b2fe89991": {
+          "type": "FAQs",
+          "settings": {
+            "question": "Who is Alice Benedetto the CEO and Founder of Raw Rev?",
+            "answer": "<p>Alice is our hard rock guitar-playing, Kitchen-aide mixing, marathon training, fruit-loving, super-Mom of two (plus a pug) CEO! Oh, she’s also a registered nurse and a trained natural foods Chef as well 😉<\/p>"
+          }
+        },
+        "3021a819-1f88-4aa1-a374-206d4e40c752": {
+          "type": "FAQs",
+          "settings": {
+            "question": "It’s so hard to find a good protein bar… why Raw Rev?",
+            "answer": "<p> There are so many choices nowadays, we totally get how overwhelming it is to choose a new snack. Raw Rev has a focus on pioneering the low sugar snack wave! Shopping with Raw Rev ensures you will have the best tasting plant-based bar available, without the excess sugar.<\/p>"
+          }
+        },
+        "37c49edd-5161-4a76-a20b-32458e83567f": {
+          "type": "FAQs",
+          "settings": {
+            "question": "Do Raw Rev bars have an aftertaste like so many other bars?",
+            "answer": "<p>We don’t like that aftertaste either! That’s why we went STEVIA-FREE. We use Reb M – the latest in sugar-free sweetener  innovation. Reb M is made from fermented sugar cane leaf – not the stevia leaf – leaving no bad aftertaste.<\/p>"
+          }
+        },
+        "bfc39421-bf61-4752-af68-13ed53075cde": {
+          "type": "FAQs",
+          "settings": {
+            "question": "Can I find Raw Rev in stores?",
+            "answer": "<p>Absolutely! You can find Raw Rev in thousands of retail stores all over the USA, and we’re adding new stores every day! Check our store locator for <a href=\"https:\/\/rawrev.com\/pages\/stores\"><span style=\"text-decoration:underline\">availability<\/span><\/a> near you. If you don’t see your favorite store, fill out our retailer submission form and we’ll get working on that!<\/p>"
+          }
+        },
+        "8f9353df-a29c-4362-8f36-3cd042947f07": {
+          "type": "FAQs",
+          "settings": {
+            "question": "Anything cool I should know about Raw Rev?",
+            "answer": "<p>About a million things, but just to name a few, we are: Woman owned business, Plant-Based, Non-GMO, Kosher, Gluten-Free, Dairy-Free, Vegan, Family operated, Made in the USA, Stevia-Free, and Plastic Neutral.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1c181434-5d51-4915-9796-b3540f60bc0a",
+        "564e37d6-46ff-402b-bc61-407b2fe89991",
+        "3021a819-1f88-4aa1-a374-206d4e40c752",
+        "37c49edd-5161-4a76-a20b-32458e83567f",
+        "bfc39421-bf61-4752-af68-13ed53075cde",
+        "8f9353df-a29c-4362-8f36-3cd042947f07"
+      ],
+      "settings": {
+        "heading": "FAQ's"
+      }
+    },
+    "1661856392b63b39ad": {
+      "type": "StorySustainability",
+      "blocks": {
+        "a56aab9c-f028-410f-b881-afc057b74f3a": {
+          "type": "block",
+          "settings": {
+            "storysustainabilityimage": "shopify:\/\/shop_images\/Gluten_Free.png",
+            "storysustainabilitytitle": "Gluten Free",
+            "storysustainabilitydetails": "<p>All Raw Rev bars are certified Gluten Free by National Food Certifiers. Here at Raw Rev we follow rigorous steps to prevent gluten contamination, Our process has been independently tested, so that you can be sure that your Raw Rev products are always gluten free.<\/p>",
+            "link": "https:\/\/nfccertification.com\/certifications\/gluten-free\/"
+          }
+        },
+        "e8de7917-3b00-4c2a-9b50-e3f1762e1612": {
+          "type": "block",
+          "settings": {
+            "storysustainabilityimage": "shopify:\/\/shop_images\/NFC_Kosher.png",
+            "storysustainabilitytitle": "Kosher",
+            "storysustainabilitydetails": "<p>Certified by National Food Certifiers, all Raw Rev products are certified Kosher. The NFC Apple K Kosher label meets the highest kosher standards available.<\/p>",
+            "link": "https:\/\/nfccertification.com\/certifications\/kosher\/"
+          }
+        },
+        "0a8f441c-2ef9-4630-a4a8-9789d6bff3ee": {
+          "type": "block",
+          "settings": {
+            "storysustainabilityimage": "shopify:\/\/shop_images\/non-gmo.png",
+            "storysustainabilitytitle": "Non-GMO",
+            "storysustainabilitydetails": "<p>Raw Rev bars are certified Non-GMO by the The Non-GMO Project – North America’s most trusted certification for GMO avoidance.<\/p>",
+            "link": "https:\/\/www.nongmoproject.org\/about\/"
+          }
+        },
+        "91da84b3-30ce-4050-8b69-03df45844b0a": {
+          "type": "block",
+          "settings": {
+            "storysustainabilityimage": "shopify:\/\/shop_images\/wob-logo_1200xx3122-1756-71-0.jpg",
+            "storysustainabilitytitle": "Woman Owned Business",
+            "storysustainabilitydetails": "<p>Certified by Women’s Business Enterprise National Council (WBENC), Raw Rev is proud to be 100% woman owned.<\/p>",
+            "link": "https:\/\/www.wbenc.org\/about-wbenc\/#who-we-are"
+          }
+        },
+        "c08a5e72-16d7-426c-85b7-5960b02eddff": {
+          "type": "block",
+          "settings": {
+            "storysustainabilityimage": "shopify:\/\/shop_images\/PlasticNeutra.png",
+            "storysustainabilitytitle": "Certified Plastic Neutral",
+            "storysustainabilitydetails": "<p>Raw Rev has partnered with rePurpose Global to recover as much plastic from nature as we use in production. We are now officially certified Plastic Neutral. <\/p>",
+            "link": "https:\/\/repurpose.global\/"
+          }
+        }
+      },
+      "block_order": [
+        "a56aab9c-f028-410f-b881-afc057b74f3a",
+        "e8de7917-3b00-4c2a-9b50-e3f1762e1612",
+        "0a8f441c-2ef9-4630-a4a8-9789d6bff3ee",
+        "91da84b3-30ce-4050-8b69-03df45844b0a",
+        "c08a5e72-16d7-426c-85b7-5960b02eddff"
+      ],
+      "settings": {
+        "storysustainabilityhead": "Trust In Raw Rev",
+        "storysustainabilitydetails": ""
+      }
+    },
+    "16607321059fb2616a": {
+      "type": "ImgRight",
+      "settings": {
+        "heading": "Alice’s Favorite",
+        "content1": "With how many bars she has made over the years, choosing a definitive winner is practically impossible. But even after all this time, chocolate chip cookie dough and Double Chocolate Brownie Batter stands out as classics that’ll never go out of style.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/CookieDough_Bar_White_V2.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660732973c507402e",
+    "166073103133f04262",
+    "16607375132fc07e38",
+    "1661856392b63b39ad",
+    "16607321059fb2616a"
+  ]
+}

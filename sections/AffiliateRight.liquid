@@ -1,0 +1,37 @@
+<section class="AffiliateRight" id="how-it-works">
+    <div class="AffiliateRight__Container">
+        <div class="AffiliateRight__Layout-main">
+            <div class="AffiliateRight__Layout-inner">
+                <h2 class="AffiliateRight__Head">{{section.settings.affiliateheading}}</h2>
+                <p class="AffiliateRight__Content">
+                    {{section.settings.affiliatedetails}}
+                </p>
+            </div>
+            <div class="AffiliateRight__Layout-inner">
+                <img src="{{ section.settings.affiliateimage | img_url:'480x480' }}" loading="lazy" alt="Favourite Image" class="AffiliateRight__Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Affiliate Right", "tag": "section",
+"settings": [
+    {
+    "type": "text",
+    "id": "affiliateheading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "affiliatedetails",
+    "label": "Details"
+   },
+   {
+    "type": "image_picker",
+    "id": "affiliateimage",
+    "label": "Background Image"
+  }
+
+], "presets": [ { "name": "Affiliate Right", "category": "Section" } ] } {%
+endschema %}

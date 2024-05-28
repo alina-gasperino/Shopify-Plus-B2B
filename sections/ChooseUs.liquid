@@ -1,0 +1,72 @@
+<section class="ChooseUs">
+    <div class="ChooseUs__Container">
+        <div class="ChooseUs__Layout-main">
+            <div class="ChooseUs__Layout-inner ChooseUs__Layout-details">
+      {% for block in section.blocks %}
+
+                <div class="ChooseUs__Content">
+                    <div class="ChooseUs__Details">
+                        <div class="ChooseUs__IconWrap">
+                            <img src="{{ block.settings.image | img_url:'140x140' }}" class="ChooseUs__Icons" loading="lazy" alt="icons" width="70" height="70" >
+                        </div>
+                        <h3 class="ChooseUs__Title">{{block.settings.title}}</h3>
+                    </div>
+                    <p class="ChooseUs__Description">{{block.settings.content}} </p>
+                </div>
+      {% endfor %}
+        
+            </div>
+            <div class="ChooseUs__Layout-inner ChooseUs__Layout-image">
+                <div class="ChooseUs__ImgWrap">
+                    <img src="{{ section.settings.image | img_url:'480x480' }}" class="ChooseUs__Images" loading="lazy" alt="Images" >
+                </div>
+                <div class="ChooseUs__ImgWrap">
+                    <img src="{{ section.settings.image1 | img_url:'480x480' }}" class="ChooseUs__Images" loading="lazy" alt="Images" >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %} { "name": "Choose Us", "tag":
+"section", "settings": 
+[
+{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Side Image"
+  },
+  {
+    "type": "image_picker",
+    "id": "image1",
+    "label": "Side Image"
+  }
+], 
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+	{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      }
+]
+}
+],
+"presets": [ { "name": "Choose Us",
+"category": "Section" } ] } {% endschema %}

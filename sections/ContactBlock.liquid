@@ -1,0 +1,78 @@
+<section class="ContactBlock" id="our-perks">
+  <div class="ContactBlock__container">
+    <h1 class="ContactBlock__MainTitle heading-stars heading-stars-right">{{ section.settings.title }}</h1>
+    <div class="ContactBlock__Layout-main">
+      {% for block in section.blocks %}
+        <div class="ContactBlock__Layout-inner">
+          <div class="ContactBlock__Block">
+            <h6 class="ContactBlock__Title">{{ block.settings.contactblocktitle }}</h6>
+            <p class="ContactBlock__Details">{{ block.settings.contactblockdetails }}</p>
+            <div class="ContactBlock__ButtonWrap">
+              <a href="{{block.settings.contactblockurl}}" class="ContactBlock__Button btn">
+                {{- block.settings.contactblockbutton -}}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% comment %} <style>
+  .ContactBlock__Block:hover {
+    border: 15px solid{{ section.settings.hovercolor }};
+    border-top: 0;
+    border-left: 0;
+    border-radius: 15px 26px 26px 26px;
+  }
+</style> {% endcomment %}
+
+{% schema %}
+  {
+    "name": "Contact Block",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "color",
+        "id": "hovercolor",
+        "label": "Hover Block Color"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "contactblocktitle",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "contactblockdetails",
+            "label": "Details"
+          }, {
+            "type": "text",
+            "id": "contactblockbutton",
+            "label": "Button Name"
+          }, {
+            "type": "url",
+            "id": "contactblockurl",
+            "label": "Button URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact Block",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

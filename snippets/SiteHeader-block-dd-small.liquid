@@ -1,0 +1,51 @@
+<div class="dd-mega-menu">
+  <div class="dd-mega-menu__container">
+    {% if block.settings.subtitle != blank %}
+      <p class="dd-mega-menu__subtitle">{{ block.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="dd-mega-menu__grid">
+      {% if block.settings.item_1 != blank and block.settings.item_1_image %}
+        <a class="dd-mega-menu__grid-item" href="{{ block.settings.item_1 }}">
+          <img class="dd-mega-menu__grid-image" src="{{ block.settings.item_1_image | img_url: '400x400', crop: 'center' }}" alt="{{ block.settings.item_1_title }}" loading="lazy" width="200px">
+
+          <div class="dd-mega-menu__grid-title text-small">{{ block.settings.item_1_title }}</div>
+        </a>
+      {% endif %}
+
+      {% if block.settings.item_2 != blank and block.settings.item_2_image %}
+        <a class="dd-mega-menu__grid-item" href="{{ block.settings.item_2 }}">
+          <img class="dd-mega-menu__grid-image" src="{{ block.settings.item_2_image | img_url: '400x400' }}" alt="{{ block.settings.item_2_title }}" loading="lazy" width="200px">
+
+          <div class="dd-mega-menu__grid-title text-small">{{ block.settings.item_2_title }}</div>
+        </a>
+      {% endif %}
+
+      {% if block.settings.item_3 != blank and block.settings.item_3_image %}
+        <a class="dd-mega-menu__grid-item" href="{{ block.settings.item_3 }}">
+          <img class="dd-mega-menu__grid-image" src="{{ block.settings.item_3_image | img_url: '400x400', crop: 'center' }}" alt="{{ block.settings.item_3_title }}" loading="lazy" width="200px">
+
+          <div class="dd-mega-menu__grid-title text-small">{{ block.settings.item_3_title }}</div>
+        </a>
+      {% endif %}
+
+      {% if block.settings.item_4 != blank and block.settings.item_4_image %}
+        <a class="dd-mega-menu__grid-item" href="{{ block.settings.item_4 }}">
+          <img class="dd-mega-menu__grid-image" src="{{ block.settings.item_4_image | img_url: '400x400', crop: 'center' }}" alt="{{ block.settings.item_4_title }}" loading="lazy" width="200px">
+
+          <div class="dd-mega-menu__grid-title text-small">{{ block.settings.item_4_title }}</div>
+        </a>
+      {% endif %}
+
+      {% if block.settings.item_5 != blank and block.settings.item_5_image %}
+        <a class="dd-mega-menu__grid-item" href="{{ block.settings.item_5 }}">
+          <img class="dd-mega-menu__grid-image" src="{{ block.settings.item_5_image | img_url: '400x400', crop: 'center' }}" alt="{{ block.settings.item_5_title }}" width="200px">
+
+          <div class="dd-mega-menu__grid-title text-small">{{ block.settings.item_5_title }}</div>
+        </a>
+      {% endif %}
+    </div>
+
+    <a class="dd-tab__link text-small" href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+  </div>
+</div>

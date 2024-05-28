@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "16630497034b72070e": {
+      "type": "BannerV2",
+      "settings": {
+        "shopheading": "{{ collection.title }}",
+        "images": "shopify:\/\/shop_images\/Brownie.png"
+      }
+    },
+    "bundle": {
+      "type": "Collection-bundle",
+      "blocks": {
+        "0d9b59a6-c5be-4c50-8fba-cb5fefb21ff8": {
+          "type": "item",
+          "settings": {
+            "number": 3,
+            "title": "Choose 3 Items",
+            "copy": "10% Off with free delivery",
+            "discount": 10
+          }
+        },
+        "803a2f24-03dd-4547-bed7-1b91b4552f38": {
+          "type": "item",
+          "settings": {
+            "number": 6,
+            "title": "Choose 6 Items",
+            "copy": "15% Off with free delivery",
+            "discount": 15
+          }
+        },
+        "d2e9d13b-9288-4735-b5e3-24eddede565b": {
+          "type": "item",
+          "settings": {
+            "number": 12,
+            "title": "Choose 12 Items",
+            "copy": "20% Off with free delivery",
+            "discount": 20
+          }
+        }
+      },
+      "block_order": [
+        "0d9b59a6-c5be-4c50-8fba-cb5fefb21ff8",
+        "803a2f24-03dd-4547-bed7-1b91b4552f38",
+        "d2e9d13b-9288-4735-b5e3-24eddede565b"
+      ],
+      "settings": {}
+    },
+    "collection": {
+      "type": "Collection-CollectionBundle",
+      "settings": {
+        "tab_menu": ""
+      }
+    }
+  },
+  "order": [
+    "16630497034b72070e",
+    "bundle",
+    "collection"
+  ]
+}

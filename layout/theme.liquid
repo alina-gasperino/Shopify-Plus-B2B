@@ -1,0 +1,169 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+ {%- render 'beae_header' -%}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="facebook-domain-verification" content="shvjtcalksogc1gy97c9zqtw1yq664" />
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="google-site-verification" content="J7K_XzAFqsq7QFlxqa9SKuSLoHLRJFe5jw8EoGsawjw" />
+
+  <script type="application/ld+json" data-type="functional">
+  {
+    "@context": "https://schema.org/",
+    "@type": "CreativeWorkSeries",
+    "name": "Review",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "208"
+    }
+  }
+</script>
+  
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  {% capture seo_title %}
+    {{ page_title }}
+    {% if current_tags %}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {% endif %}
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  {% endcapture %}
+  <title>{{ seo_title }}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'Theme-social_meta_tags' %}
+
+  {{ 'main.css' | asset_url | stylesheet_tag }}
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    };
+  </script>
+
+  {% if template.directory == 'customers' %}
+    <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+  {% endif %}
+  
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {{ content_for_header }}
+  
+  {{ 'script.js' | asset_url | script_tag }}
+
+  <!-- Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- marker.io -->
+  <script>
+      window.markerConfig = {
+        project: '63752be12e6f5ac03c8840c8',
+        source: 'snippet'
+      };
+    </script>
+    <script>
+    !function(e,r,a){if(!e.__Marker){e.__Marker={};var t=[],n={__cs:t};["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","setCustomData","on","off"].forEach(function(e){n[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),t.push(r)}}),e.Marker=n;var s=r.createElement("script");s.async=1,s.src="https://edge.marker.io/latest/shim.js";var i=r.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}}(window,document);
+    </script>
+
+  {% render 'judgeme_core' %}
+
+  <script>
+    window._Sendlane = window._Sendlane || [];
+    </script>
+    <script src="https://sendlane.com/scripts/pusher.js" async></script>
+    <script>
+    _Sendlane.push({
+        event_id: '6N3cRd0X8j8eS'
+    });
+  </script>
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}" {% if template.name == 'collection' %}data-collection="{{ collection.url }}"{% endif %}>
+  
+  {% section "SiteHeader" %}
+  {% include 'SiteHeader-cart-dd' %}
+  
+  <main role="main" id="MainContent" class="MainContent">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'SiteFooter' %}
+
+  <!-- WPD Start -->
+  {% if customer.tags.size > 0 and template != 'cart' %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          let checkoutbtninterval = setInterval(function(){
+            var x=document.querySelectorAll("input[name='checkout'], button[name='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], [href$='checkout']");
+            var WPD_RedirectToCart = function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                window.location = '/cart';
+                };
+                for (var i = 0; i < x.length; i++) {
+                    x[i].addEventListener('click', WPD_RedirectToCart, false);
+                }
+            },500)
+    });
+  </script>
+   {% endif %}
+
+
+   {% if customer.tags.size > 0 and template == 'cart' %}
+     {% include 'wcp_cart' %}
+   {% endif %}
+   <!-- WPD End -->
+  <!-- wpd_app_integration start -->
+  <script>
+  function wpd_includefile(filename) {
+  var head = document.getElementsByTagName("head")[0];
+  var script = document.createElement("script");
+  script.src = filename;
+  script.type = "text/javascript";
+  script.defer = true;
+  script.async = true;
+  head.appendChild(script)
+  }
+  {% if customer.tags.size > 0 %}
+  window.shopifyCustomer = "{{ customer.tags | join: "," }}";
+  window.wpd_moneyFormat = '{{ shop.money_format }}';
+  wpd_includefile("/apps/wpdapp/integration/build/app.bundle.js?v="+Math.random());
+  {% endif %}
+  </script>
+  <!-- wpd_app_integration end -->
+
+  
+ {%- render 'beae_footer' -%}
+ </body>
+
+</html>

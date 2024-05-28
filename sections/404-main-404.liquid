@@ -1,0 +1,49 @@
+<div class="Page Page--404">
+  <div class="Page--404-content">
+    <h1 class="Page-title Page--404-title">
+      <span class="Page--404-errorcode">404</span>
+      OOPS! This page doesn't exist.
+    </h1>
+    <form action="/search" method="get" class="Form Form--search SearchResults-search" role="search">
+      {% comment %}
+      Uncomment the following hidden input to only show products in your search results
+      {% endcomment %}
+      <input type="hidden" name="type" value="product">
+
+      <div class="FormItem FormItem--name_query FormItem--type_search Page--404-search"
+        id="Swiftype-SearchFieldContainer404">
+        <input type="search" name="q" value="{{ search_terms_text }}" placeholder="Search Rug & Home"
+          class="FormItem-input FormItem-input--search Form--search-query" aria-label="Search Rug & Home"
+          id="Swiftype-SearchField404">
+
+        <div class="Form-actionlist Form--search-actionlist Page--404-actions">
+          <button type="submit" class="Form--search-action404" value="Search">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  define("swiftype-integration-404", ["jquery", "swiftype_templates", "jquery.swiftype.autocomplete"], function ($, SwiftypeTemplates) {
+    $("#Swiftype-SearchField404").swiftype({
+      engineKey: 'smJwAzmgYt8txTPTAxry',
+      autocompleteContainingElement: '#Swiftype-SearchFieldContainer404',
+      dropdownStylesFunction: function () { return {}; },
+      renderFunction: function (doctype, item) {
+        item.document_type = doctype;
+        return SwiftypeTemplates.swiftypeAutocompleteItem(item);
+      },
+    });
+  });
+</script>
+<!-- comment -->
+
+{% schema %}
+{
+"name": "404 Page",
+"settings": [
+
+]
+}
+{% endschema %}

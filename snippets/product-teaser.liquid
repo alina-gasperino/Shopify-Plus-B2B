@@ -1,0 +1,30 @@
+<a href="{{product.url}}" class="Product Product--teaser {{ extra_classes }}">
+    <div style="background-image: url({{ product.featured_image | product_img_url: "original" }})" class="Product-image Product--teaser-image"></div>
+    <h2 class="Product-title Product--teaser-title">{{product.title}}</h2>
+    <p class="Product-price Product--teaser-price">
+        {% if product.compare_at_price > product.price %}
+            <span class="sr-only">{{ 'products.product.regular_price' | t }}</span>
+            <s class="Product-comparison_price Product--teaser-comparison_price">
+                {% if product.compare_at_price_varies %}
+                    {%- assign sale_price = product.compare_at_price_min | money -%}
+                    {%- assign high_sale_price = product.compare_at_price_max | money -%}
+                    {{ 'products.product.price_range' | t: low_price: sale_price, high_price: high_sale_price }}
+                {% else %}
+                    {{ product.compare_at_price | money }}
+                {% endif %}
+            </s>
+        {% endif %}
+
+        {% if product.price_varies %}
+            {%- assign sale_price = product.price_min | money -%}
+            {%- assign high_sale_price = product.price_max | money -%}
+            {{ 'products.product.price_range' | t: low_price: sale_price, high_price: high_sale_price }}
+        {% else %}
+            {{ product.price | money }}
+        {% endif %}
+
+        {% unless product.available %}
+            <span class="Product-availability Product--teaser-availability Product-availability--sold_out Product--teaser-availability--sold_out">{{ 'products.product.sold_out' | t }}</span>
+        {% endunless %}
+    </p>
+</a>

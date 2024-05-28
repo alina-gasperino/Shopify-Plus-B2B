@@ -1,0 +1,146 @@
+
+{% capture wpd_discounted_prices %}{%- render 'wcp_discount'  wcp_discount:product , wpd_is_render:'yes' -%}{% endcapture %}
+    
+{%- capture wcp_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price' -%}{%- endcapture -%}
+{% assign  wcp_price = wcp_price | minus: 0 %}
+
+{%- capture wcp_compare_at_price  -%}{%- render 'wcp_render_discount', wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price' -%}{%- endcapture -%}
+{% if wcp_compare_at_price != blank %}
+    {% assign  wcp_compare_at_price = wcp_compare_at_price | minus: 0 %}
+{% else %}
+{% assign  wcp_compare_at_price = nil %}
+{% endif %}
+
+{%- capture wcp_compare_at_price_min  -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price_min' -%}{%- endcapture -%}
+{% assign  wcp_compare_at_price_min = wcp_compare_at_price_min | minus: 0 %}
+
+{%- capture wcp_compare_at_price_max  -%}{%- render 'wcp_render_discount', wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_compare_at_price_max' -%}{%- endcapture -%}
+{% assign  wcp_compare_at_price_max = wcp_compare_at_price_max | minus: 0 %}
+
+{%- capture wcp_price_min -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price_min' -%}{%- endcapture -%}
+{% assign  wcp_price_min = wcp_price_min | minus: 0 %}
+
+{%- capture wcp_price_max -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_price_max' -%}{%- endcapture -%}
+{% assign  wcp_price_max = wcp_price_max | minus: 0 %}
+
+
+{%- capture v_discount_tag -%}{%-render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'v_discount_tag'-%}{%- endcapture -%}
+{% assign v_discount_tag = v_discount_tag | strip %}
+
+{%- capture p_discount_tag -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'p_discount_tag' -%}{%- endcapture -%}
+{% assign p_discount_tag = p_discount_tag | strip %}
+
+{% assign raw_set_prices = product.metafields.wcp_set_prices.wcp_set_prices %}
+{% assign set_prices_array = blank %}
+{% if raw_set_prices %}
+    {% assign set_prices_array = raw_set_prices | split: ',' %}
+{% endif %}
+
+{%- capture wcp_discount_value -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wpd_discounted_prices, price_variable:'wcp_discount_value' -%}{%- endcapture -%}
+
+{% capture wcp_v_discounted_prices %}{%- render 'wcp_variant' , wcp_variant:product.selected_or_first_available_variant , set_prices_array:set_prices_array , wpd_is_render:'yes', v_discount_tag : v_discount_tag , wcp_discount_value : wcp_discount_value -%}{%- endcapture -%}
+
+{%- capture wcp_v_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wcp_v_discounted_prices, price_variable:'wcp_v_price' -%}{%- endcapture -%}
+{% assign  wcp_v_price = wcp_v_price | minus: 0 %}
+
+{%- capture wcp_v_compare_at_price -%}{%- render 'wcp_render_discount' , wpd_discounted_prices:wcp_v_discounted_prices, price_variable:'wcp_v_compare_at_price' -%}{%- endcapture -%}
+{% if wcp_v_compare_at_price != blank %}
+    {% assign  wcp_v_compare_at_price = wcp_v_compare_at_price | minus: 0 %}
+{% else %}
+{% assign  wcp_v_compare_at_price = nil %}
+{% endif %}
+{% assign is_sub = false %}
+{% for variant in product.variants %}
+  {% if variant.selling_plan_allocations != blank %}
+    {% for allocation in variant.selling_plan_allocations %}
+      {% if allocation.selling_plan.name != "Pre-order" %}
+        {% assign is_sub = true %}
+      {% endif %}
+      {% assign subs_price = allocation.price | money %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% render 'preorder-now-collection-item', product: product %}
+<div class="{% if className %}{{ className }}{% endif %} grid-item" {% if dataIndex %}data-index="{{ dataIndex }}"{% endif %}>
+<div class="grid-item__inner" href="{{ product.url }}">
+<div class="grid-item__top">
+  <a class="grid-item__link" href="{{ product.url }}">
+    <img class="grid-item__image" src="{{ product.featured_image | img_url: '720x720', crop: 'center' }}" alt="{{ product.title }}"
+      loading="lazy" width="360" height="360">
+
+    {% if product.images[1] %}
+      <img class="grid-item__image-hover" src="{{ product.images[1] | img_url: '720x720', crop: 'center' }}"
+      alt="{{ product.title }}" loading="lazy" width="360" height="360">
+    {% else %}
+      <img class="grid-item__image-hover" src="{{ product.featured_image | img_url: '720x720', crop: 'center' }}" alt="{{ product.title }}"
+        loading="lazy" width="360" height="360">
+    {% endif %}
+  </a>
+
+  {% if is_sub %}
+    {% unless customer.tags contains "b2b" %}
+      <div class="subs__radio-wrapper subs__radio-wrapper--grid">
+        <div class="subs__radio-item subs__radio-item--grid">
+          <div class="subs__select-wrapper">
+            <select class="subs__select subs__select--grid" name="subscription_time{{foreach}}" id="subscription_time{{foreach}}">
+              {% for variant in product.variants %}
+                {% if variant.selling_plan_allocations != blank %}
+                  {% for allocation in variant.selling_plan_allocations %}
+                    {% if allocation.selling_plan.name != "Pre-order" %}
+                      <option value="{{ allocation.selling_plan.id }}">
+                        {{ allocation.selling_plan.name }}
+                      </option>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+
+          <input type="radio" name="subs{{ foreach }}" class="subs__radio" id="subscription{{foreach}}" value="subscription" data-price="{{ subs_price }}">
+
+          <label for="subscription{{foreach}}" class="subs__label subs__label--grid">
+            <span class="subs__label-title subs__label-title--grid">Save When You Subscribe</span>
+
+            <span class="subs__label-price subs__label-price--grid">{{ subs_price }}</span>
+          </label>
+        </div>
+
+        <div class="subs__radio-item sub__radio-item--grid">
+          <input type="radio" name="subs{{ foreach }}" class="subs__radio" id="one_time{{foreach}}" value="one_time" data-price="{{ wcp_v_price | money }}" checked>
+
+          <label for="one_time{{foreach}}" class="subs__label subs__label--grid">
+            <span class="subs__label-title subs__label-title--grid">One-Time Purchase</span>
+
+            <span class="subs__label-price subs__label-price--grid">{{ wcp_v_price | money }}</span>
+          </label>
+        </div>
+      </div>
+    {% endunless %}
+  {% endif %}
+</div>
+
+<div class="grid-item__content">
+  <h3 class="grid-item__title">
+    <a href="{{ product.url }}">{{ product.title }}</a>
+  </h3>
+
+  {% if product.available %}
+    <span class="grid-item__btn btn btn--big btn--full-width js-atc" data-id="{{ product.first_available_variant.id }}">
+      <span class="pdp__btn-price js-sub-btn-price">{{ wcp_v_price | money }}</span>
+      <span class="grid-item__btn-separator">|</span>
+      <span class="pdp__btn-text">Add to Cart</span>
+    </span>
+  {% else %}
+    <span class="grid-item__btn btn btn--disabled" data-variant="{{ product.selected_or_first_available_variant.id }}">SOLD OUT</span>
+  {% endif %}
+</div>
+</div>
+</div>
+{%- assign wcp_prd_var = product -%}
+{%- unless wcp_prd_var == empty -%}
+        <script type='application/json' class='{%- for wcp_v in wcp_prd_var.variants -%} wcp_json_{{wcp_v.id}} {%- endfor -%} wcp_json_{{ wcp_prd_var.id }} wcp_json' id='wcp_json_{{ wcp_prd_var.id }}' > 
+            {%- render 'wcp_product_json' with wcp_prd_var -%}
+        </script>
+{%- endunless -%}

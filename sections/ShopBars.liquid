@@ -1,0 +1,26 @@
+<section class="ShopBars">
+    <div class="ShopBars__Container">
+        <h2 class="ShopBars__Head">{{section.settings.shopheading}}</h2>
+    </div>
+</section>
+
+<style>
+.ShopBars{
+    background-image: url({{ section.settings.images | img_url:'2048x480' }});
+}
+</style>
+
+{% schema %} { "name": "Banner V2",  "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "shopheading",
+    "label": "Heading"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+  }
+], "presets": [ { "name": "Banner V2", "category": "Section" } ] } {%
+endschema %}

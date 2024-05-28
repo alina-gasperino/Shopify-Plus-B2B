@@ -1,0 +1,15 @@
+<div class="nav-mobile mobile-only">
+  <div class="nav-mobile__container">
+    <ul class="nav-mobile-list">
+      {% for block in section.blocks %}
+        <li class="nav-mobile-list__item {% if block.type == 'dropdown-small' %}nav-mobile-list__item--has-dd{% endif %}">
+          <a class="nav-mobile-list__item-link text-x-small" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+
+          {% if block.type == 'dropdown-small' %}
+            {% include 'SiteHeader-block-dd-small-mobile' %}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

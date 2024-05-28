@@ -1,0 +1,121 @@
+<div {{block.shopify_attributes}}>
+    {% case block.type %}
+
+
+        {% when 'menu' %}
+            <ul class="NavMenu NavMenu--main_menu">
+                {% for link in linklists[block.settings.linklist].links %}
+                    {% capture child_list_handle %}{{link.title | handleize }}{% endcapture %}
+                    {% capture link_id %}SiteHeader-link--{{block.settings.linklist}}_{{link.title | handleize}}{% endcapture %}
+                    {% if menus[child_list_handle] != blank %}
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#{{ link_id }}" href="{{link.url}}"><span>{{ link.title }}</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="{{ link_id }}">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        {% for link in linklists[child_list_handle].links %}
+                                            <li class="NavMenu-link NavMenu--dropdown-link"><a href="{{ link.href }}"><span>{{ link.title }}</span></a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a href="{{link.url}}"><span>{{ link.title }}</span></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
+        {% when 'accounts' %}
+            {% if shop.customer_accounts_enabled %}
+                <div class="SiteHeader-Icon SiteHeader-account">
+                    {% comment %} <button type="button" data-toggle="offcanvas" data-target="#SiteHeader-accounts" class="SiteHeader-account_button" data-toggle-options="">
+                        <span class="sr-only">{{ 'customer.account.title' | t }}</span>
+                    </button> {% endcomment %}
+                    <button type="button" data-toggle="offcanvas" data-target="#SiteHeader-accounts" class="SiteHeader-account" data-toggle-options="">
+                        <span class="sr-only">{{ 'customer.account.title' | t }}</span>
+                        <img src="{{ block.settings.account-icon | img_url: 'original' }}" class="SiteHeader-cart-icon"/>
+                    </button>
+                    <div class="SiteHeader-account_menu Offcanvas--auxiliary Offcanvas--auxiliary_lv1 is-Offcanvas--closed" id="SiteHeader-accounts">
+                        <div class="Offcanvas-scroller">
+                            <ul class="NavMenu NavMenu--dropdown">
+
+                            {% if customer %}
+                                <li class="NavMenu-link NavMenu--dropdown-link NavMenu--dropdown-link--heading">
+                                    {% if customer.first_name != blank %}
+                                        {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+                                        {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+                                    {% else %}
+                                        <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                                    {% endif %}
+                                </li>
+                                <li class="NavMenu-link NavMenu--dropdown-link">
+                                    {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                                </li>
+                            {% else %}
+                                <li class="NavMenu-link NavMenu--dropdown-link">
+                                    {{ 'layout.customer.log_in' | t | customer_login_link }}
+                                </li>
+                                <li class="NavMenu-link NavMenu--dropdown-link">
+                                    {{ 'layout.customer.create_account' | t | customer_register_link }}
+                                </li>
+                            {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <!-- Accounts are disabled. Cannot render menu. -->
+            {% endif %}
+
+
+        {% when 'cart' %}
+            <div class="SiteHeader-cart">
+                <a class="SiteHeader-Icon SiteHeader-cart_button" href="/cart"
+                    {% if block.settings.use-minicart %}data-toggle="offcanvas" data-toggle-options="nohover nohref" data-target="#SiteHeader-cart_menu--{{block.id}}"{% endif %}>
+                    <img src="{{ block.settings.cart-icon | img_url: 'original' }}" class="SiteHeader-cart_icon"/>
+                    {% if block.settings.cart-count and cart.item_count > 0 or block.settings.use-minicart %}
+                        <span class="SiteHeader-cart_notification"
+                            {% if block.settings.use-minicart %}data-minicart-notification{% endif %}
+                            style="background-color: {{ block.settings.cart-notification-bg-color }}; color: {{ block.settings.cart-notification-text-color }};{% if cart.item_count == 0 %} display: none;{% endif %}">
+                        {% if cart.item_count > 0 %}
+                            {{ cart.item_count }}
+                        {% endif %}
+                        </span>
+                    {% endif %}
+                </a>
+
+                {% if block.settings.use-minicart %}
+                    <div id="SiteHeader-cart_menu--{{block.id}}"
+                        class="SiteHeader-cart_menu {% if block.settings.location == "second_menu" %}SiteHeader-cart_menu--placed_on_left{% else %}SiteHeader-cart_menu--placed_on_right{% endif %}"
+                        data-minicart
+                        data-minicart-moneyformat="{{shop.money_with_currency}}"
+                        data-minicart-friendlyerror="Oh no! The cart failed to load."></div>
+                    <template data-minicart-countrylist>
+                        {{country_option_tags}}
+                    </template>
+                {% endif %}
+            </div>
+        {% when 'search' %}
+            <div class="SiteHeader-Icon SiteHeader-search">
+                <a href="/search" class="SiteHeader-search-link">
+                    <img src="{{ block.settings.search-icon | img_url: 'original' }}" class="SiteHeader-search-icon"/>
+                </a>
+            </div>
+
+
+        {% when 'hilight-button' %}
+            <div class="SiteHeader-Icon SiteHeader-hilight_botton_wrap">
+                <div class="SiteHeader-hilight_botton" style="background-color: {{ block.settings.hilight-bg-color }}">
+                    <a href="{{ block.settings.hilight-url }}" class="SiteHeader-hilight_botton_link" style="color: {{ block.settings.hilight-text-color }}">
+                        {{ block.settings.hilight-text }}
+                    </a>
+                </div>
+            </div>
+
+            
+    {% endcase %}
+</div>

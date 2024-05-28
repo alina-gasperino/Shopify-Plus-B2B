@@ -1,0 +1,114 @@
+<div class="dd-mega-menu">
+  <div class="dd-mega-menu__container">
+    <ul class="dd-mega-menu__nav">
+      {% if block.settings.tab_1_title != blank %}
+        <li class="dd-mega-menu__nav-item dd-mega-menu__nav-item--active text-small js-dd-tab" data-tab="1">{{ block.settings.tab_1_title }}</li>
+      {% endif %}
+
+      {% if block.settings.tab_2_title != blank %}
+        <li class="dd-mega-menu__nav-item text-small js-dd-tab" data-tab="2">{{ block.settings.tab_2_title }}</li>
+      {% endif %}
+
+      {% if block.settings.tab_3_title != blank %}
+        <li class="dd-mega-menu__nav-item text-small js-dd-tab" data-tab="3">{{ block.settings.tab_3_title }}</li>
+      {% endif %}
+
+      {% if block.settings.tab_4_title != blank %}
+        <li class="dd-mega-menu__nav-item text-small js-dd-tab" data-tab="4">{{ block.settings.tab_4_title }}</li>
+      {% endif %}
+
+      {% if block.settings.tab_5_title != blank %}
+        <li class="dd-mega-menu__nav-item text-small js-dd-tab" data-tab="5">{{ block.settings.tab_5_title }}</li>
+      {% endif %}
+    </ul>
+
+    <div class="dd-mega-menu__content">
+      {% if block.settings.tab_1_menu != blank %}
+        <div class="dd-tab dd-tab--active" data-tab="1">
+          <ul class="dd-tab__menu">
+            {% for link in linklists[block.settings.tab_1_menu].links %}
+              <li class="dd-tab__menu-item">
+                <a class="dd-tab__menu-link" href="{{ link.url }}">
+                  <img class="dd-tab__menu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                  <span class="dd-tab__menu-copy text-x-small">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if block.settings.tab_2_menu != blank %}
+        <div class="dd-tab" data-tab="2">
+          <ul class="dd-tab__menu">
+            {% for link in linklists[block.settings.tab_2_menu].links %}
+              <li class="dd-tab__menu-item">
+                <a class="dd-tab__menu-link" href="{{ link.url }}">
+                  <img class="dd-tab__menu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                  <span class="dd-tab__menu-copy text-x-small">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if block.settings.tab_3_menu != blank %}
+        <div class="dd-tab" data-tab="3">
+          <ul class="dd-tab__menu">
+            {% for link in linklists[block.settings.tab_3_menu].links %}
+              <li class="dd-tab__menu-item">
+                <a class="dd-tab__menu-link" href="{{ link.url }}">
+                  <img class="dd-tab__menu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                  <span class="dd-tab__menu-copy text-x-small">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if block.settings.tab_4_menu != blank %}
+        <div class="dd-tab" data-tab="4">
+          <ul class="dd-tab__menu">
+            {% for link in linklists[block.settings.tab_4_menu].links %}
+              <li class="dd-tab__menu-item">
+                <a class="dd-tab__menu-link" href="{{ link.url }}">
+                  <img class="dd-tab__menu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                  <span class="dd-tab__menu-copy text-x-small">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if block.settings.tab_5_menu != blank %}
+        <div class="dd-tab" data-tab="5">
+          <ul class="dd-tab__menu">
+            {% for link in linklists[block.settings.tab_5_menu].links %}
+              <li class="dd-tab__menu-item">
+                <a class="dd-tab__menu-link" href="{{ link.url }}">
+                  <img class="dd-tab__menu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                  <span class="dd-tab__menu-copy text-x-small">{{ link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    <a class="dd-tab__image" href="{{ block.settings.tab_1_button_url }}">
+      <img class="dd-tab__img" src="{{ block.settings.tab_1_image | img_url: '170x170', crop: 'center' }}" alt="{{ block.settings.tab_1_button_text }}">
+      
+      <span class="dd-tab__link text-small">{{ block.settings.tab_1_button_text }}</span>
+    </a>
+  </div>
+</div>
+<!-- End dd-menu -->

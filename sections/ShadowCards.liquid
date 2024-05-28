@@ -1,0 +1,73 @@
+<div class="shadow-cards__container">
+  <h2 class="shadow-cards__title heading-stars heading-stars-right">{{ section.settings.title }}</h2>
+
+  <p class="shadow-cards__copy">{{ section.settings.copy }}</p>
+
+  <div class="shadow-cards-list">
+    {% for block in section.blocks %}
+      <div class="shadow-cards-list-item">
+        <div class="shadow-cards-list-item__content">
+          <h3 class="shadow-cards-list-item__title h4">{{ block.settings.title }}</h3>
+
+          <p class="shadow-cards-list-item__copy">{{ block.settings.copy }}</p>
+
+          <a href="{{ block.settings.button_url }}" class="shadow-cards-list-item___btn btn" download>{{ block.settings.button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shadow Cards",
+  "class": "shadow-cards",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ] 
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shadow Cards",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

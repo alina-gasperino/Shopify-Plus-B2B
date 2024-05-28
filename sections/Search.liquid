@@ -1,0 +1,52 @@
+{% paginate search.results by 16 %}
+<section class="search-results">
+  <div class="sr__container">
+    <div class="sr__text">
+      {% if search.results_count > 0 %}
+        <h1 class="sr__title h4">{{ search.results_count }} Results for "{{ search.terms | escape }}"</h1>
+      {% else %}
+        <h1 class="sr__title h4 sr__title--no-res">There are no search results for "{{ search.terms | escape }}"</h1>
+      {% endif %}
+      </h1>
+    </div>
+     
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+
+        <div class="sr__lists">
+          <div class="product__list product__list--grid-4">
+            {%- for item in search.results -%}
+              {%- if item.object_type != 'page' and item.object_type == 'product' -%}
+                {% render 'Product-grid_item', product: item %}  
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="article__list">
+            {%- for item in search.results -%}
+              {%- if item.object_type != 'page' and item.object_type == 'article' -%}
+                {% render 'Article-grid-article', article: item %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {% else %}
+        <p class="sr__copy">Please review your search and try again.</p> 
+
+        <form action="{{ routes.search_url }}" class="sr__form">
+          <input class="sr__form-text" type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}">
+  
+          <input type=hidden name=type value="product,article">
+          <input class="sr__form-submit" type="submit" value="Search">
+        </form>
+      {% endif %}
+    {% endif %}
+
+    {% if paginate.pages > 1 %}
+      {% render 'Pagination-pagination' paginate:paginate %}
+    {% endif %}
+
+  </div><!--sr inner-->
+</section>
+
+{% endpaginate %}

@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1662110578ad103f00": {
+      "type": "BestBarQuiz",
+      "blocks": {
+        "ec444374-b813-4d23-b621-2032414b9d78": {
+          "type": "block",
+          "settings": {
+            "bestdetails": "Unsure which of our delicious plant-based protein bars is the best one for you?"
+          }
+        },
+        "5175180e-6443-407f-9784-7a4b6121f38c": {
+          "type": "block",
+          "settings": {
+            "bestdetails": "Our quick quiz will help you find the flavor you’re craving. Who knows? Maybe you’ll find a new favorite!"
+          }
+        }
+      },
+      "block_order": [
+        "ec444374-b813-4d23-b621-2032414b9d78",
+        "5175180e-6443-407f-9784-7a4b6121f38c"
+      ],
+      "settings": {
+        "bestbarhead": "Welcome",
+        "bestbarbutton": "Let’s Get Started",
+        "resulturl": "shopify:\/\/pages\/quiz-results-new",
+        "result": "Skip To Results"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662110578ad103f00"
+  ]
+}

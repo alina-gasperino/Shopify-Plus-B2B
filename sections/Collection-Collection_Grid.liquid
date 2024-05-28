@@ -1,0 +1,760 @@
+<section class="ProductCollection">
+  <div class="ProductCollection__Container">
+     <div class="ProductCollection__Layout-main">
+        <div class="ProductCollection__SideBar">
+          <div class="ProductCollection__Select-box">
+            <div class="ProductCollection__Select-box-btn">
+              <a href="javascript:void(0)" class="btn ProductCollection__SelectButton">FILTER</a>
+            </div>
+            <div class="ProductCollection__Flavor">
+                <div class="ProductCollection__Flavor-overlay"></div>
+                <div class="ProductCollection__Flavor-box">
+                    <h3 class="ProductCollection__Flavor-title">
+                        Pick your Flavor
+                    </h3>
+                    <div class="ProductCollection__Flavor-pick-box-block">
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Almonds</label
+                        >
+                    </div>
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Cashew</label
+                        >
+                    </div>
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Chocolate</label
+                        >
+                    </div>
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Peanut</label
+                        >
+                    </div>
+                    </div>
+                </div>
+                <div class="ProductCollection__Sort-box">
+                   <h3 class="ProductCollection__Flavor-title">Sort By</h3>
+                    <div class="ProductCollection__Flavor-pick-box-block">
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Top Sellers</label
+                        >
+                    </div>
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >New Arrivals</label
+                        >
+                    </div>
+                    <div class="ProductCollection__Flavor-pick-box-list">
+                        <input
+                        type="checkbox"
+                        id="ProductCollection__Flavor-pick-box"
+                        />
+                        <label
+                        for="ProductCollection__Flavor-pick-box"
+                        class="ProductCollection__Flavor-pick-box-title"
+                        >Alice’s Picks</label
+                        >
+                    </div>
+                    </div>
+                    <div class="ProductCollection__Sort-product-btn">
+                    <a href="javascript:void(0)" class="Show-product-btn btn">Show Products</a>
+                    </div>
+                    <div class="ProductCollection__Sort-product-clear-filter">
+                        <a href="javascript:void(0)" class="product-clear-filter-btn">Clear Filter</a>
+                    </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ProductCollection__Products-main">
+         <div class="ProductCollection__Product-inner">
+             
+             
+              {%- for product in collection.products -%}
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block">
+                  <div
+                    class="ProductCollection__Product-img ProductCollection__Product-img-box-purple"
+                  >
+                    <img
+                      src="{{product.featured_image | img_url: 'master'}}" alt="{{product.title}}"
+                      class="ProductCollection__Image"
+                    />
+                    {% comment %}
+                    <div class="ProductCollection__Product-offer-block Desktop" >
+                      <div class="ProductCollection__Product-offer">
+                        <div class="ProductCollection__Product-offer-heading">
+                          
+                            {% if product.available %}{% include 'subscription-product' %}{% endif %} 
+                          
+                        </div>
+                      </div>
+                    </div>
+                    {% endcomment %}
+                    {% assign custom_tag =  section.settings.custom_product_tag | split: ", " %}
+                        {% for tags_c in custom_tag %}
+                        {% for p_tag in product.tags %}
+                           {%if tags_c == p_tag %}
+                            <div
+                      class="ProductCollection__Product-img-tag ProductCollection__Product-img-tag-pista"
+                    >
+                      <p class="ProductCollection__Product-img-tag-text">
+                        {{p_tag}}
+                      </p>
+                    </div> 
+                           {% endif %}
+                        {%endfor%}
+                        {% endfor %}
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      {{product.title}}
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >{{ product.price | money }} | Add To Cart</a
+                    >
+                  </div>
+                   <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        
+                          {% if product.available %}{% include 'subscription-product' %}{% endif %} 
+                        
+                      </div>
+                    </div>
+                  
+                  {% if product.metafields.subscriptions.is_subscription_only == 'true' or product.tags contains 'Subscription Only' or product.tags contains 'subscription only' or product.tags contains 'Subscription only' or product.tags contains 'subscriptiononly' %}{%endif%}
+                </div>
+              </div>
+              
+              {% endfor %}
+              {% comment %}
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-purple"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <div
+                      class="ProductCollection__Product-img-tag ProductCollection__Product-img-tag-pista"
+                    >
+                      <p class="ProductCollection__Product-img-tag-text">
+                        Best Seller
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-red"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <div
+                      class="ProductCollection__Product-img-tag ProductCollection__Product-img-tag-sky"
+                    >
+                      <p class="ProductCollection__Product-img-tag-text">
+                        Alice’s Fav
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-indigo"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <!-- <div class="ProductCollection__Product-img-tag">
+                                            <p class="ProductCollection__Product-img-tag-text">Best Seller</p>
+                                        </div> -->
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-orange"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <!-- <div class="ProductCollection__Product-img-tag">
+                                            <p class="ProductCollection__Product-img-tag-text">Best Seller</p>
+                                        </div> -->
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-sky"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <!-- <div class="ProductCollection__Product-img-tag">
+                                            <p class="ProductCollection__Product-img-tag-text">Best Seller</p>
+                                        </div> -->
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-violet"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <div
+                      class="ProductCollection__Product-img-tag ProductCollection__Product-img-tag-grey"
+                    >
+                      <p class="ProductCollection__Product-img-tag-text">
+                        SALE
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ProductCollection__Product">
+                <div class="ProductCollection__Product-block-box">
+                  <div
+                    class="ProductCollection__Product-img-box ProductCollection__Product-img-box-blue"
+                  >
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/1803/1651/files/product.png"
+                      class="ProductCollection__Image"
+                    />
+                    <!-- <div class="ProductCollection__Product-img-tag">
+                                            <p class="ProductCollection__Product-img-tag-text">Best Seller</p>
+                                        </div> -->
+                  </div>
+                  <div class="ProductCollection__Product-block-heading">
+                    <h2 class="ProductCollection__Product-block-title">
+                      Product Name
+                    </h2>
+                  </div>
+                  <div class="ProductCollection__Product-cart-block">
+                    <a
+                      href="javascript:void(0)"
+                      class="ProductCollection__Product-cart-btn btn"
+                      >$12.50 | Add To Cart</a
+                    >
+                  </div>
+                  <div class="ProductCollection__Product-offer-block">
+                    <div class="ProductCollection__Product-offer">
+                      <div class="ProductCollection__Product-offer-heading">
+                        <p class="ProductCollection__Product-offer-title">
+                          Every 15 days
+                        </p>
+                      </div>
+                      <ul class="ProductCollection__Product-offer-list-block">
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              Save When You Subscribe
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$10.50</span
+                            >
+                          </div>
+                        </li>
+                        <li class="ProductCollection__Product-offer-list-inner">
+                          <div class="ProductCollection__Product-offer-list">
+                            <input
+                              type="radio"
+                              id="ProductCollection__Product-offer-btn"
+                            />
+                            <p
+                              class="ProductCollection__Product-offer-list-title"
+                            >
+                              One-Time Purchase
+                            </p>
+                          </div>
+                          <div class="ProductCollection__Product-offer-price">
+                            <span
+                              class="ProductCollection__Product-offer-price-value"
+                              >$12.50</span
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endcomment %}
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function () {
+    if (jQuery(window).width() <= 767) {
+      $(".ProductCollection__Select-box-btn").click(function () {
+        $(".ProductCollection__Flavor").fadeIn();
+      });
+      $(".ProductCollection__Sort-product-btn .show-product-btn").click(function () {
+        $(".ProductCollection__Flavor").fadeOut();
+      });
+    }
+  });
+</script>
+
+{% schema %} 
+{ 
+  "name": "Collection__Grid", 
+  "tag": "section", 
+  "settings": [
+  {
+   "type": "html",
+   "id": "custom_product_tag",
+   "label": "Enter Custom Product Tags Here",
+   "info": "You need to enter like: bestseller, hot-deal, etc.. you need to enter like the mention"
+  }
+],
+"presets": [ 
+  { 
+   "name": "Collection__Grid", 
+   "category": "Section" 
+  } 
+] 
+} 
+
+{% endschema %}

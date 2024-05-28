@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "887a8b20-32ec-4395-bc34-7eb6e792f63c": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Press Kit",
+        "content1": "Want to feature Raw Rev in your publication? Access our latest press materials below.",
+        "images": "shopify:\/\/shop_images\/Mixed_Nut_Banner.png"
+      }
+    },
+    "16626372730a67a61e": {
+      "type": "ShadowCards",
+      "blocks": {
+        "7658573e-45f5-4478-bebc-23325ddaf9c3": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Company Logo",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "DOWNLOAD",
+            "button_url": ""
+          }
+        },
+        "aae9499b-f081-4d99-ad55-98ae98781acc": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Raw Rev Products",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "DOWNLOAD",
+            "button_url": ""
+          }
+        },
+        "e7a1c7b0-e545-428b-9ef3-5c6536469097": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Branded Photos",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "Download",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "7658573e-45f5-4478-bebc-23325ddaf9c3",
+        "aae9499b-f081-4d99-ad55-98ae98781acc",
+        "e7a1c7b0-e545-428b-9ef3-5c6536469097"
+      ],
+      "settings": {
+        "title": "Our Mission",
+        "copy": "Simply put, we create great-tasting and all-natural bars that will blow your mind. Raw Rev believes in doing something different because too many snacks out there are loaded with unnecessary sugar and additives. Instead, we’re offering nutrition that’s entirely guilt free, without losing the delicious flavors that you crave."
+      }
+    }
+  },
+  "order": [
+    "887a8b20-32ec-4395-bc34-7eb6e792f63c",
+    "16626372730a67a61e"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "0d203174-f161-4fe7-a281-c6e684e714ee": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Holiday Bundles!",
+        "content1": "Bundle your favorite Raw Rev bars and save!",
+        "images": "shopify:\/\/shop_images\/brown_bundles_2.png",
+        "button_1_text": "",
+        "button_1_url": "",
+        "button_2_text": "",
+        "button_2_url": ""
+      }
+    },
+    "170033239819a2c6f3": {
+      "type": "apps",
+      "blocks": {
+        "3a3dfb25-49df-433f-bd30-425059bc24de": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": "8bf9"
+          }
+        },
+        "b5e12b8d-d2ce-4e75-8cf1-44230c681eb5": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": "8bfg"
+          }
+        },
+        "a133256e-9f9f-4e32-b7ae-5bb35b54e829": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": "8bfi"
+          }
+        },
+        "5bd90317-010b-493d-b8e1-7d1ad471b91e": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": ""
+          }
+        },
+        "7dc5dff8-f912-45c6-a90f-7f9f0735b576": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": "8fty"
+          }
+        }
+      },
+      "block_order": [
+        "3a3dfb25-49df-433f-bd30-425059bc24de",
+        "b5e12b8d-d2ce-4e75-8cf1-44230c681eb5",
+        "a133256e-9f9f-4e32-b7ae-5bb35b54e829",
+        "5bd90317-010b-493d-b8e1-7d1ad471b91e",
+        "7dc5dff8-f912-45c6-a90f-7f9f0735b576"
+      ],
+      "settings": {}
+    },
+    "22208721-6dcb-43a8-93ea-1ab46529c924": {
+      "type": "beae-untitled",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "0d203174-f161-4fe7-a281-c6e684e714ee",
+    "170033239819a2c6f3",
+    "22208721-6dcb-43a8-93ea-1ab46529c924"
+  ]
+}

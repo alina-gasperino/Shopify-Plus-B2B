@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "166073103133f04262": {
+      "type": "ImgLeft",
+      "settings": {
+        "round_image": true,
+        "heading": "Sustainability",
+        "content1": "At Raw Rev, a commitment to sustainability is part of our mission. At Raw Rev we are continuously looking to source the most environmentally sound ingredients and packaging available. We also partner with vendors and organizations who are committed to combating climate change and maintaining a healthy planet.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/daisy.png"
+      }
+    },
+    "16607321059fb2616a": {
+      "type": "ImgRight",
+      "settings": {
+        "heading": "Certified Plastic Neutral Product",
+        "content1": "rePurpose Global is the world's leading Plastic Action Platform dedicated to fighting plastic waste. Its pioneering ecosystem of solutions allows companies to invest in critical waste management infrastructure, and supports them to calculate, reduce, and balance their products’ plastic footprints, while empowering grassroots waste management innovators around the world. Through this partnership, Raw Rev is enabling the removal of over 2500 lbs of plastic waste each year that would otherwise end up polluting the natural environment.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/rePurpose.jpg"
+      }
+    },
+    "378185e4-7fc5-4d5b-a005-07f6b54e7570": {
+      "type": "ImgLeft",
+      "settings": {
+        "round_image": false,
+        "heading": "Sustainable Forestry Initiative",
+        "content1": "All of the cartons we use are certified to the Sustainable Forestry Initiative standards. This means that all of the paperboard packaging we use comes from a legal and responsible source, working to improve forest management. SFI is a comprehensive forest management\/reforestation program that balances the demand for wood products with the need for forest sustainability.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/SFI_w_bground.png"
+      }
+    },
+    "521f7896-57c4-4bb5-8270-f38eea16c716": {
+      "type": "ImgRight",
+      "settings": {
+        "heading": "Forest Stewardship Council",
+        "content1": "All of the cartons that we use are certified to the Forest Stewardship Council standards. The Forest Stewardship Council is a chain-of-custody program which requires that the materials used to manufacture the product or printed piece were sourced responsibly, and renewably. Every entity that touches the product - from the logger to the printer - must be Forest Stewardship Council certified.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/FSC-Open-Graph-Image.png"
+      }
+    },
+    "ceb7af82-7c0f-4446-b08f-8c2123a4d07e": {
+      "type": "ImgLeft",
+      "settings": {
+        "round_image": false,
+        "heading": "Wind Energy",
+        "content1": "Raw Rev partners with packaging vendors who participate in several wind turbine farm projects. They also purchase carbon offset rights equivalent to the amount of energy they consume. These partnerships allow Raw Rev to use wind power in the creation of all of our cartons.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/Wind_Energy_1.png"
+      }
+    },
+    "ea9d4b76-1452-4c35-b322-56a05c9961cb": {
+      "type": "ImgRight",
+      "settings": {
+        "heading": "Vegan",
+        "content1": "Raw Rev is a vegan company and all of our Raw Rev bars are vegan. We never use any animal products in our bars, nor are any ingredients that we use tested on animals for any type of research purposes whatsoever. At Raw Rev we know that plant-sourced foods are less resource intense and taxing on the environment than the production of animal-derived foods. This is one reason why we will never, ever use whey protein in any of our products.",
+        "content2": "",
+        "images": "shopify:\/\/shop_images\/veganword.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "166073103133f04262",
+    "16607321059fb2616a",
+    "378185e4-7fc5-4d5b-a005-07f6b54e7570",
+    "521f7896-57c4-4bb5-8270-f38eea16c716",
+    "ceb7af82-7c0f-4446-b08f-8c2123a4d07e",
+    "ea9d4b76-1452-4c35-b322-56a05c9961cb"
+  ]
+}

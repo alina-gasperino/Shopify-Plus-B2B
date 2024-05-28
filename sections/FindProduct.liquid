@@ -1,0 +1,35 @@
+<section class="FindProduct">
+    <div class="FindProduct__FullContainer">
+        <h1 class="FindProduct__Head">{{ section.settings.title }}</h1>
+        <p class="FindProduct__Subhead">{{ section.settings.copy }}</p>
+        <div class="FindProduct__container">
+            <script type="text/javascript" src="//destinilocators.com/rawindulgence/site/install/?"></script>
+        </div>
+    </div>
+</section>
+
+
+{% schema %} 
+{ 
+    "name": "Find Products",  
+    "tag": "section", 
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "copy",
+            "label": "Copy"
+        }
+    ], 
+    "presets": [ 
+        { 
+            "name": "Find Products",
+            "category": "Section" 
+        } 
+    ] 
+} 
+{% endschema %}

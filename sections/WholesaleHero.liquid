@@ -1,0 +1,44 @@
+<section class="WholesaleHero">
+    <div class="WholesaleHero__Container">
+        <div class="WholesaleHero__Layout-main">
+            <h2 class="WholesaleHero__Head">{{section.settings.heading}}</h2>
+            <p class="WholesaleHero__Content">{{section.settings.content1}}</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.WholesaleHero {
+    padding: 158px 0 105px;
+    background-image: url({{ section.settings.images | img_url:'2048x480' }});
+}
+</style>
+{% schema %}
+{
+  "name": "Banner",
+  "tag": "section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "content1",
+    "label": "Content"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Banner",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

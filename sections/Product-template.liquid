@@ -1,0 +1,152 @@
+{%- include 'wcp_discount' with product -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{% include 'wcp_variant' with current_variant %}
+
+{% include 'wcp_vd_table_change' with product %}
+{% include 'wcp_variant' with current_variant %}
+{% include 'wcp_vd_product' with product %} 
+{% include 'wcp_variant' with current_variant %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign available_variant = product.first_available_variant %}
+{% render 'preorder-now-collection-item', product: product %}
+<div class="pdp__inner">
+  <!-- PDP Images -->
+  <div class="pdp__images" id="pdp__images">
+    <div class="pdp__images-wrapper">
+      {% for image in product.images %}
+        <img class="pdp__image" src="{{ image | img_url: '1500x' }}" alt="{{ image.alt | escape }}" loading="lazy">
+      {% endfor %} 
+    </div>
+  </div>
+
+  <!--PDP Copy -->
+  <div class="pdp__copy">
+    <h1 class="pdp__title h3">{{ product.title }}</h1>
+
+    {% if product.metafields.huemor.pdp_description_extra_ != blank %}
+      <div class="pdp__description">{{ product.metafields.huemor.pdp_description_extra_ }}</div>
+    {% endif %}
+
+    <p class="pdp__vendor">{{ product.vendor }}</p>
+
+    {% include 'Product-form' %}
+
+    	 <div class="wpd_vd_main_container">
+		{% unless wcp_vd_HTML_table == '' or wcp_vd_HTML_table == blank%}
+		<br><span><b>{{shop.metafields.wcp_net.VDTableNote}}</b></span>
+		{% endunless %}
+		<div id='wcp_vd_table'>{{wcp_vd_HTML_table}}</div>             
+		</div>
+    
+    {% include 'Product-share' %}
+
+    <div class="delivery">
+      <h3 class="delivery__title">{{ section.settings.delivery }}</h3>
+
+      <div class="delivery__logos">
+        {% for block in section.blocks %}
+          <img class="delivery__logo" src="{{ block.settings.logo | img_url: '200x' }}" alt="logo" width="100px">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+ {%- assign wcp_prd_var = product -%}
+{%- unless wcp_prd_var == empty -%}
+            <script type='application/json' class='{%- for wcp_v in wcp_prd_var.variants -%} wcp_json_{{wcp_v.id}} {%- endfor -%} wcp_json_{{ wcp_prd_var.id }} wcp_json' id='wcp_json_{{ wcp_prd_var.id }}' > 
+                {%- render 'wcp_product_json' with wcp_prd_var -%}
+            </script>
+{%- endunless -%}
+
+{% unless wcp_vd_HTML_table == '' %}
+<script type="application/json" class="wcp_vd_table" id="wcp_vd_table_{{ product.id }}" > 
+  {{- wcp_vd_HTML_table_tmp -}}
+</script>
+{% endunless %}
+
+{% unless wcp_vd_HTML_table == '' %}
+<script id='vdtable' type="text/x-handlebars-template">
+<table>
+<tr>
+<th>Quantity</th>
+<th>Discount</th>
+<th>Price</th>
+</tr>
+{% raw %}
+{{#each vdtable}}
+	<tr>
+		<td>{{Qty}}</td>
+    	<td>{{Discount}}</td>
+    	<td>{{Price}}</td>
+  	</tr>
+{{/each}}
+{% endraw %}
+</table>   
+</script>
+<script>
+  if(typeof Handlebars === 'undefined'){
+     var head = document.getElementsByTagName("head")[0];
+    script = document.createElement('script');
+    script.onload = function() { };
+    script.type = 'text/javascript';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js';
+    head.appendChild(script);
+  }  
+</script>
+
+{% endunless %}
+
+<style type="text/css">
+#wcp_vd_table table {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+#wcp_vd_table table th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+#wcp_vd_table table td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product Detail",
+  "tag": "section",
+  "class": "pdp",
+  "settings": [
+    {
+      "type": "text",
+      "id": "delivery",
+      "label": "Delivery Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "logo",
+      "type": "logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

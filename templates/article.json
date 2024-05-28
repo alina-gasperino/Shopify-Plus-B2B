@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "Article",
+      "settings": {}
+    },
+    "16627303369bb24dfb": {
+      "type": "RelatedBlogs",
+      "settings": {
+        "title": "Related Articles"
+      }
+    },
+    "0feb2987-0477-42f5-b211-7db6ba671bf7": {
+      "type": "SupportDetails",
+      "settings": {
+        "supportheading": "Want to Learn More?",
+        "supportdetails": "Your question may already be answered in our Support Center! There, you’ll find plenty of frequently asked questions on a number of topics about our business.",
+        "support_button": "Support Center",
+        "support_button_url": "shopify:\/\/pages\/support-center-new"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16627303369bb24dfb",
+    "0feb2987-0477-42f5-b211-7db6ba671bf7"
+  ]
+}

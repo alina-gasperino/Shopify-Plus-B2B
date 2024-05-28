@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "f9a23769-106c-46a5-ac93-cc04262be538": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Join Our Wholesale Program",
+        "content1": "",
+        "images": "shopify:\/\/shop_images\/chocolate-and-nuts.jpg",
+        "button_1_text": "",
+        "button_1_url": "",
+        "button_2_text": "",
+        "button_2_url": ""
+      }
+    },
+    "eb0e8208-1f70-4f39-acdd-d304c8821540": {
+      "type": "WholesaleSignUp",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "f9a23769-106c-46a5-ac93-cc04262be538",
+    "eb0e8208-1f70-4f39-acdd-d304c8821540"
+  ]
+}

@@ -1,0 +1,59 @@
+<div class="external-news__container">
+  <div class="external-news__list">
+    {% for block in section.blocks %}
+      <a class="external-news__list-item" href="{{ block.settings.url }}" target="_blank">
+        <div class="external-news__list-item-image-wrapper">
+          <img src="{{ block.settings.image | img_url: '620x480', crop: 'center' }}" alt="{{ block.settings.title }}" class="external-news__list-item-image" width="310px" height="240px">
+        </div>
+
+        <div class="external-news__list-item-content">
+          <p class="external-news__list-item-date">{{ block.settings.date }}</p>
+
+          <h3 class="external-news__list-item-title h5">{{ block.settings.title }}</h3>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "External News",
+  "class": "external-news",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "News",
+      "type": "news",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "External News",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

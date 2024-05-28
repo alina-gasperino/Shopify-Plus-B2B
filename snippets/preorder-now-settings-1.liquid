@@ -1,0 +1,68 @@
+<script type="text/javascript">
+  {% if cart %}
+    window.pn.cart = {};
+  	window.pn.cart = {{cart | json}}
+    window.pn.cart.items = [];
+
+    {% for item in cart.items %}
+      var cart_item = {{item | json}};
+      cart_item["collection_ids"] = [];
+      {% for c in item.product.collections %}
+        cart_item["collection_ids"].push({{c.id}})
+        {% endfor %}
+      window.pn.cart.items.push(cart_item);
+    {% endfor %}
+
+    if (typeof window.pn.cart.items == "object") {
+      for (var i=0; i<window.pn.cart.items.length; i++) {
+        ["sku", "vendor", "url", "image", "handle", "product_type", "product_description"].map(function(a) {
+          delete window.pn.cart.items[i][a]
+        })
+      }
+    }
+  {% endif %}
+</script>
+
+{% raw %}
+<script>
+if(typeof pn === "undefined"){
+  pn = {};
+}
+if(typeof pn.settings === "undefined"){
+  pn.settings = {};
+}
+pn.settings.defaultSetting={"id":18523235,"a":"Preorder Now","b":true,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"Deliveries Start Approx November 20","h":"above","i":true,"j":"Pre-Order Now!","k":"2023-09-29T04:24:00.000Z","l":null,"m":"default","n":null,"o":true,"handle":null,"p":null,"y":null,"q":true,"r":true,"s":null,"t":null,"u":2,"v":false,"w":"circle","tag":null,"x":null,"z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0","partial_payment_z":"no_partial_discount","partial_payment_aa":"0.0","partial_payment_ab":0,"selling_plan_group_id":null,"selling_plan_group_name":null,"partial_payment_charge_date":null};
+pn.settings.singleProductSettings=[{"id":40305798,"a":"Preorder Now","b":true,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"Deliveries Start Approx January 5","h":"above","i":true,"j":"Pre-Order Now!","k":"2023-09-29T04:24:00.000Z","l":null,"m":"variant","n":"44078191149277","o":false,"handle":"chocolate-chip-cookie-dough-glo-2-0-vegan-protein-bars","p":"8196892459229","y":"https://cdn.shopify.com/s/files/1/1803/1651/files/RAW_REV_CCCD_RENDERING_COMP_111023_WEB.png?v=1699721576","q":true,"r":true,"s":-241,"t":null,"u":2,"v":true,"w":"circle","tag":null,"x":"Pre-Order","z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0","partial_payment_z":"no_partial_discount","partial_payment_aa":"0.0","partial_payment_ab":0,"selling_plan_group_id":null,"selling_plan_group_name":null,"partial_payment_charge_date":"2023-11-18T05:00:00.000Z"},{"id":40597148,"a":"Preorder Now","b":true,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"Deliveries Start Approx Jan 5","h":"above","i":true,"j":"Pre-Order Now!","k":"2023-09-29T04:24:00.000Z","l":null,"m":"variant","n":"44261642961117","o":false,"handle":"double-chocolate-brownie-batter-new-improved-vegan-protein-bars","p":"8259872522461","y":"https://cdn.shopify.com/s/files/1/1803/1651/files/RAW_REV_DCBB_RENDERING_COMP_111023_WEB.png?v=1699726369","q":true,"r":true,"s":-328,"t":null,"u":2,"v":true,"w":"circle","tag":null,"x":"","z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0","partial_payment_z":"no_partial_discount","partial_payment_aa":"0.0","partial_payment_ab":0,"selling_plan_group_id":null,"selling_plan_group_name":null,"partial_payment_charge_date":null},{"id":40305843,"a":"Preorder Now","b":true,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"Deliveries Start Approx January 5","h":"above","i":true,"j":"Pre-Order Now!","k":"2023-09-29T04:24:00.000Z","l":null,"m":"variant","n":"44261674713309","o":false,"handle":"crunchy-protein-bars-crunchy-peanut-butter-sea-salt-new-improved-glo-vegan-protein-bars","p":"8259876323549","y":"https://cdn.shopify.com/s/files/1/1803/1651/files/RAW_REV_CRPB_RENDERING_COMP_111023_WEB.png?v=1699728170","q":true,"r":true,"s":-292,"t":null,"u":2,"v":true,"w":"circle","tag":null,"x":"Pre-Order","z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0","partial_payment_z":"no_partial_discount","partial_payment_aa":"0.0","partial_payment_ab":0,"selling_plan_group_id":null,"selling_plan_group_name":null,"partial_payment_charge_date":"2023-11-18T05:00:00.000Z"}];
+pn.settings.tagSettings=[];
+</script>
+<style type="text/css">
+  .pn-original-subtotal{
+    text-decoration: line-through;
+    display:inline-block;
+  }
+  .pn-discounted-subtotal{
+    font-weight:bold;
+    margin-left:20px;
+    display:inline-block;
+    font-size: 1.3em;
+  }
+
+  .pn-line-item-original-price {
+    text-decoration: line-through;
+  }
+
+  .pn-line-item-discounted-price {
+    font-size: 1.2em;
+    margin-left: 8px;
+  }
+</style>
+{% endraw %}
+
+
+<div id="pn-mixed-cart-warning" class="pn-modal">
+  <div id="pn-mixed-cart-warning-content">
+    <span id="pn-modal-close-btn">x</span>
+    <p class="pn-mixed-cart-heading" id="pn-mixed-cart-warning-title"></p>
+    <div id="pn-mixed-cart-warning-text"></div>
+  </div>
+</div>

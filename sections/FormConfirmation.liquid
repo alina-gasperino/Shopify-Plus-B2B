@@ -1,0 +1,59 @@
+<div class="form-confirmation__container">
+  <div class="form-confirmation__content">
+    <h2 class="form-confirmation__title h1">{{ section.settings.title }}</h2>
+
+    <p class="form-confirmation__copy">{{ section.settings.copy }}</p>
+
+    {% if section.settings.button_url != blank %}
+      <a href="{{ section.settings.button_url }}" class="form-confirmation__btn btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+
+  <div class="form-confirmation__item">
+    {% assign article = articles[section.settings.article] %}
+
+    {% render 'Article-grid-article', article: article %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Form Confirmation",
+  "class": "form-confirmation",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Form Confirmation",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

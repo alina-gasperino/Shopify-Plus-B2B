@@ -1,0 +1,36 @@
+<div class="image-grid__container js-image-grid">
+  <div class="image-grid__list">
+    {% for block in section.blocks %}
+      <div class="image-grid__list-item">
+        <img class="image-grid__list-item-image" src="{{ block.settings.image | img_url: 'x128' }}" alt="logo" width="auto" height="64">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+ 
+{% schema %}
+{
+  "name": "Image Grid",
+  "class": "image-grid",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Grid",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

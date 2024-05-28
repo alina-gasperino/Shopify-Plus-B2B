@@ -1,0 +1,23 @@
+{
+  "layout": "theme",
+  "sections": {
+    "beae-untitled": {
+      "type": "beae-untitled",
+      "blocks": {
+        "3ca19243-f56e-4c4c-a6b9-689146bf03a9": {
+          "type": "shopify:\/\/apps\/bundler\/blocks\/custom-bundle\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": "8bfi"
+          }
+        }
+      },
+      "block_order": [
+        "3ca19243-f56e-4c4c-a6b9-689146bf03a9"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "beae-untitled"
+  ]
+}

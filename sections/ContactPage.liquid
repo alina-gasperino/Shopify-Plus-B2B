@@ -1,0 +1,82 @@
+<div class="contact__container">
+  <div class="contact__top">
+    <h1 class="contact__title">{{ section.settings.title }}</h1>
+
+    <select class="cfc" id="cfc">
+      <option value="default">Escoge una forma de contacto</option>
+      {% for block in section.blocks %}
+        <option value="form-{{ forloop.index }}">{{ block.settings.title }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="contact__row">
+    <div class="contact__forms">
+      {% for block in section.blocks %}
+        <div class="contact__form {% if forloop.index == 1 %} contact__form--active {% endif %}" data-form="form-{{ forloop.index }}">
+          {{ block.settings.code }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="contact__data">
+      {% for block in section.blocks %}
+        <div class="contact__info {% if forloop.index == 1 %} contact__info--active {% endif %}" data-form="form-{{ forloop.index }}">
+          {{ block.settings.copy }}
+
+          {% if block.settings.email != blank %}
+            <p class="contact__email">
+              <span>EMAIL:</span>
+
+              <a href="mailto:{{- block.settings.email -}}">{{- block.settings.email -}}</a> 
+            </p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact",
+  "tag": "section",
+  "class": "contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "form",
+      "type": "form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Form Title"
+        },
+        {
+          "type": "html",
+          "id": "code",
+          "label": "Code",
+          "info": "Paste your code snippet here"
+        },
+        {
+          "type": "richtext",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

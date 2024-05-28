@@ -1,0 +1,79 @@
+<section class="BlogBanner">
+    <div class="BlogBanner__Container">
+        <div class="BlogBanner__Layout-main">
+            <div class="BlogBanner__Layout-inner">
+                <div class="BlogBanner__LeftContent">
+                    <div class="BlogBanner__DateWrap">
+                        <p class="BlogBanner__Date">{{ section.settings.date }} </p>
+                        <p class="BlogBanner__Name"><span>|</span>{{ section.settings.author }}</p>
+                    </div>
+                    <h1 class="BlogBanner__Head">{{ section.settings.title }}</h1>
+                    <p class="BlogBanner__Details">{{ section.settings.copy }}</p>
+                    <div class="BlogBanner__ButtonWrap">
+                        <a href="{{ section.settings.button_url }}" class="BlogBanner__Button btn">{{ section.settings.button_text }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="BlogBanner__Layout-inner BlogBanner__ImageSide">
+                <div class="BlogBanner__RightImage">
+                    <div class="BlogBanner__BrandBtnWrap">
+                        <a href="#" class="BlogBanner__BrandButton">Brand</a>
+                    </div>
+                    <div class="BlogBanner__ImageWrap">
+                        <img src="{{ section.settings.image | img_url: '1024x' }}" alt="Blog Banner" class="BlogBanner__Image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %} 
+{ 
+  "name": "BlogBanner", 
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "date",
+      "label": "Date"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "Author"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ], 
+  "presets": [ 
+    { 
+      "name": "BlogBanner", 
+      "category": "Section" 
+    } 
+  ] 
+} 
+{% endschema %}

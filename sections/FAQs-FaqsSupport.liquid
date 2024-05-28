@@ -1,0 +1,209 @@
+<section class="FaqsSupport">
+  <div class="FaqsSupport__Menu-block">
+    <div class="FaqsSupport__Dropdown">
+      <button class="FaqsSupport__Dropdown-btn">Brand</button>
+    </div>
+    {% if section.blocks.size > 0 %}
+    <div class="FaqsSupport__Row">
+      {% for block in section.blocks %}
+
+      {% if block.type == 'text' %}
+        {% assign tag_content = block.settings.heading %}
+        {% assign get_rle_val =  tag_content | handleize %}
+          <div class="FaqsSupport__Menu-item">
+            <a href="javascript:void(0)" class="FaqsSupport__Menu {% if forloop.index == 1%}FaqsSupport__Menu-active{% endif %}" rel="{{get_rle_val}}-tab">{{ block.settings.heading }}</a>
+          </div>
+        {% else %}
+          {% assign tabing_split = block.settings.heading %}
+          {{tabing_split}}
+        {% endif %}
+
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+    {% if section.blocks.size > 0 %}
+    <div class="FaqsSupport__Container">
+      <div class="FaqsSupport__FaqInner__content">
+      {% for block in section.blocks %}
+      {% if block.type == 'accodian' %}
+      {% assign tag_content = block.settings.tab_title %}
+        {% assign get_tab =  tag_content | handleize %}
+      <div class="FaqsSupport__FAQ-tabcontent" data-tab="{{get_tab}}-tab">
+          <div class="FaqsSupport__Main">
+            {% if block.settings.title != blank %}
+            <a href="javascript:void(0)" class="FaqsSupport__Question">
+              {{block.settings.title}}
+
+              <div class="FaqsSupport__Plus__Minus">
+                <div class="FaqsSupport__Plus">
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    width="45.402px"
+                    height="45.402px"
+                    viewBox="0 0 45.402 45.402"
+                    style="enable-background: new 0 0 45.402 45.402"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141
+                              c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27
+                              c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435
+                              c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div class="FaqsSupport__Minus">
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    width="459.313px"
+                    height="459.314px"
+                    viewBox="0 0 459.313 459.314"
+                    style="enable-background: new 0 0 459.313 459.314"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M459.313,229.648c0,22.201-17.992,40.199-40.205,40.199H40.181c-11.094,0-21.14-4.498-28.416-11.774
+                              C4.495,250.808,0,240.76,0,229.66c-0.006-22.204,17.992-40.199,40.202-40.193h378.936
+                              C441.333,189.472,459.308,207.456,459.313,229.648z"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            {% endif %}
+            <div class="FaqsSupport__Faq__Content">
+              <div class="FaqsSupport__Answer">
+              {{block.settings.text}}
+              </div>
+            </div>
+          </div>
+      </div>
+      {% endif %} 
+      {% endfor %}
+     </div>
+    </div>
+    {% endif %}
+    
+</section>
+
+<script>
+  $(document).ready(function () {
+    $('.FaqsSupport__Main > a').on('click', function () {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).siblings(".FaqsSupport__Faq__Content").slideUp(200);
+      } else {
+        $(".FaqsSupport__Main > a").removeClass("active");
+        $(this).addClass("active");
+        $(".FaqsSupport__Faq__Content").slideUp(200);
+        $(this).siblings(".FaqsSupport__Faq__Content").slideDown(200);
+      }
+      return false;
+    });
+
+   //$(".FaqsSupport__FAQ-tabcontent").hide();
+    //$(".FaqsSupport__FAQ-tabcontent:first-child").show();
+    $(".FaqsSupport__Menu").click(function (event) {
+      event.preventDefault();
+      let tab = $(this).attr('rel');
+      //console.log(tab);
+      $(".FaqsSupport__Menu").removeClass("FaqsSupport__Menu-active");
+      $(this).addClass("FaqsSupport__Menu-active");
+      $(".FaqsSupport__FAQ-tabcontent").hide();
+      //console.log($(`[data-tab="${tab}"]`));
+      $(`[data-tab="${tab}"]`).show();
+    });
+
+    if (jQuery(window).width() <= 768) {
+      let i = 0;
+      $(".FaqsSupport__Dropdown").click(function () {
+        $(".FaqsSupport__Row").slideToggle();
+      });
+      $(".FaqsSupport__Menu").click(function () {
+        var btnText = $(this).text();
+        if (i != 0) {
+          $(".FaqsSupport__Row").slideToggle();
+        }
+        $(".FaqsSupport__Dropdown-btn").text(btnText);
+        i++;
+      });
+    }
+
+   $(".FaqsSupport__Menu-item a.FaqsSupport__Menu:first").trigger( "click" );
+  });
+</script>
+
+{% schema %} 
+{ 
+  "name": "FaqsSupport", 
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accodian",
+      "name": "accodian",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab title"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Accodian Title"
+        },
+        {
+          "type": "richtext",    
+          "id": "text",
+          "label": "Accodian Text"     
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "tab text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Tab Text"
+        }
+      ]
+    }
+  ],
+  "presets": [ 
+    { 
+      "name": "FaqsSupport", 
+      "category": "Section",
+      "blocks": [
+          {
+            "type": "accodian"
+          }
+      ]
+    } 
+  ] 
+} 
+{% endschema %}

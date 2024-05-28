@@ -1,0 +1,70 @@
+<section class="blog" id="blog">
+  <div class="blog__container">
+    <div class="blog__sidebar">
+      <form action="{{ routes.search_url }}" class="blog__form">
+        <input
+          class="blog__form-text"
+          type="text"
+          placeholder="Search"
+          name="q"
+          value="{{ search.terms | escape }}">
+
+        <input
+          class="blog__form-submit"
+          type="submit"
+          value="Search">
+      </form>
+
+      <div class="blog__categories">
+        <h2 class="blog__title h4">Categories</h2>
+
+        <ul class="nav-category">
+          <li class="nav-category__item">
+            <a href="/blogs/news/" class="nav-category__item-name {% unless canonical_url contains 'tagged' %}nav-category__item-name--selected{% endunless %}">All Categories</a>
+          </li>
+          {% for tag in blog.all_tags %}
+            {% if tag == 'alice benedetto' or tag == 'allergens' or tag == 'corn free' or tag == 'corn free' or tag == 'fiber' or tag == 'gluten free' or tag == 'holiday' or tag == 'keto friendly' or tag == 'kosher' or tag == 'nongmo' or tag == 'nutrionist' or tag == 'nutrition' or tag == 'nyc' or tag == 'on-the-go' or tag == 'plant based' or tag == 'protein' or tag == 'raw rev' or tag == 'vegan' or tag == 'veganism' %}
+              <li class="nav-category__item">
+                <a class="nav-category__item-name {% if current_tags[0] == tag %}nav-category__item-name--selected{% endif %}" href="{{ blogs[handle].url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <select class="mobile-nav-categories" onchange="if (this.value) window.location.href=this.value">
+          <option value="/blogs/news/" {% unless canonical_url contains 'tagged' %}selected{% endunless %}>All Categories</option>
+
+          {% for tag in blog.all_tags %}
+            <option value="{{ blogs[handle].url }}/tagged/{{ tag | handle }}" {% if current_tags[0] == tag %}selected{% endif %}>{{ tag }}</option>
+          {% endfor %}
+        </select>
+
+      </div>
+    </div>
+
+    <div class="blog__content">
+      {%- paginate blog.articles by 27 -%}
+        <div class="article__list">
+          {% if blog.articles.size > 0 %}
+            {% for article in blog.articles %}
+              {% render 'Article-grid-article', article: article %}
+            {% endfor %}
+          {% else %}
+            <p>Nothing Found</p>
+          {% endif %}
+        </div>
+
+        <div class="blog__pagination">
+          {{ paginate | default_pagination: next: 'Next', previous: 'Prev' }}
+        </div>
+      {%- endpaginate -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Blog Page",
+    "settings": []
+  }
+{% endschema %}

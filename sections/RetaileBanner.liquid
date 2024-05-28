@@ -1,0 +1,58 @@
+    <section class="RetaileBanner">
+      <div class="RetaileBanner__Container">
+        <h2 class="RetaileBanner__Head">{{section.settings.heading}}</h2>
+        <p class="RetaileBanner__Subhead"> {{section.settings.content}} </p>
+        <div class="RetaileBanner__Layout-main">
+
+{% for block in section.blocks %}
+          <div class="RetaileBanner__Layout-inner">
+            <img src="{{ block.settings.image | img_url:'180x180' }}" alt="logo" class="img-fluid RetaileBanner__Img" />
+          </div>
+{% endfor %}
+          
+
+        </div>
+      </div>
+    </section>
+
+<style>
+.RetaileBanner {
+    padding: 121px 0 116px;
+    background-image: url({{ section.settings.images | img_url:'master' }});
+}
+</style>
+    
+{% schema %} { "name": "Retaile Banner",  "tag":
+"section", "settings": 
+[
+  {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "content",
+    "label": "Content"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Image"
+  }
+],
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+{
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  }
+]
+}
+], "presets": [ { "name": "Retaile Banner",
+"category": "Section" } ] } {% endschema %}

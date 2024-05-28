@@ -1,0 +1,51 @@
+
+            {% assign beae_root_url = routes.root_url %}
+            {% if beae_root_url != '/'%}
+                {% assign beae_root_url = routes.root_url | append: '/' %}
+            {% endif %}
+        {%capture section_id %}beae-untitled{% endcapture%}{% if section_id == section.id %}{% if shop.metafields.beae.global_css %}
+            <!--BEAE-EMBED-->
+            <link href="data:text/css;base64,{{-shop.metafields.beae.global_css-}}" rel="stylesheet" id="beae-global-css"/>
+            <!--/BEAE-EMBED-->
+        {% endif %}
+{{ content_for_header }}
+{% render 'beae_header', BEAE_THEME: true %}{% endif %}<link rel="stylesheet" media="all" href="{{"beae-6559212a5aa3c1eabc0c03f2.css" | asset_url}}">{% unless includeBeaeJquery %}<script type="text/javascript" src="https://cdn.beae.com/vendors/js-v2/jquery.min.js" defer></script>{% assign includeBeaeJquery = true %}{% endunless %}<script type="text/javascript" id="beae-page-info">
+                    window.BEAE = window.BEAE || {};
+                    window.BEAE.SECTION = {"template_id":"6559212a5aa3c1eabc0c03f2","title":"BF23 Head","type":"section","slug":"beae-untitled","plan_id":1};
+            </script>
+<div class="beae-builder"><div class="beae-sections"><style type="text/css">.beae-bg-lazy{background-image: url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==') !important;background-repeat: repeat !important;background-color: #fafafa !important;}.beae-swiper-container:not(.beae-swiper-interactived){visibility: hidden;}</style>
+            <script type="text/javascript">
+            (function(){let f=Element.prototype.appendChild;Element.prototype.appendChild=function(){if(arguments[0].tagName=='SCRIPT'){arguments[0].removeAttribute('async');arguments[0].setAttribute('defer','')}return f.apply(this,arguments)};let resizeImgs=[],beaeLazy=(selector)=>{let lazys=[].slice.call(document.querySelectorAll(selector));if("IntersectionObserver"in window){let lazyObserver=new IntersectionObserver(function(entries,observer){entries.forEach(function(entry){if(entry.isIntersecting){if(entry.target.classList.contains('beae-bg-lazy')){entry.target.classList.remove("beae-bg-lazy");lazyObserver.unobserve(entry.target)}if(entry.target.classList.contains('beae-img-lazy')){entry.target.removeAttribute("loading");entry.target.classList.remove("beae-img-lazy");if(entry.target.getAttribute('data-src')){entry.target.setAttribute('src',entry.target.getAttribute('data-src'));entry.target.removeAttribute("data-src")}if(entry.target.getAttribute('data-srcset')){entry.target.setAttribute('srcset',entry.target.getAttribute('data-srcset'));entry.target.removeAttribute("data-srcset");if(entry.target.getAttribute('sizes')=='0px'){buildLazy(entry.target)}}lazyObserver.unobserve(entry.target)}if(entry.target.classList.contains('beae-iframe-lazy')){entry.target.classList.remove("beae-iframe-lazy");entry.target.setAttribute('src',entry.target.getAttribute('data-src'));entry.target.removeAttribute('data-src')}}})});lazys.forEach(function(lazy){if(lazy.tagName=='IMG'||lazy.tagName=='SOURCE'&&lazy.getAttribute('data-src')){buildLazy(lazy);resizeImgs.push(lazy)}if(!lazy.inited){lazyObserver.observe(lazy);lazy.inited=true}})}},buildLazy=(lazy)=>{let size=lazy.tagName=='IMG'?lazy.offsetWidth:lazy.parentNode.offsetWidth,prx=lazy.classList.contains('beae-img-lazy')?'data-':'',src=lazy.getAttribute(prx+'src'),ratio=1,height=src.match(/height=([\d]+)/)?src.match(/height=([\d]+)/)[1]:'',width=src.match(/width=([\d]+)/)?src.match(/width=([\d]+)/)[1]:'',crop=src.match(/crop=([\w]+)/)?'&crop='+src.match(/crop=([\w]+)/)[1]:'',srcset='';if(size==0){function getVisible(child){try{var node=child.parentNode;while(node!=null){if(window.getComputedStyle(node).display=='none'){return node}node=node.parentNode}}catch(error){}return null}const parent=getVisible(lazy);if(parent){let oldDisplay=parent.style.display;parent.style.display='block';size=lazy.tagName=='IMG'?lazy.offsetWidth:lazy.parentNode.offsetWidth;parent.style.display=oldDisplay}if(size==0){size=500}}src=src.replace(/(https:\/\/via.placeholder.com\/[\d]*x[\d]*)([\s\S]*)/,"$1").replace(/_([\d]*x[\d]*)\.(jpg|png|gif|svg|webp|jpeg)/,".$2").split('?')[0];if(height&&width){if(width<size){size=width}ratio=height/width;srcset=src+'?width='+size+'&height='+size*ratio+crop+' 1x, '+src+'?width='+(size*2)+'&height='+(size*ratio*2)+crop+' 2x'}else{srcset=src+'?width='+size+crop+' 1x, '+src+'?width='+(size*2)+crop+' 2x'}lazy.setAttribute('sizes',size+'px');lazy.setAttribute(prx+'srcset',srcset)},interactive=()=>{window.removeEventListener('scroll',interactive);document.removeEventListener('mousemove',interactive);if(window.innerWidth<=767){beaeLazy(".beae-bg-lazy, .beae-img-lazy, .beae-iframe-lazy")}else{beaeLazy(".beae-iframe-lazy")}};{% if request.design_mode %} if(!window.beaeLazy) { window.beaeLazy = beaeLazy; document.querySelectorAll('.beae-swiper-container').forEach(sw => {sw.classList.add('beae-swiper-interactived')});};{% endif %};document.addEventListener("DOMContentLoaded",function(){window.addEventListener('scroll',interactive);document.addEventListener('mousemove',interactive);beaeLazy(".beae-img-lazy, .beae-bg-lazy");window.beaeLazy=beaeLazy;document.querySelectorAll('.beae-swiper-container').forEach(sw=>{sw.classList.add('beae-swiper-interactived')})});let deboundTimer;window.addEventListener('resize',()=>{clearTimeout(deboundTimer);deboundTimer=setTimeout(()=>{if(resizeImgs.length){resizeImgs.forEach(img=>buildLazy(img))}},250)})})()
+            </script>
+            {%capture lzsvg %}data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000px' height='1000px' fill='%23ccc'%3E%3Crect x='0' y='0' width='1000' height='1000' /%3E%3C/svg%3E{% endcapture%}<section class="beae-row beae-core beae-bg-lazy beae-section beae-4v2my1e4" data-beaeis="section"><div class="core__row--columns"><div class="beae-column beae-core core__column--first core__column--last beae-1hp96ipz" data-beaeis="column" style="z-index: 1; outline-offset: -1px;"><div class="core__column--wrapper"><div class="core__blocks" data-beaeis="blocks"><div class="core__blocks--body"><div class="beae-block beae-core core__block elmspace beae-0uie9jw5" data-beaeis="block" data-core-is="row"><div class="beae-row beae-core core__block beae-fisf0c5m" data-beaeis="row"><div class="core__row--columns"><div class="beae-column beae-core core__column--first beae-u3y7vstj" data-beaeis="column" style="z-index: 1; outline-offset: -1px;"><div class="core__column--wrapper"><div class="core__blocks" data-beaeis="blocks"><div class="core__blocks--body"><div class="beae-block beae-core core__block beae-8527hbg0" data-beaeis="block" data-core-is="block"><div class="beae__element element__heading beae-html"><div class="beae-core core__microelement mce--title core__micro--title"><div class="mce--wrp" data-beaeis="micro"><h2 class="beae-mce__title" placeholder="Enter heading text ..."><font color="#121111">Black Friday Bundles</font></h2></div></div></div></div><div class="beae-block beae-core core__block beae-kgdqhlc1" data-beaeis="block" data-core-is="block"><div class="beae__element beae-element element__text" deep="2"><div class="beae-core core__microelement mce--text core__micro--text"><div class="mce--wrp" data-beaeis="micro"><div class="beae-mce__text text-content beae-html" placeholder="Enter text ...">Bundle your favorite Raw Rev bars and save!<div><br><div>Mix &amp; Match in any combination!<br><div>Buy any 3 boxes and save 15%<br></div><div>Buy any 4 boxes and save 25%</div><div>Buy any 6 boxes and save 35%</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></section><!---This page has been built by Beae Builder (www.beae.com)--->
+</div></div>{% if section_id == section.id %}{% endif%}<script  type="text/javascript" id="beae-vendors-section_helper" src="https://cdn.beae.com/vendors/js/section-helper.js" async></script>
+<script src="{{'beae-6559212a5aa3c1eabc0c03f2.js'  | asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "BEAE BUILDER APP",
+    "locales": {},
+    "settings": [
+        {
+            "type": "header",
+            "content": "The section was generated by BEAE BUILDER",
+            "info": "\n                        Beae is a flexible page builder app on Shopify AppStore.\n                        It provides 100+ Shopify Elements and pre-built templates library, \n                        so you can build unlimited pages that you can imagine with it.\n                    "
+        },
+        {
+            "type": "header",
+            "content": "[EDIT WITH BEAE APP \u2192](https:\/\/rawrev.myshopify.com\/admin\/apps\/beae-flexible-page-builder\/shop\/builder\/&id=6559212a5aa3c1eabc0c03f2&page=section)",
+            "info": "(*You must install the app to start editing this section [Learn more](https:\/\/docs.beae.com\/en\/article\/quick-start-guide-dkoesy\/))"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        }
+    ],
+    "presets": [
+        {
+            "name": "BF23 Head"
+        }
+    ]
+}
+{% endschema %}

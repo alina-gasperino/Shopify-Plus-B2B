@@ -1,0 +1,65 @@
+<section class="Sustainability" id="sustainability">
+  <div class="Sustainability__container">
+    <h2 class="Sustainability__Head">{{ section.settings.sustainabilityheading }}</h2>
+    <p class="Sustainability__Details">{{ section.settings.sustainabilitydetails }}
+    </p>
+    <div class="Sustainability__Layout-main">
+      {% for block in section.blocks %}
+
+        <div class="Sustainability__Layout-inner">
+          <div class="Sustainability__ImgWrap">
+            <img
+              src="{{ block.settings.image | img_url:'x160' }}"
+              loading="lazy"
+              class="Sustainability__Image"
+              alt="Certifiactes"
+              height="80">
+          </div>
+          <h4 class="Sustainability__Title">{{ block.settings.sustainabilitytitle }}</h4>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Sustainability Call Out",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sustainabilityheading",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "sustainabilitydetails",
+        "label": "Details"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "sustainabilitytitle",
+            "label": "Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sustainability Call Out",
+        "category": "Section"
+      }
+    ]
+  }
+{%
+endschema %}

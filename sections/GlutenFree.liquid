@@ -1,0 +1,49 @@
+<section class="GlutenFree">
+    <div class="GlutenFree__Container">
+        <div class="GlutenFree__Layout-main">
+            {% for block in section.blocks %}
+
+            <div class="GlutenFree__Layout-inner">
+                <div class="GlutenFree__ImageWrap">
+                    <img class="GlutenFree__Image" src="{{ block.settings.glutenimage | img_url:'160x160' }}" loading="lazy" alt="Ingredients Image">
+                </div>
+                <h3 class="GlutenFree__Title">{{block.settings.glutentitle}}</h3>
+                <p class="GlutenFree__Details">{{block.settings.glutendetails}}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Gluten Free", "tag": "section",
+"settings": [
+], 
+
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+{
+    "type": "image_picker",
+    "id": "glutenimage",
+    "label": "Image"
+  },
+	{
+      "type": "text",
+      "id": "glutentitle",
+      "label": "Title"
+    },
+    	{
+      "type": "text",
+      "id": "glutendetails",
+      "label": "Details"
+    }
+]
+}
+],
+"presets": [ { "name": "Gluten Free", "category": "Section" } ] } {%
+endschema %}

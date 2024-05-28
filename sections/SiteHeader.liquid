@@ -1,0 +1,274 @@
+{% if section.settings.enable_ann %}
+  <div class="announcement-bar">
+    <div class="ann__container">
+      <div class="ann__copy text-small">{{ section.settings.ann_copy }}</div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="site-header__container">
+  <div class="site-header__row">
+    <div class="mobile-only site-header__mobile-left">
+      <nav class="hamburger js-hamburger">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </nav>
+    </div>
+
+    <nav class="site-header__navigation">
+      <ul class="nav-list">
+        {% for block in section.blocks limit: 4 %}
+          <li class="nav-list__item">
+            <a class="nav-list__link" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+  
+            {% if block.type == 'dropdown-small' %}
+              {% include 'SiteHeader-block-dd-small' %}
+            {% endif %}
+  
+            {% if block.type == 'dropdown-big' %}
+              {% include 'SiteHeader-block-dd-big' %}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <a class="site-header__logo" href="/">
+      {% render 'SiteHeader-logo' %}
+    </a>
+
+    <nav class="site-header__helper-navigation">
+      <ul class="nav-list nav-list--helper">
+        {% for block in section.blocks offset:4 %}
+          <li class="nav-list__item desktop-only">
+            <a class="nav-list__link" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+
+            {% if block.type == 'dropdown-small' %}
+              {% include 'SiteHeader-block-dd-small' %}
+            {% endif %}
+
+            {% if block.type == 'dropdown-big' %}
+              {% include 'SiteHeader-block-dd-big' %}
+            {% endif %}
+          </li>
+        {% endfor %}
+
+        <li class="nav-list__item nav-list__item--account">
+          <a class="nav-list__link nav-list__link--nohover" href="/account">{% include 'icon-user' %}</a>
+        </li>
+
+        <li class="nav-list__item nav-list__item--cart">
+          <a href="" class="nav-list__link nav-list__link--nohover js-cart" data-toggle="offcanvas" data-toggle-options="nohover nohref" data-target="#site-header__sidecart-wrapper">
+            {% include 'icon-cart' %}
+
+            <span class="cart__total" data-minicart-notification>{{ cart.item_count }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+{% include 'SiteHeader-navigation-mobile' %}
+
+{% if section.settings.enable_ann %}
+  <style>
+    .announcement-bar {
+      background: {{ section.settings.background_color }};
+      color: {{ section.settings.text_color }};
+    }
+
+    .ann__copy a {
+      color: {{ section.settings.text_color }};
+    }
+
+    body .dd-mega-menu {
+      top: 136px;
+    }
+  </style>
+{% endif %}
+
+{% if template contains 'product' or template contains 'login' or template contains 'register' or page.metafields.huemor.white_header %}
+  <script>
+    document.querySelector('.site-header').classList.add('site-header--light');
+  </script>
+{% elsif template contains 'article' or template contains 'blog' or page.metafields.huemor.yellow_header %} 
+  <script>
+    document.querySelector('.site-header').classList.add('site-header--yellow');
+  </script>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Header",
+    "tag": "header",
+    "class": "site-header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Announcement Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ann",
+        "label": "Enable Announcement Bar"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "richtext",
+        "id": "ann_copy",
+        "label": "Copy"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "link",
+        "name": "link",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      },
+      {
+        "type": "dropdown-small",
+        "name": "Dropdown small",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          },
+          {
+            "type": "header",
+            "content": "Item 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_1_image",
+            "label": "Item 1 Image"
+          },
+          {
+            "type": "url",
+            "id": "item_1",
+            "label": "Item 1 URL"
+          },
+          {
+            "type": "text",
+            "id": "item_1_title",
+            "label": "Item 1 Title"
+          },
+          {
+            "type": "header",
+            "content": "Item 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_2_image",
+            "label": "Image 2 Image"
+          },
+          {
+            "type": "url",
+            "id": "item_2",
+            "label": "Item 2 URL"
+          },
+          {
+            "type": "text",
+            "id": "item_2_title",
+            "label": "Item 2 Title"
+          },
+          {
+            "type": "header",
+            "content": "Item 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_3_image",
+            "label": "Item 3 Image"
+          },
+          {
+            "type": "url",
+            "id": "item_3",
+            "label": "Item 3"
+          },
+          {
+            "type": "text",
+            "id": "item_3_title",
+            "label": "Item 3 Title"
+          },
+          {
+            "type": "header",
+            "content": "Item 4"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_4_image",
+            "label": "Item 4 Image"
+          },
+          {
+            "type": "url",
+            "id": "item_4",
+            "label": "Item 4 URL"
+          },
+          {
+            "type": "text",
+            "id": "item_4_title",
+            "label": "Item 4 Title"
+          },
+          {
+            "type": "header",
+            "content": "Item 5"
+          },
+          {
+            "type": "image_picker",
+            "id": "item_5_image",
+            "label": "Item 5 Image"
+          },
+          {
+            "type": "url",
+            "id": "item_5",
+            "label": "Item 5 URL"
+          },
+          {
+            "type": "text",
+            "id": "item_5_title",
+            "label": "Item 5 Title"
+          }
+        ]
+      }
+    ]
+}
+{% endschema %}

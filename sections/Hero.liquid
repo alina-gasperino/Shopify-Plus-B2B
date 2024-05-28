@@ -1,0 +1,60 @@
+<div class="hero__container">
+  <div class="hero__content">
+    <h1 class="hero__title h0">{{ section.settings.title }}</h1>
+
+    {% if section.settings.button_url != blank %}
+      <a href="{{ section.settings.button_url }}" class="hero__btn btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+
+  <img src="{{ section.settings.image_mobile | img_url: 'master' }}" alt="Hero" class="hero__image-mobile mobile-only">
+  
+  <div class="hero__image js-parallax-herooo desktop-only">
+    <div class="hero__image-part-2"></div>
+    <div class="hero__image-part-1"></div>
+    <div class="hero__image-part-3"></div>
+    <div class="hero__image-part-4"></div> 
+    <div class="hero__image-part-5"></div>
+    <div class="hero__image-part-6"></div>
+  </div>
+</div>
+
+<script>
+ 
+</script> 
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

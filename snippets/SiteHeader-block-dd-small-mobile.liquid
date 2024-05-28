@@ -1,0 +1,44 @@
+<div class="dd-mega-menu-mobile">
+  <div class="dd-mega-menu-small-mobile__grid">
+    {% if block.settings.item_1 != blank and block.settings.item_1_image %}
+      <a class="dd-mega-menu-small-mobile__grid-item" href="{{ block.settings.item_1 }}">
+        <img class="dd-mega-menu-small-mobile__grid-image" src="{{ block.settings.item_1_image | img_url: '300x300' }}" alt="{{ block.settings.item_1_title }}" widt="150" height="150" loading="lazy">
+
+        <p class="dd-mega-menu-small-mobile__grid-title">{{ block.settings.item_1_title }}</p>
+      </a>
+    {% endif %}
+
+    {% if block.settings.item_2 != blank and block.settings.item_2_image %}
+      <a class="dd-mega-menu-small-mobile__grid-item" href="{{ block.settings.item_2 }}">
+        <img class="dd-mega-menu-small-mobile__grid-image" src="{{ block.settings.item_2_image | img_url: '300x300' }}" alt="{{ block.settings.item_2_title }}" widt="150" height="150" loading="lazy">
+
+        <p class="dd-mega-menu-small-mobile__grid-title">{{ block.settings.item_2_title }}</p>
+      </a>
+    {% endif %}
+
+    {% if block.settings.item_3 != blank and block.settings.item_3_image %}
+      <a class="dd-mega-menu-small-mobile__grid-item" href="{{ block.settings.item_3 }}">
+        <img class="dd-mega-menu-small-mobile__grid-image" src="{{ block.settings.item_3_image | img_url: '300x300' }}" alt="{{ block.settings.item_3_title }}" widt="150" height="150" loading="lazy">
+
+        <p class="dd-mega-menu-small-mobile__grid-title">{{ block.settings.item_3_title }}</p>
+      </a>
+    {% endif %}
+
+    {% if block.settings.item_4 != blank and block.settings.item_4_image %}
+      <a class="dd-mega-menu-small-mobile__grid-item" href="{{ block.settings.item_4 }}">
+        <img class="dd-mega-menu-small-mobile__grid-image" src="{{ block.settings.item_4_image | img_url: '300x300' }}" alt="{{ block.settings.item_4_title }}" widt="150" height="150" loading="lazy">
+
+        <p class="dd-mega-menu-small-mobile__grid-title">{{ block.settings.item_4_title }}</p>
+      </a>
+    {% endif %}
+
+    {% if block.settings.item_5 != blank and block.settings.item_5_image %}
+      <a class="dd-mega-menu-small-mobile__grid-item" href="{{ block.settings.item_5 }}">
+        <img class="dd-mega-menu-small-mobile__grid-image" src="{{ block.settings.item_5_image | img_url: '300x300' }}" alt="{{ block.settings.item_5_title }}" widt="150" height="150" loading="lazy">
+
+        <p class="dd-mega-menu-small-mobile__grid-title">{{ block.settings.item_5_title }}</p>
+      </a>
+    {% endif %}
+  </div>
+</div>
+<!-- End dd-menu -->

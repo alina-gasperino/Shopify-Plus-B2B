@@ -1,0 +1,63 @@
+
+{% if product.metafields.ksp-title-1 != '{}' %}
+
+<div id="product-key-selling-points" class="product-key-selling-points">
+  <div class="pksp__content">
+
+    <div class="pksp__column pksp__column--text">
+      <div class="pksp__text-box">
+
+        <div class="pksp__row">
+          <h4 class="pksp__title">
+            {{ product.metafields.ksp-title.title-1 }}
+          </h4>
+          <p class="pksp__text">
+            {{ product.metafields.ksp-text.text-1 }}
+          </p>
+        </div>
+
+        <div class="pksp__row">
+          <h4 class="pksp__title">
+            {{ product.metafields.ksp-title.title-2 }}
+          </h4>
+          <p class="pksp__text">
+            {{ product.metafields.ksp-text.text-2 }}
+          </p>
+        </div>
+
+        <div class="pksp__row">
+          <h4 class="pksp__title">
+            {{ product.metafields.ksp-title.title-3 }}
+          </h4>
+          <p class="pksp__text">
+            {{ product.metafields.ksp-text.text-3 }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div class="pksp__column pksp__column--image">
+      <div class="pksp__image-wrap">
+        <img src="{{ section.settings.image | img_url: 'master' }}" class="pksp__image">
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Key Selling Points",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Section Image"
+      }
+    ]
+  }
+{% endschema %}

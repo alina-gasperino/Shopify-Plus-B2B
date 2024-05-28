@@ -1,0 +1,232 @@
+{% paginate customer.orders by 20 %}
+
+<div class="my-account__container">
+  <div class="my-account__wrapper">
+    <h1 class="my-account__title h2">{{ 'customer.account.details' | t }}</h1>
+
+    <div class="my-account__row">
+      <div class="my-account__sidebar">
+        <ul>
+          <li><a class="active" href="/account">Purchase history</a></li>
+          <li><a href="/account/addresses">Addresses</a></li>
+          <li><a href="/account/logout/">Logout</a> </li>
+        </ul>
+
+        <div class="accordion__list">
+          <div class="accordion__item">
+            <div class="accordion__title">
+              <p class="accordion__paragraph"><strong>Purchase history</strong></p><i class="accordion__icon"></i>
+            </div>
+  
+            <div class="accordion__body">
+              <ul>
+                <li><a href="/account/addresses">Addresses</a></li>
+                <li><a href="/account/logout/">Logout</a> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-account__content">
+        <h2 class="my-account__subtitle">Purchase history</h2>
+
+        {% if customer.orders.size != 0 %}
+        <div class="order-header">
+          <div class="oh-date">Date</div>
+          <div class="oh-order-number">Number of order</div>
+          <div class="oh-status">Status</div>
+          <div class="oh-tracking">Tracking Number</div>
+        </div>
+
+        <div class="order-body">
+          <div class="accordion__list accordion__list-order">
+
+            {% for order in customer.orders %}
+              <div class="accordion__item">
+                <div class="accordion__title">
+                  <div class="accordion__paragraph large-screen">
+                    <span class="oh-date">{{ order.created_at | date: "%m/%d/%y" }}</span>
+
+                    <span class="oh-order-number">{{ order.name | link_to: order.customer_url }}</span>
+
+                    <span class="oh-status">{{ order.financial_status }}</span>
+
+                    <span class="oh-tracking">{{ order.line_items[0].fulfillment.tracking_number }}</span>
+                  </div>
+
+                  <div class="accordion__paragraph mobile-screen">
+                    <div class="date-status">
+                      <span class="oh-date">{{ order.created_at | date: "%m/%d/%y" }}</span>
+                    
+                      <span class="oh-status">{{ order.financial_status }}</span>
+                    </div>
+
+                    <span class="oh-order-number">{{ order.name | link_to: order.customer_url }}</span>
+                  </div>
+
+                  <i class="accordion__icon"></i>
+                </div>
+      
+                <div class="accordion__body">
+                  <div class="accordion__body-text">
+                    <div class="tablet-display-true">
+                      <h4>Date</h4>
+                      <p>{{ order.created_at | date: "%m/%d/%y" }}</p>
+
+                      <h4>Number of order</h4>
+                      <p>{{ order.name | link_to: order.customer_url }}</p>
+
+                      <h4>Status</h4>
+                      <p>{{ order.financial_status }}</p>
+
+                      <h4>Tracking Number</h4>
+                      {% if order.line_items[0].fulfillment.tracking_number %}
+                        <p>{{ order.line_items[0].fulfillment.tracking_number }}</p>
+                      {% else %}
+                        <p>-</p>
+                      {% endif %}
+                    </div>
+
+                    <h2>Order summary</h2>
+                    
+                    <div class="accordion__body-row">
+                      <div class="col-payment">
+                        <h3>Payment method</h3>
+  
+                        <p>
+                          {% if order.transactions[0].payment_details.credit_card_company != blank %}
+                            {{ order.transactions[0].payment_details.credit_card_company }} {{ order.transactions[0].payment_details.credit_card_number }}
+                          {% else %}
+                          -
+                          {% endif %}
+                        </p>
+                      </div>
+  
+                      <div class="col-address">
+                        <h3>Shipping Address</h3>
+                        
+                        <p>
+                          {% if order.billing_address != blank %}
+                            {{ order.billing_address.name }}<br>
+                            {{ order.billing_address.street }}<br>
+                            {{ order.billing_address.city }}, {{  order.billing_address.country_code }} {{ order.billing_address.zip }}<br>
+                            {{  order.billing_address.country }}<br>
+                            {% if order.billing_address.phone != blank %}
+                              Phone: {{ order.billing_address.phone }}
+                            {% endif %}
+                          {% else %}
+                          -
+                          {% endif %}
+                      </div>
+  
+                      <div class="col-order">
+                        <h3>Order summary</h3>
+  
+                        <table>
+                          <tr>
+                            <td>Subtotal</td>
+                            <td>{{ order.subtotal_price | money }}</td>
+                          </tr>
+                          <tr>
+                            <td>Shipping</td>
+                            <td>{{ order.shipping_price | money }}</td>
+                          </tr>
+                          <tr>
+                            <td>Tax</td>
+                            <td>{{ order.tax_price | money }}</td>
+                          </tr>
+                          <tr>
+                            <td>Total</td>
+                            <td>{{ order.total_price | money }}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="accordion-body-items">
+                      {% for item in order.line_items %}
+                        <div class="line__item" data-id="{{ item.id }}">
+                          <div class="line__item-product">
+                            <img class="line__item-image" src="{{ item.product.featured_image.src | product_img_url: '160x' }}" alt="{{ item.title | escape }}">
+                        
+                            <div class="line__item-content">
+                              <a class="line__item-title" href="{{ item.product.url }}">
+                                {{ item.product.title }}
+                              </a>
+                        
+                              {% unless item.product.has_only_default_variant %}
+                                <ul class="line__item-options">
+                                    <li class="line__item-variant">Item: #{{ item.id }}</li>
+                                    <li class="line__item-variant">Price: {{ item.price | money }}</li>
+                                  {% for option in item.options_with_values %}
+                                    <li class="line__item-variant">{{ option.name }}: {{ option.value }}</li>
+                                  {% endfor %}
+                                    <li class="line__item-variant">Quantity: {{ item.quantity }}</li>
+                                </ul>
+                              {% endunless %}
+                        
+                            </div>
+                          </div>
+
+                          <div class="line__item-shipping" data-title="Total Price: ">
+                            <p class="line__item-title">SHIPPING METHOD</p>
+
+                            {% if order.shipping_methods[0].title != blank %}
+                              <span>{{ order.shipping_methods[0].title }}</span>
+                            {% else %}
+                              <span>-</span>
+                            {% endif %}
+
+                            <p class="line__item-title">Financial Status</p>
+
+                            {% if order.financial_status != blank %}
+                              <span>{{ order.financial_status }}</span>
+                            {% else %}
+                              <span>-</span>
+                            {% endif %}
+
+                            <p class="line__item-title">Tracking Number</p>
+
+                            {% if order.line_items[0].fulfillment.tracking_number != blank %}
+                              <span>{{ order.line_items[0].fulfillment.tracking_number }}</span>
+                            {% else %}
+                              <span>-</span>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            {% endfor %}
+          </div>
+        </div>
+
+        {% else %}
+          <p>You haven't placed any order yet.</p>
+        {% endif %}
+
+        {% if paginate.pages > 1 %}
+          {% render 'Pagination-pagination' paginate:paginate %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+ 
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Account Page",
+    "tag": "section",
+    "class": "my-account",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

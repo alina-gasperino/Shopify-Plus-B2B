@@ -1,0 +1,45 @@
+<div class="nav-inner__container">
+  <nav class="nav-inner__list desktop-only">
+    {% for block in section.blocks %}
+      <a class="nav-inner__list-item {% if forloop.index == 1 %}nav-inner__list-item--active{% endif %}" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+    {% endfor %}
+  </nav>
+
+  <select name="nav-inner" class="nav-inner__select mobile-only" id="nav-inner" onchange="if (this.value) window.location.href=this.value">
+    {% for block in section.blocks %}
+      <option value="{{ block.settings.url }}">{{ block.settings.title }}</option>
+    {% endfor %}
+  </select>
+</div>
+
+{% schema %}
+{
+  "name": "Navigation Inner",
+  "class": "nav-inner",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navigation Inner",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

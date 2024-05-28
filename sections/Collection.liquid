@@ -1,0 +1,81 @@
+{%- assign limit = 96 -%}
+
+{% paginate collection.products by limit %}
+
+  <div class="collection-main__container">
+    <aside class="collection-main__sidebar">
+      <span class="collection-main__sidebar-button js-collection-filter">FILTER</span>
+
+      <div class="collection-main__filter">
+        <div class="collection-main__sort-item js-filter-tag">
+          <p class="collection-main__sort-title">Pick your Flavor</p>
+          <label class="filter-item"><input
+              type="checkbox"
+              value="cashew"
+              {% if current_tags contains 'Cashew' %}checked{% endif %}><i></i>Cashew bars</label>
+          <label class="filter-item"><input
+              type="checkbox"
+              value="chocolate"
+              {% if current_tags contains 'Chocolate' %}checked{% endif %}><i></i>Chocolate Bars</label>
+          <label class="filter-item"><input
+              type="checkbox"
+              value="peanuts"
+              {% if current_tags contains 'Peanuts' %}checked{% endif %}><i></i>Peanuts Bars</label>
+        </div>
+
+        <div class="collection-main__sort-item js-sort">
+          <p class="collection-main__sort-title">Sort By</p>
+
+          {% assign sort_by = collection.sort_by | default: "manual" %}
+
+          <div class="filter-item__list">
+          {% for option in collection.sort_options %}
+            <label class="filter-item">
+              <input
+                type="checkbox"
+                value="{{ option.value }}"
+                {% if option.value == sort_by %}checked{% endif %}>
+              <i></i>
+              {{ option.name }}
+            </label>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="collection-main__content">
+      <div class="collection-main__list product__list">
+        {% for product in collection.products %}
+          {% capture forIndex %}
+            {{ forloop.index }}{% endcapture %}
+
+          {% render 'Product-grid_item', product: product, all_prods: all_prods, foreach: forIndex %}
+        {% else %}
+          <p>No products found in this collection.</p>
+        {% endfor %}
+      </div>
+
+      {% if paginate.pages > 1 %}
+        {% render 'Pagination-pagination' paginate: paginate %}
+      {% endif %}
+
+    </main>
+  </div>
+
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Collection Main",
+    "class": "collection-main",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "tab_menu",
+        "label": "Tab Menu"
+      }
+    ]
+  }
+{% endschema %}

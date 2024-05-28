@@ -1,0 +1,36 @@
+<section class="Error404">
+    <div class="Error404__Container">
+        <h1 class="Error404__Head">{{section.settings.errorhead}}</h1>
+        <p class="Error404__Details">{{section.settings.errordetails}}</p>
+        <div class="Error404__ButtonWrap">
+            <a href="{{section.settings.errorurl}}" class="Error404__Button btn">{{section.settings.errorbutton}}</a>
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Error404", "tag":
+"section", "settings": [
+{
+    "type": "text",
+    "id": "errorhead",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "errordetails",
+    "label": "Details"
+   },
+   {
+    "type": "url",
+    "id": "errorurl",
+    "label": "Button URL"
+   },
+   {
+    "type": "text",
+    "id": "errorbutton",
+    "label": "Button Name"
+   }
+
+], "presets": [ { "name": "Error404", "category":
+"Section" } ] } {% endschema %}

@@ -1,0 +1,61 @@
+<div class="related-blogs__container">
+  <h2 class="related-blogs__title">{{ section.settings.title }}</h2>
+
+  <div class='article__list'>
+    {% assign counter = 0 %}
+
+    {% for tag in article.tags %}
+
+    {% assign skip_articles = article.handle | split: '.....' %}
+      {% for related_article in blog.articles %}
+        {% if related_article.tags contains tag and counter < 3 %}
+          {% unless skip_articles contains related_article.handle %}
+            {% assign counter = counter | plus: 1 %}
+            {% assign temp = related_article.handle | split: '.....' %}
+            {% assign skip_articles = skip_articles | concat: temp %}
+
+            <a class="article-grid" href="{{ related_article.url }}">
+              <div class="article-grid__wrapper">
+                <div class="article-grid__image-wrapper">
+                  <img src="{{ related_article.image | img_url: '620x480', crop: 'center' }} " alt="image" class="article-grid__image" width="310px" height="240px">
+                </div>
+  
+                <div class="article-grid__content">
+                  <div class="article-grid__meta">
+                    <time class="article__postdate" pubdate datetime="{{ related_article.published_at | date: '%Y-%m-%d' }}">{{ related_article.published_at | date: '%b %d, %Y' }}</time>&nbsp;|&nbsp;<span class="article__author">{{ related_article.author }}</span>
+                  </div>
+      
+                  <h3 class="article-grid__title h4">{{ related_article.title }}</h3>
+      
+                  <span class="article-grid__link underline">VIEW MORE</span>
+                </div>
+              </div>
+            </a>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Related Blogs",
+  "class": "related-blogs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related Blogs",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

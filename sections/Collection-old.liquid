@@ -1,0 +1,78 @@
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+<style>
+
+</style>
+
+{{ collection.metafields.shogun.above }}
+
+{% paginate collection.products by 32 %}
+
+<header class="HeroHeader HeroHeader--thin" style="">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">{{ collection.title }}</h1>
+            ({{ collection.products_count | append: '00' |  money_without_currency | remove: '.00' }} Products)
+            {% if collection.description.size > 0 %}
+                {{ collection.description }}
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<main class="Page ProductView">
+    <section class="ProductView-options CollapseContent CollapseContent--collapse" data-collapsecontent-region>
+        <button type="button" class="ProductView-options_toggle" data-collapsecontent-trigger>
+            Filters
+        </button>
+        <div class="ProductView-options_content CollapseContent-body CollapseContent--collapse-body" data-collapsecontent-body>
+            <p>Put filters here.</p>
+        </div>
+    </section>
+    
+    {% if collection.products_count > 0 %}
+        <div class="ProductView-products">
+            <ol class="ProductView-productslist ProductView--grid-productslist">
+                {% comment %}
+                  Loop through our products in the current collection.
+                  See the snippet 'product-grid-item' for the layout.
+                {% endcomment %}
+                {% for product in collection.products %}
+                    <li class="ProductView-product ProductView--grid-product">
+                        {% include 'product-teaser', extra_classes: "" %}
+                    </li>
+                {% endfor %}
+            </ol>
+            
+            {% if paginate.pages > 1 %}
+                <hr>
+
+                <div class="ProductView-pager">
+                    {% include 'pagination-custom' %}
+                </div>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="ProductView-products ProductView-products--empty">
+            <p>Products for this portion of the website will be added shortly.</p>
+        </div>
+    {% endif %}
+</main>
+
+{% endpaginate %}
+
+{{ collection.metafields.shogun.below }}
+
+{% schema %}
+    {
+        "name": "Collection Page",
+        "settings": [
+            
+        ]
+    }
+{% endschema %}

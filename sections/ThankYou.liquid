@@ -1,0 +1,39 @@
+<div class="thank-you__container">
+  <div class="thank-you__content">
+    <h1 class="thank-you__title">{{ section.settings.title }}</h1>
+
+    <p class="thank-you__copy">{{ section.settings.copy }}</p>
+
+    <a class="btn btn--black" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Thank You",
+  "tag": "section",
+  "class": "thank-you",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ]
+}
+{% endschema %}

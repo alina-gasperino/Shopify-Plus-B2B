@@ -1,0 +1,51 @@
+<div class="pricing-breakdown__container">
+  <div class="pricing-breakdown__row pricing-breakdown__row--heading">
+    <h2 class="pricing-breakdown__title">{{ product.metafields.metrics.pricing_breakdown_title }}</h2>
+
+    <p class="pricing-breakdown__copy">{{ product.metafields.metrics.pricing_breakdown_copy }}</p>
+  </div>
+
+  <div class="pricing-breakdown__row pricing-breakdown__row--content">
+    <div class="pricing-breakdown__col">
+      <img class="pricing-breakdown__col-image material" src="{{ 'icon-material.svg' | asset_url }}">
+
+      <h3 class="pricing-breakdown__col-title">MATERIALES</h3>
+
+      <p class="pricing-breakdown__col-copy">{{ product.metafields.metrics.pricing_breakdown_material }}</p>
+    </div>
+
+    <div class="pricing-breakdown__col">
+      <img class="pricing-breakdown__col-image equality" src="{{ 'icon-fair.svg' | asset_url }}">
+
+      <h3 class="pricing-breakdown__col-title">Confección</h3>
+
+      <p class="pricing-breakdown__col-copy">{{ product.metafields.metrics.pricing_breakdown_maquila }}</p>
+    </div>
+
+    <div class="pricing-breakdown__col">
+      <img class="pricing-breakdown__col-image fond" src="{{ 'logo-white.png' | asset_url }}">
+
+      <h3 class="pricing-breakdown__col-title">Fondo de Igualdad</h3>
+
+      <p class="pricing-breakdown__col-copy">{{ product.metafields.metrics.pricing_breakdown_fond }}</p>
+    </div>
+
+    <div class="pricing-breakdown__col">
+      <img class="pricing-breakdown__col-image packaging" src="{{ 'icon-box.svg' | asset_url }}">
+
+      <h3 class="pricing-breakdown__col-title">Logística</h3>
+
+      <p class="pricing-breakdown__col-copy">{{ product.metafields.metrics.pricing_breakdown_packaging }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Pricing Breakdown (MF)",
+  "class": "pricing-breakdown",
+  "tag": "section",
+  "settings": [
+  ]
+}
+{% endschema %}

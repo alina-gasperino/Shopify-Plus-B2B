@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1662795609e91434bb": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Wholesale",
+        "content1": "Interested in purchasing our bars wholesale? Signup is easy, and partnership with Raw Rev comes with exciting benefits!",
+        "images": "shopify:\/\/shop_images\/Crunchy_PB_1cec5213-4a8b-4b5c-80fa-b6acfd2fef1d.png",
+        "button_1_text": "",
+        "button_1_url": "",
+        "button_2_text": "",
+        "button_2_url": ""
+      }
+    },
+    "1660731536064706cb": {
+      "type": "WholesaleSignIn",
+      "settings": {}
+    },
+    "16607316726de9f917": {
+      "type": "WholesaleBenefits",
+      "blocks": {
+        "fedec79f-5086-4e19-9431-826c5bc3f245": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/noun-dollar-4844538-F2D073.png",
+            "title": "Wholesale Pricing",
+            "content": ""
+          }
+        },
+        "ad316366-e260-4fd5-bcd4-bb804778fd00": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/400x200Artboard_2_a6b25b3d-472f-4ac2-948d-c256a1716ce5.png",
+            "title": "Easy Ordering",
+            "content": ""
+          }
+        },
+        "1665ed9f-3de4-4c10-972f-53dd6d68f232": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/400x200Artboard_1.png",
+            "title": "First Access to New Products",
+            "content": ""
+          }
+        },
+        "affab56f-a003-43fb-bf29-2b57f8a0e8ce": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/400x200Artboard_3.png",
+            "title": "Sales Support",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "fedec79f-5086-4e19-9431-826c5bc3f245",
+        "ad316366-e260-4fd5-bcd4-bb804778fd00",
+        "1665ed9f-3de4-4c10-972f-53dd6d68f232",
+        "affab56f-a003-43fb-bf29-2b57f8a0e8ce"
+      ],
+      "settings": {
+        "heading": "Wholesale Benefits",
+        "images": "shopify:\/\/shop_images\/imgpsh_fullsize_anim.png"
+      }
+    },
+    "1662038704cd2383df": {
+      "type": "WholesaleMember",
+      "disabled": true,
+      "settings": {
+        "heading_stars": false,
+        "title": "Sign Up to Become a Wholesale Member!",
+        "subtitle": "",
+        "copy": "Want to bring Raw Rev to your retail business? Fill out the form below to take advantage of everything our program has to offer.\n\nWe work with all kinds of independent retailers–tell us how we can help!\nSave big with special rates and exclusive deals when you purchase wholesale.\nTake advantage of a hassle-free ordering process that brings our bars straight to you."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662795609e91434bb",
+    "1660731536064706cb",
+    "16607316726de9f917",
+    "1662038704cd2383df"
+  ]
+}

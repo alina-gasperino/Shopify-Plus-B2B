@@ -1,0 +1,44 @@
+<section class="NutrionalFacts" id="nutritional-facts">
+    <div class="NutrionalFacts__Container">
+                <h2 class="NutrionalFacts__Head-mobile">{{section.settings.nutrionalheading}}</h2>
+                <p class="NutrionalFacts__Details-mobile">{{section.settings.nutrionaldetails}}</p>
+        <div class="NutrionalFacts__Layout-main">
+            <div class="NutrionalFacts__Layout-inner">
+                {% if product.images[3] %}
+                    <img src="{{ product.images[3] | img_url:'480x480' }}" loading="lazy" alt="nutrionalfact" class="NutrionalFacts__NutrionalImg">
+                {% else %}
+                    <img src="{{ section.settings.image | img_url:'480x480' }}" loading="lazy" alt="nutrionalfact" class="NutrionalFacts__NutrionalImg">
+                {% endif %}
+            </div> 
+            <div class="NutrionalFacts__Layout-inner NutrionalFacts__Layout-Table">
+                <h2 class="NutrionalFacts__Head">{{section.settings.nutrionalheading}}</h2>
+                <p class="NutrionalFacts__Details">{{section.settings.nutrionaldetails}}</p>
+                <div class="NutrionalFacts__Table-main">
+                    {{ product.metafields.c_f.nutrition_facts }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %} { "name": "Nutrional Fact",  "tag":
+"section", "settings": 
+[
+    {
+    "type": "text",
+    "id": "nutrionalheading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "nutrionaldetails",
+    "label": "Details"
+   },
+   {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  }
+], 
+"presets": [ { "name": "Nutrional Fact",
+"category": "Section" } ] } {% endschema %}

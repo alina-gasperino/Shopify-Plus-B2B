@@ -1,0 +1,196 @@
+<footer class="Footer">
+  <div class="Footer__container">
+    <div class="Footer__Layout">
+      <div class="Footer__Support">
+        <div class="Footer__SupportWrap">
+          <h6 class="Footer__Head">{{ section.settings.title-col1 }}</h6>
+
+          <ul class="Footer__ListLink">
+            {% for link in section.settings.footer_linklist_one.links %}
+            <li>
+              <a href="{{ link.url }}" class="Footer__Links">
+                {{ link.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="Footer__About">
+        <div class="Footer__AboutWrap">
+          <h6 class="Footer__Head">{{ section.settings.title-col2 }}</h6>
+          <ul class="Footer__ListLink">
+            {% for link in section.settings.footer_linklist_two.links %}
+            <li>
+              <a href="{{ link.url }}" class="Footer__Links">
+                {{ link.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="Footer__Connect">
+        <div class="Footer__ConnectWrap">
+          <h6 class="Footer__Head">{{ section.settings.title-col3 }}</h6>
+          <ul class="Footer__ListLink">
+            {% for link in section.settings.footer_linklist_three.links %}
+            <li>
+              <a href="{{ link.url }}" class="Footer__Links">
+                {{ link.title }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="Footer__News">
+        <div>
+          <h6 class="Footer__Head">Newsletter</h6>
+          <p class="Footer__NewsDetails">Join our weekly mailing list</p>
+          
+          <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WH7vq8"></script>
+          <div class="klaviyo-form-Yd5Ljy"></div>
+<a href="https://www.trustpilot.com/review/rawrev.com" target="_blank" style = "font-size: 11px; margin-top: 10px; ">4.5  stars - based on  208 reviews on Trustpilot.</a>
+        </div>
+      </div>
+    </div>
+    <div class="Footer__SiteDetails">
+      <div class="Footer__Condition">
+        <a href="{{ section.settings.link1 }}" class="Footer__Links">{{
+          section.settings.link-text1
+        }}</a>
+      </div>
+      <div class="Footer__Legal">
+        <a href="{{ section.settings.link2 }}" class="Footer__Links">{{
+          section.settings.link-text2
+        }}</a>
+      </div>
+      <div class="Footer__Pattents">
+        <a href="{{ section.settings.link3 }}" class="Footer__Links">{{
+          section.settings.link-text3
+        }}</a>
+      </div>
+      <div class="Footer__CopyRight">
+        <p class="Footer__Links">{{
+          section.settings.copyright-text
+        }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %} 
+{ 
+  "name": "Footer", 
+  "tag": "footer", 
+"settings": [ 
+{ 
+  "type": "text", 
+  "id": "copyright-text", 
+  "label": "Copyright text" 
+},
+{ 
+  "type": "text", 
+  "id": "title-col1", 
+  "label": "First Menu Title" 
+}, 
+{
+  "type": "link_list",
+  "id": "footer_linklist_one",
+  "label": "menu column 1"
+},
+{ 
+  "type": "text", 
+  "id": "title-col2", 
+  "label": "Second Menu Title" 
+}, 
+{
+  "type": "link_list",
+  "id": "footer_linklist_two",
+  "label": "menu column 2"
+},
+{ 
+  "type": "text", 
+  "id": "title-col3", 
+  "label": "Third Menu Title" 
+}, 
+{
+  "type": "link_list",
+  "id": "footer_linklist_three",
+  "label": "menu column 3"
+},
+{ 
+  "type": "text", 
+  "id": "link-text1", 
+  "label": "Link text 1" 
+}, 
+{
+  "type": "url",
+  "id": "link1",
+  "label": "bottom Link"
+  },
+  { 
+    "type": "text", 
+    "id": "link-text2", 
+    "label": "Link text 2" 
+  }, 
+  {
+    "type": "url",
+    "id": "link2",
+    "label": "bottom Link"
+    },
+    { 
+      "type": "text", 
+      "id": "link-text3", 
+      "label": "Link text 3" 
+    }, 
+    {
+      "type": "url",
+      "id": "link3",
+      "label": "bottom Link"
+      }
+      
+], 
+"blocks": [ 
+{ 
+  "name":"Social", 
+  "type": "social", 
+  "settings": [ 
+  { 
+    "type": "text", 
+    "id": "url",
+    "label": "URL" 
+}, 
+{ 
+  "type": "image_picker", 
+  "id": "icon", 
+  "label": "Icon" 
+} 
+]
+ },
+{ 
+  "name": "Props", 
+  "type": "props", 
+  "settings": [ 
+  { 
+    "type": "image_picker",
+    "id": "icon", 
+    "label": "Icon" 
+  }, 
+  { 
+    "type": "text", 
+    "id": "title", 
+    "label":"Title" 
+  }, 
+  { 
+    "type": "textarea", 
+    "id": "copy", 
+    "label": "Copy" 
+  } 
+  ] 
+} 
+] 
+} 
+{%endschema %}

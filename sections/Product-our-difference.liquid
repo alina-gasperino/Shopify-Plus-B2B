@@ -1,0 +1,66 @@
+<div class="our-difference__container">
+  <div class="our-difference__row our-difference__row--first">
+    <h2 class="our-difference__title">{{ section.settings.title }}</h2>
+
+    <p class="our-difference__copy">{{ section.settings.copy }}</p>
+  </div>
+
+  <div class="our-difference__row our-difference__row--second">
+    <div class="our-difference__grid">
+      {% for block in section.blocks %}
+        <div class="our-difference__grid-item">
+          <h3 class="value__title">{{ block.settings.title }}</h3>
+
+          <p class="value__copy">{{ block.settings.copy }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="our-difference__image">
+      <img src="{{ section.settings.image | img_url:'master' }}" alt="Hands Up">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Difference",
+  "tag": "section",
+  "class": "our-difference",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Value",
+      "type": "value",
+      "settings": [
+       {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

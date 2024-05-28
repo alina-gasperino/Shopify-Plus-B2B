@@ -1,0 +1,65 @@
+{% if customer and customer.tags contains "b2b" %}
+    <section class="SignIn">
+      <div class="SignIn__Container">
+        <h2 class="SignIn__Head">Welcome {{ customer.name }}!</h2>
+      </div>
+    </section>
+  {% else %}
+    <section class="SignIn">
+      <div class="SignIn__Container">
+        <div class="SignIn__Layout-main">
+          <div class="wholesale-sign-up-form">
+            <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+            hbspt.forms.create({
+                region: "na1",
+                portalId: "22481551",
+                formId: "7fb20374-3693-4e77-87d4-50f1ca7b531b"
+            });
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .wholesale-sign-up-form .actions {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .wholesale-sign-up-form input.hs-button.primary.large {
+        align-items: center;
+        background: #FDD174;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 14px;
+        font-family: Interstate;
+        font-weight: 700;
+        letter-spacing: .8px;
+        min-width: 177px;
+        justify-content: center;
+        padding: 0 22px;
+        text-transform: uppercase;
+        transition: all .3s cubic-bezier(.42,0,.58,1);
+        white-space: nowrap;
+        height: 52px;
+      }
+    </style>
+  {% endif %}
+  
+  
+  {% schema %}
+    {
+      "name": "Sale Sign Up",
+      "tag": "section",
+      "settings": [],
+      "presets": [
+        {
+          "name": "Sale Sign Up",
+          "category": "Section"
+        }
+      ]
+    }
+  {% endschema %}

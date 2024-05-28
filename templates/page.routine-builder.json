@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "1662639115b74ba690": {
+      "type": "WholesaleHero",
+      "settings": {
+        "heading": "Press Kit",
+        "content1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor consectetur adipisicing elit.",
+        "images": "shopify:\/\/shop_images\/Peanut-Background---Raw-Rev.png"
+      }
+    },
+    "16626372730a67a61e": {
+      "type": "ShadowCards",
+      "blocks": {
+        "7658573e-45f5-4478-bebc-23325ddaf9c3": {
+          "type": "item",
+          "settings": {
+            "title": "Company Logo",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "DOWNLOAD",
+            "button_url": ""
+          }
+        },
+        "aae9499b-f081-4d99-ad55-98ae98781acc": {
+          "type": "item",
+          "settings": {
+            "title": "Raw Rev Products",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "DOWNLOAD",
+            "button_url": ""
+          }
+        },
+        "e7a1c7b0-e545-428b-9ef3-5c6536469097": {
+          "type": "item",
+          "settings": {
+            "title": "Branded Photos",
+            "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam.",
+            "button_text": "Download",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "7658573e-45f5-4478-bebc-23325ddaf9c3",
+        "aae9499b-f081-4d99-ad55-98ae98781acc",
+        "e7a1c7b0-e545-428b-9ef3-5c6536469097"
+      ],
+      "settings": {
+        "title": "Our Mission",
+        "copy": "Our mission is to wow our customers with taste, nutrition, and quality, transforming the health of people and the planet."
+      }
+    }
+  },
+  "order": [
+    "1662639115b74ba690",
+    "16626372730a67a61e"
+  ]
+}

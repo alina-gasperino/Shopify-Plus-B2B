@@ -1,0 +1,45 @@
+<section class="ImgRight">
+    <div class="ImgRight__Container">
+        <div class="ImgRight__Layout-main">
+            <div class="ImgRight__Layout-inner">
+                <h2 class="ImgRight__Head">{{section.settings.heading}}</h2>
+                <p class="ImgRight__Content Space">
+                    {{section.settings.content1}} 
+                </p>
+                <p class="ImgRight__Content">
+                    {{section.settings.content2}}
+                </p>
+            </div>
+            <div class="ImgRight__Layout-inner">
+                <img src="{{ section.settings.images | img_url:'480x480' }}" loading="lazy" alt="Favourite Image" class="ImgRight__Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+{% schema %} { "name": "Image Right", "tag":
+"section", "settings": 
+[
+    {
+    "type": "text",
+    "id": "heading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "content1",
+    "label": "Content Part 1"
+   },
+   {
+    "type": "text",
+    "id": "content2",
+    "label": "Content Part 2"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+  }
+], "presets": [ { "name": "Image Right",
+"category": "Section" } ] } {% endschema %}

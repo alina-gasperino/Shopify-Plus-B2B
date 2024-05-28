@@ -1,0 +1,445 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "f4d06d4c-e0d1-40eb-baa9-87b9dc92fc65": {
+      "type": "HeroLinks",
+      "blocks": {
+        "78ea31fc-3ebf-4c14-aa16-d97778969685": {
+          "type": "item",
+          "settings": {
+            "title": "Email Us!",
+            "link_text": "info@rawrev.com",
+            "link_url": "mailto:info@rawrev.gmail.com"
+          }
+        },
+        "f723ed41-a462-47c7-909e-9be22626df81": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Chat With Us!",
+            "link_text": "Available from 9am - 5pm",
+            "link_url": "tel:1234567"
+          }
+        },
+        "f2eff5d2-3fbb-4fd5-bc86-43dd13ed452d": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Where’s My Order?",
+            "link_text": "Track Order",
+            "link_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "78ea31fc-3ebf-4c14-aa16-d97778969685",
+        "f723ed41-a462-47c7-909e-9be22626df81",
+        "f2eff5d2-3fbb-4fd5-bc86-43dd13ed452d"
+      ],
+      "settings": {
+        "title": "Support Center",
+        "copy": "If you’re looking to learn more about Raw Rev and the products we offer, you’ve come to the right place.",
+        "image": "shopify:\/\/shop_images\/Artboard_1_7a2be19d-5083-43ac-a1ec-667970759eb9.png",
+        "image_mobile": "shopify:\/\/shop_images\/Artboard_1_7a2be19d-5083-43ac-a1ec-667970759eb9.png"
+      }
+    },
+    "1663825468830dec52": {
+      "type": "FAQs-FaqsSupport",
+      "blocks": {
+        "59cc0fc5-0611-406c-9624-3859884623b5": {
+          "type": "text",
+          "settings": {
+            "heading": "Brand"
+          }
+        },
+        "b76d68ef-1ed4-4456-b3e5-25079877b4c3": {
+          "type": "text",
+          "settings": {
+            "heading": "Certifications"
+          }
+        },
+        "4face933-cfe2-490c-b75c-dc2454019fb0": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Ingredients"
+          }
+        },
+        "4aa2b7d3-e540-408d-90f9-12840d4bee57": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "about products"
+          }
+        },
+        "b219363f-0ce0-459d-b8d4-576d4499a1c7": {
+          "type": "text",
+          "settings": {
+            "heading": "Orders"
+          }
+        },
+        "a8163ffd-12d4-49b5-967b-111bdae1371b": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Returns"
+          }
+        },
+        "24226e1d-24f6-4fac-b407-76fb68bb58bb": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "What does “Raw Rev” mean?",
+            "text": "<p>We thought this might cross your mind! Well, long story short, Alice lived in NYC in the early 1990’s during a RAW food revolution! People were soaking raw organic cashews in bathtubs and hosting basement plant-based potlucks in secret Gotham locations! During this time her entrepreneurial mind started dreaming up the beginnings of her first product line appropriately named: Raw Revolution. Insiders always knew us as “Raw Rev”, so we decided to shorten it!<\/p>"
+          }
+        },
+        "bbf3ad17-974f-4d2c-ac70-f4364a302320": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "Who is Alice Benedetto the CEO and Founder of Raw Rev?",
+            "text": "<p>Alice is our hard rock guitar-playing, Kitchen-aide mixing, marathon training, fruit-loving, super-Mom of two (plus a pug) CEO! Oh, she’s also a registered nurse and a trained natural foods Chef as well 😉<\/p>"
+          }
+        },
+        "e592eefe-106a-49c9-aa10-a5f630b2aa7c": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "It’s so hard to find a good protein bar… why Raw Rev?",
+            "text": "<p>There are so many choices nowadays, we totally get how overwhelming it is to choose a new snack. Raw Rev has a focus on pioneering the low sugar snack wave! Shopping with Raw Rev ensures you will have the best tasting plant-based bar available, without the excess sugar.<\/p>"
+          }
+        },
+        "131802b9-f711-4cde-b328-9df807f48a60": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "Do Raw Rev bars have an aftertaste like so many other bars?",
+            "text": "<p>We don’t like that aftertaste either! That’s why we went STEVIA-FREE. We use Reb M – the latest in sugar-free sweetener innovation. Reb M is made from fermented sugar cane leaf – not the stevia leaf – leaving no bad aftertaste.<\/p>"
+          }
+        },
+        "d423cc2e-3477-4b02-880c-3ccaea9a00b3": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "Can I find Raw Rev in stores?",
+            "text": "<p>Absolutely! You can find Raw Rev in thousands of retail stores all over the USA, and we’re adding new stores every day! Check our store locator for availability near you. If you don’t see your favorite store, fill out our retailer submission form and we’ll get working on that!<\/p>"
+          }
+        },
+        "00305490-9e0a-46ac-90df-a99e9e0efc07": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Brand",
+            "title": "Anything cool I should know about Raw Rev?",
+            "text": "<p>About a million things, but just to name a few, we are: Woman owned business, Plant-Based, Non-GMO, Kosher, Gluten-Free, Dairy-Free, Vegan, Family operated, Made in the USA, Stevia-Free, and Plastic Neutral.<\/p>"
+          }
+        },
+        "6e2a8c95-ef74-45b3-95c4-e656bdb86526": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Certifications",
+            "title": "Are Raw Rev bars Kosher Certified?",
+            "text": "<p>Yes! Raw Rev bars are certified Kosher by Natural Food Certifiers “The NFC Apple K Kosher label meets the highest kosher standards and provides the consumer with an enhanced purchasing choice because the product\/products are naturally certified. This means there is no GMO technology in the raw materials manufacturing supply chain or packaging and no use of chemicals, dyes or other ingredients that are not naturally occurring.”<\/p>"
+          }
+        },
+        "d23ac609-17cd-4534-8a0b-cbf5694f5167": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Certifications",
+            "title": "Are Raw Rev bars certified gluten-free?",
+            "text": "<p>Yes! All Raw Rev bars are certified gluten-free by the Natural Food Certifiers. The NFC Gluten Certification program assures Raw Rev customers that all of our products are truly free from gluten. NFC verifies the Raw Rev gluten-free program through their comprehensive testing program.<\/p>"
+          }
+        },
+        "df9cd8dd-e033-4348-b30c-6feb282606a2": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Certifications",
+            "title": "Are Raw Rev bars certified non-GMO?",
+            "text": "<p>Yes! All Raw Rev bars are certified Non-GMO by the Non-GMO Project. The Non-GMO project and their butterfly is THE market standard in GMO avoidance.<\/p>"
+          }
+        },
+        "92f30e6c-8f74-4af0-8f47-6d388502820d": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Certifications",
+            "title": "Are Raw Rev bars a certified plastic neutral product?",
+            "text": "<p>Yes! Raw Rev has partnered with the awesome people at rePurpose Global to help solve the global plastic waste crisis. Each year, rePurpose Global recovers over 14 million pounds of plastic. To learn more about rePurpose Global, check out their <a href=\"https:\/\/repurpose.global\/\" target=\"_blank\" title=\"https:\/\/repurpose.global\/\">website<\/a> and rePurpose on <a href=\"https:\/\/www.instagram.com\/repurpose_global\/?lang=en\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/repurpose_global\/?lang=en\">Instagram<\/a><\/p>"
+          }
+        },
+        "7a945669-0158-40f5-850a-1e1dc82ffc23": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Certifications",
+            "title": "Is Raw Rev a certified Woman Owned Business?",
+            "text": "<p>Raw Rev is certified as a Woman Owned Business by the Women's Business Enterprise National Council (WBENC). Raw Rev is proud to be a member of the <a href=\"https:\/\/www.wbenc.org\/\" target=\"_blank\" title=\"https:\/\/www.wbenc.org\/\">WBNEC<\/a> – the most widely recognized and respected national certification for women-owned business in the U.S. At Raw Rev, women account for 85% of our staff.<\/p>"
+          }
+        },
+        "54f58439-0948-4965-a8d2-fe2ceb91ef99": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Orders",
+            "title": "Do you offer free shipping?",
+            "text": "<p>Yes, we offer free shipping on orders over $50<\/p>"
+          }
+        },
+        "af0aa7dc-bf9f-4a2e-86dd-2329fe004881": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Orders",
+            "title": "When will I receive my order?",
+            "text": "<p>We do our absolute best to make sure your orders ship within 1-3 business days. Once your order ships from our facility, you can expect delivery within 3-6 business days. However, delivery does depend on the carrier, time of year, and any weather issues. When your order ships, you'll get a shipping confirmation email with tracking information. All orders are shipped via USPS, UPS,or FedEx. You can select your method of delivery at checkout.<\/p>"
+          }
+        },
+        "925ec773-9bd2-4a21-b558-3e68edbf0225": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Orders",
+            "title": "Do you ship internationally?",
+            "text": "<p>We are able to ship Raw Rev products to some countries, however international shipping can get expensive! The best international shipping rates are available through iHerb.com.<\/p>"
+          }
+        },
+        "a1e1f778-6b08-44d5-95a1-2383596b5c1f": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Orders",
+            "title": "How do I cancel or change my order?",
+            "text": "<p>The Raw Rev fulfillment team processes your order soon after you hit the “place my order” button, so we have a very, very small window of time to make any changes or cancellations to your order once placed. We cannot guarantee that orders can be canceled. The Raw Rev customer service team is available M-F from 9AM-4PM EST. You can call us at 914-326-4000 or email us at info@rawrev.com. Our team responds to emails in the order they are received. Please note that our customer care office is closed on weekends, therefore orders placed over the weekend cannot be canceled.<\/p>"
+          }
+        },
+        "e1723ee9-70d0-4c61-b082-d3c2cb377204": {
+          "type": "accodian",
+          "settings": {
+            "tab_title": "Orders",
+            "title": "Can I get a refund?",
+            "text": "<p>At Raw Rev, we proudly stand behind everything that we do and we are committed to making sure that all of our customers are happy. But, we get it – sometimes we all change our minds. However, if you are not completely satisfied with your online purchase, please reach out to the Raw Rev customer service team within 30 days of your purchase, have your order number ready, and we’ll work together to make it right and make sure you are happy.<\/p>"
+          }
+        },
+        "98b83050-16be-48d4-8f11-d0d977e78bdb": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Ingredients",
+            "title": "",
+            "text": ""
+          }
+        },
+        "b5ab2c1e-d046-482c-b0f5-4df578aeadea": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "about products",
+            "title": "",
+            "text": ""
+          }
+        },
+        "752ce000-5ae7-4418-9cd2-637a982bd28c": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "about products",
+            "title": "",
+            "text": ""
+          }
+        },
+        "f70e0ab1-2800-4b48-a64e-8b290000f47c": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "about products",
+            "title": "",
+            "text": ""
+          }
+        },
+        "982044e5-3302-449d-82c8-bab8518a85db": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "about products",
+            "title": "",
+            "text": ""
+          }
+        },
+        "116d1964-adc9-4301-8c7f-b0338650dfea": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "about products",
+            "title": "",
+            "text": ""
+          }
+        },
+        "70044bf2-4eae-4711-9e40-0738f9dbe4ee": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "3c1b6768-47ed-4ae0-bcda-7c9c9e64177e": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "ce8be2c8-8111-4089-89ca-a8226f5cf82f": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "9606037b-0a9b-44c7-a42a-2377aef9bdf1": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "4fa44685-f092-4b0e-91e8-0c3bcdb8c765": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "5d7490dd-cc5d-4f53-9485-4719ca25956d": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Shipping",
+            "title": "",
+            "text": ""
+          }
+        },
+        "373f6445-b474-4e17-8a48-a7100d6b9a8d": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        },
+        "6ef74cab-c924-4888-9424-d367542e086c": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        },
+        "f7a0790d-9d71-4344-bffa-9267d149061e": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        },
+        "d6b99ab7-1ea4-4b12-b932-7bc823487416": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        },
+        "e3dd258c-777d-425e-9ebd-d747885e10fc": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        },
+        "0bad88cc-dde5-4bff-a60d-8bf435e6e687": {
+          "type": "accodian",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Returns",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "59cc0fc5-0611-406c-9624-3859884623b5",
+        "b76d68ef-1ed4-4456-b3e5-25079877b4c3",
+        "4face933-cfe2-490c-b75c-dc2454019fb0",
+        "4aa2b7d3-e540-408d-90f9-12840d4bee57",
+        "b219363f-0ce0-459d-b8d4-576d4499a1c7",
+        "a8163ffd-12d4-49b5-967b-111bdae1371b",
+        "24226e1d-24f6-4fac-b407-76fb68bb58bb",
+        "bbf3ad17-974f-4d2c-ac70-f4364a302320",
+        "e592eefe-106a-49c9-aa10-a5f630b2aa7c",
+        "131802b9-f711-4cde-b328-9df807f48a60",
+        "d423cc2e-3477-4b02-880c-3ccaea9a00b3",
+        "00305490-9e0a-46ac-90df-a99e9e0efc07",
+        "6e2a8c95-ef74-45b3-95c4-e656bdb86526",
+        "d23ac609-17cd-4534-8a0b-cbf5694f5167",
+        "df9cd8dd-e033-4348-b30c-6feb282606a2",
+        "92f30e6c-8f74-4af0-8f47-6d388502820d",
+        "7a945669-0158-40f5-850a-1e1dc82ffc23",
+        "54f58439-0948-4965-a8d2-fe2ceb91ef99",
+        "af0aa7dc-bf9f-4a2e-86dd-2329fe004881",
+        "925ec773-9bd2-4a21-b558-3e68edbf0225",
+        "a1e1f778-6b08-44d5-95a1-2383596b5c1f",
+        "e1723ee9-70d0-4c61-b082-d3c2cb377204",
+        "98b83050-16be-48d4-8f11-d0d977e78bdb",
+        "b5ab2c1e-d046-482c-b0f5-4df578aeadea",
+        "752ce000-5ae7-4418-9cd2-637a982bd28c",
+        "f70e0ab1-2800-4b48-a64e-8b290000f47c",
+        "982044e5-3302-449d-82c8-bab8518a85db",
+        "116d1964-adc9-4301-8c7f-b0338650dfea",
+        "70044bf2-4eae-4711-9e40-0738f9dbe4ee",
+        "3c1b6768-47ed-4ae0-bcda-7c9c9e64177e",
+        "ce8be2c8-8111-4089-89ca-a8226f5cf82f",
+        "9606037b-0a9b-44c7-a42a-2377aef9bdf1",
+        "4fa44685-f092-4b0e-91e8-0c3bcdb8c765",
+        "5d7490dd-cc5d-4f53-9485-4719ca25956d",
+        "373f6445-b474-4e17-8a48-a7100d6b9a8d",
+        "6ef74cab-c924-4888-9424-d367542e086c",
+        "f7a0790d-9d71-4344-bffa-9267d149061e",
+        "d6b99ab7-1ea4-4b12-b932-7bc823487416",
+        "e3dd258c-777d-425e-9ebd-d747885e10fc",
+        "0bad88cc-dde5-4bff-a60d-8bf435e6e687"
+      ],
+      "settings": {
+        "title": "list"
+      }
+    },
+    "16620244078a6b41e6": {
+      "type": "SupportDetails",
+      "settings": {
+        "supportheading": "Still Have Questions?",
+        "supportdetails": "If you couldn’t find your answer above, don’t fret—we’d be more than happy to clear things up for you. Feel free to reach out to our team if you want to learn more about Raw Rev!",
+        "support_button": "Contact Us",
+        "support_button_url": "shopify:\/\/pages\/contact-us-new"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f4d06d4c-e0d1-40eb-baa9-87b9dc92fc65",
+    "1663825468830dec52",
+    "16620244078a6b41e6"
+  ]
+}

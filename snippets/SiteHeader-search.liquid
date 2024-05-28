@@ -1,0 +1,13 @@
+<div id="search-dd" class="search-dd">
+  <div class="search-dd__container">
+    <form action="{{ routes.search_url }}" class="search-dd__form">
+      <div class="search-dd__form-group">
+        <input type=hidden name=type value="product,article">
+
+        <input type="submit" value="Search" class="search-dd__submit">
+
+        <input type="text" placeholder="Search..." name="q" value="{{ search.terms | escape }}" class="search-dd__input">
+      </div>
+    </form>
+  </div>
+</div>

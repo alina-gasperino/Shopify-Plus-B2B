@@ -1,0 +1,101 @@
+<div class="hero-s__container">
+  {% if section.settings.image != blank %}
+    <div class="hero-s__image-wrapper">
+      <picture>
+        <source media="(max-width:649px)" srcset="{{ section.settings.image_mobile | img_url: '750x600', crop: 'center' }}">
+        <source media="(min-width:650px)" srcset="{{ section.settings.image | img_url: '1440x1040', crop: 'center' }}">
+        <img class="hero-s__image" src="{{ section.settings.image | img_url: '1440x1040', crop: 'center' }}" alt="background" loading="lazy">
+      </picture>
+    </div>
+  {% endif %}
+
+  <div class="hero-s__content">
+    <h1 class="hero-s__title h0">{{ section.settings.title }}</h1>
+
+    {% if section.settings.button_url != blank %}
+      <a href="{{ section.settings.button_url }}" class="hero-s__btn btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .hero-s__content {
+    color: {{ section.settings.color }};
+  }
+
+  {% if section.settings.overlay %}
+    .hero-s__image-wrapper::after {
+      background: linear-gradient(to right, rgba(0,0,0,0.{{ section.settings.overlay_range}}), rgba(0,0,0,0));
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "Hero Static",
+  "class": "hero-s",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "overlay",
+      "label": "Background Overlay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "overlay_range",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Background Overlay Opacity",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Static",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

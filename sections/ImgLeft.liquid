@@ -1,0 +1,65 @@
+<section class="ImgLeft ">
+  <div class="ImgLeft__container">
+    <div class="ImgLeft__Layout-main">
+      <div class="ImgLeft__Layout-inner">
+        <img
+          src="{{ section.settings.images | img_url:'480x480' }}"
+          loading="lazy"
+          alt="Favourite Image"
+          class="ImgLeft__Image"
+          {% if section.settings.round_image %}
+          style="border-radius: 100px 15px 15px 15px;"
+          {% endif %} />
+      </div>
+      <div class="ImgLeft__Layout-right">
+        <h1 class="ImgLeft__Head">{{ section.settings.heading }}</h1>
+        <p class="ImgLeft__Content Space">
+          {{ section.settings.content1 }}
+        </p>
+        <p class="ImgLeft__Content">
+          {{ section.settings.content2 }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image Left",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "round_image",
+        "label": "Rounded Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "content1",
+        "label": "Content Part 1"
+      },
+      {
+        "type": "text",
+        "id": "content2",
+        "label": "Content Part 2"
+      }, {
+        "type": "image_picker",
+        "id": "images",
+        "label": "Background Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Left",
+        "category": "Section"
+      }
+    ]
+  }
+{%
+endschema %}

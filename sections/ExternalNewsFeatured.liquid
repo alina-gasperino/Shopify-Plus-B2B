@@ -1,0 +1,61 @@
+<div class="external-news-featured__container">
+  <div class="external-news-featured__image-wrapper">
+    <img src="{{ section.settings.image | img_url: '1344x1200', crop: 'center' }}" alt="{{ section.settings.title }}" class="external-news-featured__image" width="672px" height="600px">
+  </div>
+
+  <div class="external-news-featured__content">
+    <p class="external-news-featured__date">{{ section.settings.date }}</p>
+
+    <h3 class="external-news-featured__title h3">{{ section.settings.title }}</h3>
+
+    <p class="external-news-featured__copy">{{ section.settings.copy }}</p>
+
+    <a href="{{ section.settings.button_url }}" class="hero__btn btn">{{ section.settings.button_text }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "External News Featured",
+  "class": "external-news-featured",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "date",
+      "label": "Date"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "External News Featured",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

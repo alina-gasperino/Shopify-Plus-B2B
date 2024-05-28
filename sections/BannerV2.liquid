@@ -1,0 +1,26 @@
+<section class="BannerV2">
+    <div class="BannerV2__Container">
+        <h1 class="BannerV2__Head">{{section.settings.shopheading}}</h1>
+    </div>
+</section>
+
+<style>
+.BannerV2{
+    background-image: url({{ section.settings.images | img_url:'2048x480' }});
+}
+</style>
+
+{% schema %} { "name": "Banner V2", "class": "BannerV2Wrap", "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "shopheading",
+    "label": "Heading"
+},
+{
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+}
+], "presets": [ { "name": "Banner V2", "category": "Section" } ] } 
+{%endschema %}

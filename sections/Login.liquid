@@ -1,0 +1,143 @@
+{% if customer %}
+
+<div class="user-form__container">
+  <div class="user-form__already-logged">
+    <p>You already have logged in!</p>
+
+    <a href="{{ routes.root_url }}">Return to home</a>
+  </div>
+</div>
+
+{% else %}
+
+<div class="user-form__container">
+  <div class="user-form__content">
+    <div class="form-message form-message--success hide" id="ResetSuccess" tabindex="-1">
+      {{ 'customer.recover_password.success' | t }}
+    </div>
+  
+    <div class="login-form">
+      <h1 class="user-form__title heading-stars heading-stars-space">{{ 'customer.login.title' | t }}</h1>
+
+      <p class="user-form__copy ss">{{ section.settings.copy }}</p>
+  
+      {% form 'customer_login', novalidate: 'novalidate', return_to: routes.account_url %}
+
+        {%- if form.errors -%}
+          <div class="form_error">
+            <div class="form-message form-message--error">
+              {{ form.errors | default_errors }}
+            </div>
+          </div>
+        {%- endif -%}
+  
+        <div class="field-wrapper">
+          <label class="input-label" for="customer[email]">{{ 'customer.login.email' | t }}</label>
+
+          <input class="input-field" type="email" name="customer[email]" id="CustomerEmail" autocomplete="email"
+            autocorrect="off" autocapitalize="off" {%- if form.errors contains 'form' -%} class="input--error"
+            aria-invalid="true" {%- endif -%}>
+        </div>
+  
+        {% if form.password_needed %}
+          <div class="field-wrapper field-wrapper--password">
+            <label class="input-label" for="customer[password]">{{ 'customer.login.password' | t }}</label>
+
+            <input class="input-field {% if form.errors contains 'form' %}input--error{% endif %}" type="password" value="" name="customer[password]" id="CustomerPassword" {% if form.errors contains 'form' %}aria-invalid="true"{% endif %}>
+          </div>
+        {% endif %}
+  
+        <div class="form-forgot">
+          {% if form.password_needed %}
+            <a href="#recover" class="form-link form-link--forgot" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+          {% endif %}
+        </div>
+  
+        <div class="form-button">
+          <button type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">{{ 'customer.login.sign_in' | t }}</button>
+        </div>
+  
+        <div class="form-after">
+          <a class="form-link form-link--signup" href="{{ routes.account_register_url }}">Are You a New customer? <span class="underline">Sign Up!</span></a>
+        </div>
+      {% endform %}
+    </div>
+  
+    <!-- Recover Password Form -->
+    <div class="recover-form">
+      <h1 class="user-form__title">{{ 'customer.recover_password.title' | t }}</h1>
+  
+      <p class="user-form__copy">{{ 'customer.recover_password.subtext' | t }}</p>
+  
+      {% form 'recover_customer_password' %}
+  
+        {%- if form.errors -%}
+          <div class="form_error">
+            <div class="form-message form-message--error">
+              {{ form.errors.messages['form'] }}
+            </div>
+          </div>
+        {%- endif -%}
+  
+        {% if form.posted_successfully? %}
+          <div class="form_success">
+            <span class="hide reset-password-success"></span>
+          </div>
+        {% endif %}
+  
+        <div class="field-wrapper">
+          <label class="input-label" for="email">{{ 'customer.recover_password.email' | t }}</label>
+
+          <input type="email" value="" name="email" id="RecoverEmail" 
+            class="input-field {% if form.errors %} input--error{% endif %}" autocorrect="off" autocapitalize="off" {% if
+            form.errors %} aria-invalid="true" aria-describedby="RecoverEmail-email-error" {%- endif -%}>
+        </div>
+  
+        <div class="form-button form-button--reset">
+          <button type="submit" class="btn" value="{{ 'customer.recover_password.submit' | t }}">{{ 'customer.recover_password.submit' | t }}</button>
+        </div>
+
+        <div class="form-after">
+          <a href="#LoginHeading" class="form-link form-link--signup" id="HideRecoverPasswordLink">Back To <span class="underline">Sign In</span></a> 
+        </div>
+      {% endform %}
+  
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+  let loginForm = document.querySelector('.login-form');
+  let resetForm = document.querySelector('.recover-form');
+  let forgotBtn = document.querySelector('#RecoverPassword');
+  let hideRecoverPass = document.querySelector('#HideRecoverPasswordLink');
+
+  resetForm.style.display = 'none';
+  // Hide Login Form
+  forgotBtn.addEventListener('click', function () {
+    resetForm.style.display = 'block';
+    loginForm.style.display = 'none';
+  });
+
+  // Hide Recover form
+  hideRecoverPass.addEventListener('click', function () {
+    resetForm.style.display = 'none';
+    loginForm.style.display = 'block';
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Login",
+    "tag": "section",
+    "class": "user-form",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      }
+    ]
+  }
+{% endschema %}

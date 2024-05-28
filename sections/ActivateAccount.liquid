@@ -1,0 +1,51 @@
+<div class="user-form__container">
+  <div class="user-form__content">
+
+    <h1 class="user-form__title heading-stars heading-stars-space">{{ 'customer.activate_account.title' | t }}</h1>
+
+    <p class="user-form__copy">{{ 'customer.activate_account.subtext' | t }}</p>
+
+    {% form 'activate_customer_password' %}
+      {{ form.errors | default_errors }}
+
+      <div class="field-wrapper field-wrapper--first-name">
+        <label for="CustomerPassword" class="input-label">
+          {{ 'customer.activate_account.password' | t }}
+        </label>
+
+        <input class="input-field"
+          type="password"
+          name="customer[password]"
+          id="CustomerPassword"
+          placeholder="{{ 'customer.activate_account.password' | t }}">
+      </div>
+
+      <div class="field-wrapper field-wrapper--first-name">
+        <label for="CustomerPasswordConfirmation" class="input-label">
+          {{ 'customer.activate_account.password_confirm' | t }}
+        </label>
+
+        <input class="input-field" 
+          type="password"
+          name="customer[password_confirmation]"
+          id="CustomerPasswordConfirmation"
+          placeholder="{{ 'customer.activate_account.password_confirm' | t }}">
+      </div>
+
+      <input type="submit" class="btn" value="{{ 'customer.activate_account.submit' | t }}">
+      <input type="submit" class="btn btn--black" name="decline" value="{{ 'customer.activate_account.cancel' | t }}">
+    {% endform %}
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Active Account",
+    "tag": "section",
+    "class": "user-form", 
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,136 @@
+<div class="dd-mega-menu-mobile">
+  <a class="dd-tab__link-mobile text-small" href="{{ block.settings.tab_1_button_url }}">{{ block.settings.tab_1_button_text }}<img src="{{ 'arrow-right.svg' | asset_url }}" alt="link"></a>
+
+  <ul class="dd-mega-menu__accordion accordion__list accordion__list--nav">
+    {% if block.settings.tab_1_title != blank %}
+      <li class="dd-mega-menu__nav-item accordion__item accordion__item--nav">
+        <div class="accordion__title accordion__title--nav">
+          <p class="accordion__paragraph accordion__paragraph--nav text-x-small">{{ block.settings.tab_1_title }}</p>
+          
+          <i class="accordion__icon hidden"></i>
+        </div>
+
+        <div class="accordion__body accordion__body--nav">
+          <div class="accordion__body-text accordion__body-text--nav">
+            <ul class="submenu-list">
+              {% for link in linklists[block.settings.tab_1_menu].links %}
+                <li class="submenu-item">
+                  <a class="submenu-link" href="{{ link.url }}">
+                    <img class="submenu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                    <span class="submenu-copy text-x-small">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    {% if block.settings.tab_2_title != blank %}
+      <li class="dd-mega-menu__nav-item accordion__item accordion__item--nav">
+        <div class="accordion__title accordion__title--nav">
+          <p class="accordion__paragraph accordion__paragraph--nav text-x-small">{{ block.settings.tab_2_title }}</p>
+          
+          <i class="accordion__icon hidden"></i>
+        </div>
+
+        <div class="accordion__body accordion__body--nav">
+          <div class="accordion__body-text accordion__body-text--nav">
+            <ul class="submenu-list">
+              {% for link in linklists[block.settings.tab_2_menu].links %}
+                <li class="submenu-item">
+                  <a class="submenu-link" href="{{ link.url }}">
+                    <img class="submenu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                    <span class="submenu-copy text-x-small">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    {% if block.settings.tab_3_title != blank %}
+      <li class="dd-mega-menu__nav-item accordion__item accordion__item--nav">
+        <div class="accordion__title accordion__title--nav">
+          <p class="accordion__paragraph accordion__paragraph--nav text-x-small">{{ block.settings.tab_3_title }}</p>
+          
+          <i class="accordion__icon hidden"></i>
+        </div>
+
+        <div class="accordion__body accordion__body--nav">
+          <div class="accordion__body-text accordion__body-text--nav">
+            <ul class="submenu-list">
+              {% for link in linklists[block.settings.tab_3_menu].links %}
+                <li class="submenu-item">
+                  <a class="submenu-link" href="{{ link.url }}">
+                    <img class="submenu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                    <span class="submenu-copy text-x-small">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    {% if block.settings.tab_4_title != blank %}
+      <li class="dd-mega-menu__nav-item accordion__item accordion__item--nav">
+        <div class="accordion__title accordion__title--nav">
+          <p class="accordion__paragraph accordion__paragraph--nav text-x-small">{{ block.settings.tab_4_title }}</p>
+          
+          <i class="accordion__icon hidden"></i>
+        </div>
+
+        <div class="accordion__body accordion__body--nav">
+          <div class="accordion__body-text accordion__body-text--nav">
+            <ul class="submenu-list">
+              {% for link in linklists[block.settings.tab_4_menu].links %}
+                <li class="submenu-item">
+                  <a class="submenu-link" href="{{ link.url }}">
+                    <img class="submenu-image" src="{{ link.object.products.first | img_url: '52x52' }}" alt="{{ link.title }}">
+
+                    <span class="submenu-copy text-x-small">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+
+    {% if block.settings.tab_5_title != blank %}
+      <li class="dd-mega-menu__nav-item accordion__item accordion__item--nav">
+        <div class="accordion__title accordion__title--nav">
+          <p class="accordion__paragraph accordion__paragraph--nav text-x-small">{{ block.settings.tab_5_title }}</p>
+          
+          <i class="accordion__icon hidden"></i>
+        </div>
+
+        <div class="accordion__body accordion__body--nav">
+          <div class="accordion__body-text accordion__body-text--nav">
+            <ul class="submenu-list">
+              {% for link in linklists[block.settings.tab_5_menu].links %}
+                <li class="submenu-item">
+                  <a class="submenu-link" href="{{ link.url }}">
+                    <img class="submenu-image" src="{{ link.object.products.first | img_url: '76x76' }}" alt="{{ link.title }}">
+
+                    <span class="submenu-copy text-x-small">{{ link.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endif %}
+  </ul>
+</div>
+<!-- End dd-menu -->

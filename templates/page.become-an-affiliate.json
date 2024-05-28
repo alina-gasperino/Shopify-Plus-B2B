@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "16630493399244903c": {
+      "type": "Banner",
+      "settings": {
+        "heading": "Raw Rev Affiliates",
+        "content1": "Become a Raw Rev Affiliate!",
+        "images": "shopify:\/\/shop_images\/red_Banner_backgrounds.webp",
+        "button_1_text": "Join",
+        "button_1_url": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION",
+        "button_2_text": "Login",
+        "button_2_url": "https:\/\/api.collabs.shopify.com\/creator\/login\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+      }
+    },
+    "4bd2549c-28e4-4d47-841b-4c771a797df6": {
+      "type": "AnchorLinks",
+      "settings": {}
+    },
+    "166160048427a93f75": {
+      "type": "AffiliateRight",
+      "settings": {
+        "affiliateheading": "How It Works",
+        "affiliatedetails": "Do you love Raw Rev? Help spread Raw Rev’s mission to live boldly and make people’s lives better by becoming an affiliate! Raw Rev affiliates will have the ability to earn commission on orders place with your specific code! Always be the first to hear about new items and be a part of our tasting committee!",
+        "affiliateimage": "shopify:\/\/shop_images\/Cake_1.jpg"
+      }
+    },
+    "1661602361104b2fad": {
+      "type": "AffiliateLeft",
+      "settings": {
+        "affiliateheading": "Who Are Our Affiliates",
+        "affiliatedetails": "Our affiliates are people just like you! You are ambitious, enthusiastic, and live boldly. You are unabashedly you and you know that there is something to celebrate each and every day! So, if you're obsessed with Raw Rev and ready to spread the love to all of your friends, then click the link already and join our affiliate team!",
+        "affiliateimage": "shopify:\/\/shop_images\/Cookie_2_ec036c5d-7759-4cd3-869d-f569cb82fee5.jpg"
+      }
+    },
+    "70274d13-ceeb-42db-94c2-84de1709e786": {
+      "type": "WholesaleMember",
+      "disabled": true,
+      "settings": {
+        "heading_stars": false,
+        "title": "Sign Up & Become A Wholesale Member",
+        "subtitle": "",
+        "copy": ""
+      }
+    },
+    "92205a49-b3ff-4367-8212-5de4ae88cdc6": {
+      "type": "ContactBlock",
+      "blocks": {
+        "57420e02-c59b-4474-9242-e05e187d6b9b": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Commission",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        },
+        "fe55dc33-a484-4d08-9c0e-d4b5bf26f3d4": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Free Product",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        },
+        "d063ed5b-28e6-4770-b37b-8a54e398fc7e": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Raw Rev Insider",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        },
+        "cc350350-d53d-481f-a69a-9bf35c033aae": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "VIP Giveaways",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        },
+        "41325b58-d55b-47ba-ab8e-845de186af9d": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Tasting Panel",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        },
+        "1bdcafe8-27f0-48f3-b86e-6dcc9785f04f": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Community Building",
+            "contactblockdetails": "",
+            "contactblockbutton": "Sign Up",
+            "contactblockurl": "https:\/\/api.collabs.shopify.com\/creator\/signup\/community_application\/FG-iUUXA0gk?origin=THEME_EXTENSION"
+          }
+        }
+      },
+      "block_order": [
+        "57420e02-c59b-4474-9242-e05e187d6b9b",
+        "fe55dc33-a484-4d08-9c0e-d4b5bf26f3d4",
+        "d063ed5b-28e6-4770-b37b-8a54e398fc7e",
+        "cc350350-d53d-481f-a69a-9bf35c033aae",
+        "41325b58-d55b-47ba-ab8e-845de186af9d",
+        "1bdcafe8-27f0-48f3-b86e-6dcc9785f04f"
+      ],
+      "settings": {
+        "title": "Affiliate Perks",
+        "hovercolor": "#1e8386"
+      }
+    }
+  },
+  "order": [
+    "16630493399244903c",
+    "4bd2549c-28e4-4d47-841b-4c771a797df6",
+    "166160048427a93f75",
+    "1661602361104b2fad",
+    "70274d13-ceeb-42db-94c2-84de1709e786",
+    "92205a49-b3ff-4367-8212-5de4ae88cdc6"
+  ]
+}

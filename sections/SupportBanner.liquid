@@ -1,0 +1,56 @@
+<section class="SupportBanner">
+    <div class="SupportBanner__Container">
+        <h2 class="SupportBanner__Head">{{section.settings.support_heading}}</h2>
+        <p class="SupportBanner__Details">{{section.settings.support_details}}</p>
+        <div class="SupportBanner__Details-main">
+{% for block in section.blocks %}
+            <div class="SupportBanner__Details-inner">
+                <h4 class="SupportBanner__Title">{{block.settings.support_title}}</h4>
+                <a href="{{block.settings.support_link_url}}" class="SupportBanner__Link">{{block.settings.support_link_name}}</a>
+            </div>
+{% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Support Banner", "tag": "section",
+"settings": [
+    {
+    "type": "text",
+    "id": "support_heading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "support_details",
+    "label": "Details"
+   }
+],
+    
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+    {
+        "type": "text",
+        "id": "support_title",
+        "label": "Title"
+    },
+    {
+        "type": "url",
+        "id": "support_link_url",
+        "label": "Link URL"
+    },
+    {
+        "type": "text",
+        "id": "support_link_name",
+        "label": "Link Name"
+   }
+]
+}
+],
+    "presets": [ { "name": "Support Banner", "category": "Section" } ] } {%
+endschema %}

@@ -1,0 +1,42 @@
+<section class="StoreNear">
+    <div class="StoreNear__Container">
+        <h1 class="StoreNear__Head">{{section.settings.storeheading}}</h1>
+        <p class="StoreNear__Details">{{section.settings.storedetails}}</p>
+        <a href="{{section.settings.btn_store_url}}" class="StoreNear__Button btn">{{section.settings.btn_store}}</a>
+        <div class="StoreNear__ImgWrap">
+            <img src="{{ section.settings.bottomimage | img_url:'2048x2048' }}" alt="Store Image" class="StoreNear__Img" loading="lazy">
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Store Near", "tag":
+"section", "settings": 
+[
+      {
+    "type": "text",
+    "id": "storeheading",
+    "label": "Heading"
+   },
+   {
+    "type": "textarea",
+    "id": "storedetails",
+    "label": "Details"
+   },
+      {
+    "type": "image_picker",
+    "id": "bottomimage",
+    "label": "Bottom Image"
+  },
+  {
+    "type": "text",
+    "id": "btn_store",
+    "label": "Button Name"
+   },
+   {
+    "type": "url",
+    "id": "btn_store_url",
+    "label": "Button URL"
+   }
+], "presets": [ { "name": "Store Near",
+"category": "Section" } ] } {% endschema %}

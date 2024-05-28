@@ -1,0 +1,48 @@
+<div class="product-slider__row">
+  <div class="product-slider__info">
+    <h2 class="product-slider__title heading-stars">{{ section.settings.title }}</h2>
+
+    <p class="product-slider__copy">{{ section.settings.copy }}</p>
+  </div>
+
+  <div class="product-slider__gallery js-product-slider-gallery">
+    <div class="product-slider__track">
+      {% for product in collections[section.settings.collection].products limit: 10 %}
+        {% include 'Product-grid_item_slide', className: 'product-slider__item' %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="product-slider__scrollbar"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Slider",
+  "class": "product-slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Copy"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

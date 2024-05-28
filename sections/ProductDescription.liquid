@@ -1,0 +1,52 @@
+<section class="ProductDescription" id="product-description">
+    <div class="ProductDescription__Container">
+        <div class="ProductDescription__Layout-main">
+            <h2 class="ProductDescription__Head">{{section.settings.heading}}</h2>
+            {% if product.metafields.huemor.what_s_inside != blank %}
+                <div class="ProductDescription__Details">{{ product.metafields.huemor.what_s_inside }} </div> 
+            {% else %}
+                <div class="ProductDescription__Details">{{ product.description }} </div>
+            {% endif %}
+            {% comment %} <div class="ProductDescription__Product__Main">
+
+            {% for item in product.metafields.huemor.product_description_items.value.items %}
+                <div class="ProductDescription__Product__Inner">
+                    <img class="ProductDescription__ProductImg" loading="lazy" src="{{ item.image }}" alt="">
+                    <p class="ProductDescription__ProductName">{{ item.title }}</p>
+                </div> 
+            {% endfor %}
+            </div> {% endcomment %}
+        </div>
+    </div>
+</section>
+
+<style>
+.ProductDescription {
+    padding: 100px 0 101px;
+    background: {{section.settings.color}};
+    position: relative;
+}
+</style>
+
+
+
+{% schema %} 
+{ 
+    "name": "Product Description", 
+    "tag":"section",
+    "settings": [
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Background Color"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }
+    ],
+    "presets": [ { "name": "Product Description",
+    "category": "Section" } ]
+} 
+{% endschema %}

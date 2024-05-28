@@ -1,0 +1,114 @@
+<div id="product-ingredients" class="product-ingredients">
+  <div class="pi__inner">
+  
+    <div class="pi__header">
+      <h4 class="pi__header-title">
+        {{ section.settings.header-title }}
+      </h4>
+      <p class="pi__header-text">
+        {{ section.settings.header-text }}
+      </p>
+    </div>
+
+    <div class="pi__content">
+      <div class="pi__slider">
+        {% for field in shop.metafields.global.ingredients.ingredients  %}
+        {% assign loop = forloop.index %}
+          <div class="pi__slide">
+            <div class="pi__slide-text-box">
+              <p class="pi__slide-title">{{ field.title }}</p>
+              <h5 class="pi__slide-benefit">{{ field.benefit }}</h5>
+              {% for desc in field.descriptions %}
+                <li class="pi__slide-desc">{{ desc }}</li>
+              {% endfor %}
+            </div>
+            <img src="{{ field.image }}" class="pi__slide-image" />
+          </div>
+        {% endfor %}
+      </div>
+      <div class="pi__slider-nav-wrap">
+        <div class="pi__slider-nav">
+          {% for field in shop.metafields.global.ingredients.ingredients  %}
+            <div class="pi__slide-nav"></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="pi__footer">
+      <div class="pi__footer-content">
+        <p class="pi__footer-title">{{ section.settings.footer-title-1 }}</p>
+        <p class="pi__footer-text">{{ section.settings.footer-text-1 }}</p>
+        <p class="pi__footer-title">{{ section.settings.footer-title-2 }}</p>
+        <p class="pi__footer-text">{{ section.settings.footer-text-2 }}</p>
+        <p class="pi__footer-title">{{ section.settings.footer-title-3 }}</p>
+        <p class="pi__footer-text">{{ section.settings.footer-text-3 }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Ingredients",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "header-title",
+        "label": "Section Header Title",
+        "default": "Ingredients"
+      },
+      {
+        "type": "text",
+        "id": "header-text",
+        "label": "Section Header Text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "text",
+        "id": "footer-title-1",
+        "label": "Footer Title 1",
+        "default": "Free of - "
+      },
+      {
+        "type": "text",
+        "id": "footer-text-1",
+        "label": "Footer Text 1",
+        "default": "artificial fragrance, gluten, nuts, parabens, soy, nano particles, silicones, and how it is cruelty free."
+      },
+      {
+        "type": "text",
+        "id": "footer-title-2",
+        "label": "Footer Title 2",
+        "default": "All products are - "
+      },
+      {
+        "type": "text",
+        "id": "footer-text-2",
+        "label": "Footer Text 2",
+        "default": "dermatologist tested, safe for the eye area, appropriate for all skin types, nut & gluten free, cruelty free & vegan formulated for all skin types."
+      },
+      {
+        "type": "text",
+        "id": "footer-title-3",
+        "label": "Footer Title 3",
+        "default": "the gleamin promise - "
+      },
+      {
+        "type": "text",
+        "id": "footer-text-3",
+        "label": "Footer Text 3",
+        "default": "certified organic extracts and oils — all natural formula"
+      }
+    ]
+  }
+{% endschema %}

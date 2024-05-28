@@ -1,0 +1,17 @@
+<div class="share">
+  <span class="share__title">SHARE</span>
+
+  <a class="share-item share-item--facebook"
+    href="https://www.facebook.com/sharer/sharer.php?u={{shop.url | append: product.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}" target="_blank">
+    <img class="share-item__image" src="{{"icon-facebook.png" | asset_url}}">
+  </a>
+
+  <a class="share-item share-item--twitter" href="https://twitter.com/share?url={{shop.url | append: product.url | replace: ' ', ' %20'
+    |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27" }}{% if settings.twittercard_handle !="" %}&via={{settings.twittercard_handle}}{% endif %}" target="_blank">
+    <img class="share-item__image" src="{{"icon-twitter.png" | asset_url}}">
+  </a>
+
+  <a class="share-item share-item--mail" href="mailto:" target="_blank" rel="noopener noreferrer" aria-label="Share via email">
+    <img class="share-item__image" src="{{"icon-mail.png" | asset_url}}">
+  </a>
+</div>

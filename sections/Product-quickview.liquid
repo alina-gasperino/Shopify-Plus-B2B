@@ -1,0 +1,290 @@
+<style>
+.Page--product {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 80px 20px 0px;
+}
+  .Product--inner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0px auto;
+  }
+    .Product--grid {
+      position: relative;
+      width: 100%;
+      
+      display: grid;
+      grid-template-columns: repeat(2, minmax(430px, 1fr));
+      grid-gap: 80px;
+    }
+
+
+@media screen and (max-width: 768px){
+  .Product--grid {
+    position: relative;
+    width: 100%;
+    
+    display: block;
+  }
+}
+
+
+    /* Columns */
+    .Product--column {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+      .Product--column-image {
+        
+      }
+        .Product--column-image-inner {
+          height: auto !important;
+          width: 100%;
+          margin-left: auto;
+        }
+          .Product--image-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+          }
+
+    /* Main Slider */
+    .product__slider {
+      width: 412px;
+      height: 512px;
+      margin-left: 15px;
+    }
+      .product__slider-rails {
+        width: 100%;
+        height: 100%;
+      }
+        .product__slide-image-wrap {
+          width: 100%;
+          height: 100%;
+        }
+          .product__slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+
+    /* Nav Slide */
+    .product__slider-nav {
+      width: 80px;
+      height: 400px;
+      margin: auto 0px;
+    }
+      .product__slider-nav .swiper-slide {
+        opacity: .5;
+        transition: opacity .2s ease-in-out;
+      }
+      .product__slider-nav .swiper-slide-thumb-active {
+        opacity: 1;
+        border: 2px solid teal;
+      }
+        .product__slider-nav-wrapper {
+          width: 100%;
+          height: 100%;
+        }
+          .product__slide-nav-image-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 40px;
+            overflow: hidden;
+          }
+            .product__slide-nav-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+   @media screen and (max-width: 1000px){
+    .grid__column-image {
+      min-width: 440px;
+    }
+    .product__slider-nav {
+      width: 65px;
+      height: 380px;
+      margin: 0px;
+    }
+    .product__slide-nav-image-wrap {
+      width: 50px;
+      height: 50px !important;
+    }
+    .product__slider {
+      width: 340px;
+      height: 440px;
+      margin-left: 15px; 
+    }
+  }
+  @media screen and (max-width: 768px){
+    .grid__column-image {
+      min-width: 100%;
+    }
+    .grid__column-image-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+    .product__slider-nav {
+      display: none
+    }
+    .product__slider {
+      width: 100%;
+      height: 100%;
+      max-height: 70vh;
+      margin-left: 0px; 
+    }
+  }
+</style>
+
+{{ product.metafields.shogun.above }}
+
+{% include 'Breadcrumb' %}
+
+<main class="Page Page--product">
+  <!-- Bold: Order Manager-->
+    {% if product.metafields.inventory.ShappifyHidden == "true" %}
+      Product is not available
+    {% else %}
+      <article class="Product Product--inner" itemscope itemtype="http://schema.org/Product">
+        <div class="Product--grid">
+
+          <!-- Product Image Column -->
+          <div class="Product--column Product--column-image">
+            <div class="Product--column-image-inner">
+              <div class="Product--image-wrap">
+
+                <!-- Nav Slider -->
+                <div class="swiper-container product__slider-nav">
+                  <div class="swiper-wrapper product__slider-nav-wrapper">
+                    {% for image in product.images %}
+                      <div class="swiper-slide product__slide-nav-image-wrap">
+                        <img src="{{ image | img_url: 'master' }}" class="product__slide-nav-image">
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <!-- Main Slider -->
+                <div class="swiper-container product__slider">
+                  <div class="swiper-wrapper product__slider-wrapper">
+                    {% for image in product.images %}
+                      <div class="swiper-slide product__slide-image-wrap">
+                        <img src="{{ image | img_url: 'master' }}" class="product__slide-image">
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Details Column -->
+          <div class="Product--column Product--column-details">
+
+            <!-- Product Title -->
+            <div class="product-details__item-wrap">
+              <p class="pd__title">
+                {{ product.title }}
+              </p>
+            </div>
+
+            <!-- Product Quote -->
+            <div class="product-details__item-wrap">
+              <p class="pd__title">
+                {{ product.Quote }}
+              </p>
+            </div>
+
+            <!-- Product Stars -->
+            <div class="product-details__item-wrap">
+            </div>
+
+            <!-- Product Description -->
+            <div class="product-details__item-wrap">
+              <p class="pd__title">
+                {{ product.content }}
+              </p>
+            </div>
+
+            <!-- Product From -->
+            <div class="product-details__item-wrap">
+             
+            </div>
+
+            <!-- Product Afterpay -->
+            <div class="product-details__item-wrap"></div>
+
+            <!-- Product Accordion -->
+            <div class="product-details__item-wrap"></div>
+                <!-- Reviews -->
+                <!-- Ingredients -->
+                <!-- Guarantee -->
+                <!-- Shipping -->
+        </div>
+
+        </div>
+      </article>
+    {% endif %}
+  <!-- Bold: Order Manager-->
+</main>
+
+{{ product.metafields.shogun.below }}
+
+
+<script>
+  (function(){  
+
+    var galleryThumbs = new Swiper('.product__slider-nav', {
+      direction: 'vertical',
+      spaceBetween: 15,
+      slidesPerView: 5,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+
+    var galleryTop = new Swiper('.product__slider', {
+      
+      //navigation: {
+        //nextEl: '.swiper-button-next',
+        //prevEl: '.swiper-button-prev',
+      //},
+
+      thumbs: {
+        swiper: galleryThumbs
+      },
+
+      breakpoints: {
+        480: {
+          spaceBetween: 20,
+          slidesPerView: 1,
+          centeredSlides: true,
+          loop: true,
+        },
+        1000: {
+         slidesPerView: 1
+        }
+      }
+    });
+
+    
+  }())
+</script>
+
+
+{% schema %}
+  {
+    "name": "Product Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

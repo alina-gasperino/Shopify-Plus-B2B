@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "1661854260f6d8aa88": {
+      "type": "FormConfirmation",
+      "settings": {
+        "title": "<p>Thanks for <br\/>Reaching Out<\/p>",
+        "copy": "We received your message, and we’ll get back to you as soon as possible. In the meantime, feel free to return home and browse our bars!",
+        "button_text": "Take me home!",
+        "button_url": "\/",
+        "article": "news\/discover-the-power-of-pea-protein"
+      }
+    }
+  },
+  "order": [
+    "1661854260f6d8aa88"
+  ]
+}

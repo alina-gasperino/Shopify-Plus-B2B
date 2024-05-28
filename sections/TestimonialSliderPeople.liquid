@@ -1,0 +1,75 @@
+<div class="testimonial-slide-p__container js-testimonial-slider-people">
+  <div class="testimonial-slide-p__inner">
+    <div class="testimonial-slide-p__images">
+      {% for block in section.blocks %}
+        <img class="testimonial-slide-p__image {% if forloop.index == 1%}testimonial-slide-p__image--active{% endif %}" src="{{ block.settings.image | img_url: '1016x920', crop: 'center' }}" alt="{{ block.settings.title }}" width="508px" height="460px" loading="lazy" data-index="{{ forloop.index }}">
+      {% endfor %}
+    </div>
+
+    <div class="testimonial-slide-p__gallery">
+      <div class="testimonial-slide-p__track">
+        {% for block in section.blocks %}
+          <div class="testimonial-slide-p__item">
+            <div class="testimonial-slide-p__item-rating" data-rating="{{ block.settings.rating }}"></div>
+
+            <p class="testimonial-slide-p__item-copy">{{ block.settings.copy }}</p>
+
+            <p class="testimonial-slide-p__item-name">{{ block.settings.title }}</p>
+
+            <div class="testimonial-slide-p__item-thumbs">
+              {% for block in section.blocks %}
+                <img class="testimonial-slide-p__item-thumb {% if forloop.index == 1%}testimonial-slide-p__item-thumb--active{% endif %}" src="{{ block.settings.image | img_url: '200x200', crop: 'center' }}" alt="{{ block.settings.title }}" width="100px" height="100px" loading="lazy" data-index="{{ forloop.index }}">
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial Slider People",
+  "class": "testimonial-slide-people",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 3,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider People",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

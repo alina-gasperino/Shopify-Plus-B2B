@@ -1,0 +1,79 @@
+<div class="c-bundle__container">
+  {% for block in section.blocks %}
+    <div class="c-bundle__item {% if forloop.index == 2 %}c-bundle__item--active{% endif %}">
+      <h3 class="c-bundle__item-title h4">{{ block.settings.title }}</h3>
+
+      <p class="c-bundle__item-copy">{{ block.settings.copy }}</p>
+
+      <span class="c-bundle__item-btn btn btn--white btn--full-width js-bundle {% if forloop.index == 2 %}c-bundle__item-btn--active{% endif %}" data-select="{{ block.settings.number }}" data-discount="{{ block.settings.discount }}">{% if forloop.index == 2 %}SELECTED{% else %}SELECT{% endif %}</span>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="c-bundle-footer">
+  <div class="c-bundle-footer__container">
+    <div class="c-bundle-footer__content">
+      <h3 class="c-bundle-footer__title h4">Choose <span class="c-bundle-footer__number">6</span> Items</h3>
+
+      <p class="c-bundle-footer__copy"><span class="c-bundle-footer__total-selected">1</span> of <span class="c-bundle-footer__number">6</span> flavours selected</p>
+    </div> 
+
+    <div class="c-bundle-footer__checkmarks">
+      <span class="c-bundle-footer__checkmark"></span>
+      <span class="c-bundle-footer__checkmark"></span>
+      <span class="c-bundle-footer__checkmark"></span>
+      <span class="c-bundle-footer__checkmark"></span>
+      <span class="c-bundle-footer__checkmark"></span>
+      <span class="c-bundle-footer__checkmark"></span>
+    </div>
+
+    <span class="prevent-flickering" style="display: none !important">
+      <img src="{{ 'bundle-check.svg' | asset_url }}" alt="hidden">
+    </span>
+
+    <span class="c-bundle-footer__btn btn js-add-bundle">
+      <span class="pdp__btn-price js-add-bundle-price">$12.50</span><span class="grid-item__btn-separator">|</span><span class="pdp__btn-text">ADD TO CART</span>
+    </span>
+  </div>
+</div>
+
+
+{% schema %} 
+{
+  "name": "Bundle",
+  "class": "c-bundle",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "range",
+          "id": "number",
+          "min": 2,
+          "max": 50,
+          "step": 1,
+          "label": "Number of Items",
+          "default": 2
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        },
+        {
+          "type": "number",
+          "id": "discount",
+          "label": "Discount"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

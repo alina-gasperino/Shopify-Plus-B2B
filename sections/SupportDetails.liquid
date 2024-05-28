@@ -1,0 +1,34 @@
+<section class="SupportDetails">
+    <div class="SupportDetails__Container">
+        <h2 class="SupportDetails__Head">{{section.settings.supportheading}}</h2>
+        <p class="SupportDetails__Details">{{section.settings.supportdetails}}</p>
+        <div class="SupportDetails__ButtonWrap">
+            <a href="{{section.settings.support_button_url}}" class="SupportDetails__Button btn btn--black">{{section.settings.support_button}}</a>
+        </div>
+    </div>
+</section>
+
+{% schema %} { "name": "Support Details",  "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "supportheading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "supportdetails",
+    "label": "Details"
+   },
+  {
+    "type": "text",
+    "id": "support_button",
+    "label": "Button Name"
+   },
+   {
+    "type": "url",
+    "id": "support_button_url",
+    "label": "Button URL"
+   }
+], "presets": [ { "name": "Support Details", "category": "Section" } ] } {%
+endschema %}

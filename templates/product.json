@@ -1,0 +1,267 @@
+{
+  "sections": {
+    "Product-template": {
+      "type": "Product-template",
+      "blocks": {
+        "4aa6d916-d97d-4dec-b2f6-c83944d39966": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Instacart-01.png"
+          }
+        },
+        "f9787d6d-cfd4-4e5c-9335-6aa22a28a44d": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/UberEats.png"
+          }
+        },
+        "1795cb34-a8d6-4e6a-89b1-f0d59f4b712c": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Instacart-01.png"
+          }
+        }
+      },
+      "block_order": [
+        "4aa6d916-d97d-4dec-b2f6-c83944d39966",
+        "f9787d6d-cfd4-4e5c-9335-6aa22a28a44d",
+        "1795cb34-a8d6-4e6a-89b1-f0d59f4b712c"
+      ],
+      "settings": {
+        "delivery": "Get Same Day Delivery"
+      }
+    },
+    "1661846017ed168f68": {
+      "type": "apps",
+      "blocks": {
+        "91ace2ac-03ce-4f3c-bf07-a4ae28af0830": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "91ace2ac-03ce-4f3c-bf07-a4ae28af0830"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "1661933424f9cfaa22": {
+      "type": "NavigationInner",
+      "blocks": {
+        "c3389234-90f1-4f0a-bbd2-90f02add84c1": {
+          "type": "item",
+          "settings": {
+            "title": "What's Inside",
+            "url": "#product-description"
+          }
+        },
+        "f51ed3b4-7fa9-4dbc-be94-578aaae3afd8": {
+          "type": "item",
+          "settings": {
+            "title": "Ingredients",
+            "url": "#ingredients"
+          }
+        },
+        "6b7c6589-5080-4e5b-9070-dd15d146feee": {
+          "type": "item",
+          "settings": {
+            "title": "Nutritional Facts",
+            "url": "#nutritional-facts"
+          }
+        },
+        "9c811aa2-b55e-4995-bfc2-64473372bd29": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Key Benefits",
+            "url": "#key-benefits"
+          }
+        },
+        "a4adf0ee-c855-43eb-8526-7b924abcc176": {
+          "type": "item",
+          "settings": {
+            "title": "Certifications",
+            "url": "#sustainability"
+          }
+        }
+      },
+      "block_order": [
+        "c3389234-90f1-4f0a-bbd2-90f02add84c1",
+        "f51ed3b4-7fa9-4dbc-be94-578aaae3afd8",
+        "6b7c6589-5080-4e5b-9070-dd15d146feee",
+        "9c811aa2-b55e-4995-bfc2-64473372bd29",
+        "a4adf0ee-c855-43eb-8526-7b924abcc176"
+      ],
+      "settings": {}
+    },
+    "16613324904654e935": {
+      "type": "ProductDescription",
+      "settings": {
+        "color": "#52339b",
+        "heading": "What's Inside"
+      }
+    },
+    "16612391403f08c8c9": {
+      "type": "Ingredients",
+      "settings": {
+        "heading": "Ingredients"
+      }
+    },
+    "16612501019a25045f": {
+      "type": "NutrionalFacts",
+      "settings": {
+        "nutrionalheading": "Nutritional Facts",
+        "nutrionaldetails": "",
+        "image": "shopify:\/\/shop_images\/nutrition.png"
+      }
+    },
+    "16612535502b27c951": {
+      "type": "KeyBenefits",
+      "disabled": true,
+      "settings": {
+        "title": "Key Benefits",
+        "image": "shopify:\/\/shop_images\/benefits.webp"
+      }
+    },
+    "1661406470a9c10690": {
+      "type": "SustainabilityCallOut",
+      "blocks": {
+        "33ebb900-8afc-4c26-b498-bbc367db040f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Recyclable-logo.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "b25470e8-9b20-42c1-b137-189d6298e0f8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sugar.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "2cce58dd-0ff6-4b8c-91e9-15663277dd33": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/protein.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "181df348-f17f-4667-be5c-97ab6def5ff5": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WomenOwned_Logo_white_Resize.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "24e2e8f2-8cde-4b27-a658-e6e9f223f306": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/White_Neu_Horizontal.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "22086db1-f133-40bd-9f3b-9bcfe2a7047d": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NFC-Gluten-color.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "487a70e9-34bd-4a95-aa16-d5f5e048a791": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/non-gmo-logo_resize4272023.jpg",
+            "sustainabilitytitle": ""
+          }
+        },
+        "822f2e3c-50a7-4b8f-b789-3984b7d77f3a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NFC-Kosher-color.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "258b1a31-31a5-4932-9e0c-e679d44189c2": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vegan.png",
+            "sustainabilitytitle": ""
+          }
+        },
+        "e4ee4ba4-a44d-461a-ac80-06298bc3ba93": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SteviaF.png",
+            "sustainabilitytitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "33ebb900-8afc-4c26-b498-bbc367db040f",
+        "b25470e8-9b20-42c1-b137-189d6298e0f8",
+        "2cce58dd-0ff6-4b8c-91e9-15663277dd33",
+        "181df348-f17f-4667-be5c-97ab6def5ff5",
+        "24e2e8f2-8cde-4b27-a658-e6e9f223f306",
+        "22086db1-f133-40bd-9f3b-9bcfe2a7047d",
+        "487a70e9-34bd-4a95-aa16-d5f5e048a791",
+        "822f2e3c-50a7-4b8f-b789-3984b7d77f3a",
+        "258b1a31-31a5-4932-9e0c-e679d44189c2",
+        "e4ee4ba4-a44d-461a-ac80-06298bc3ba93"
+      ],
+      "settings": {
+        "sustainabilityheading": "Certifications",
+        "sustainabilitydetails": ""
+      }
+    },
+    "1661758221f82981fb": {
+      "type": "TestimonialSliderPeople",
+      "blocks": {
+        "12fd4ff8-36d5-4a7c-8aa0-83b073aa93b4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/michael-dam.jpg",
+            "copy": "“I love these bars! And eat one every day, have for several years. I don’t think I’ll ever get tired of them. Great variety!!“",
+            "title": "Christy B",
+            "rating": 5
+          }
+        },
+        "68498f9c-543e-442d-a50a-056eae705d9f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/luis-villasmil-hh3ViD0r0Rc-unsplash.jpg",
+            "copy": "“I absolutely love the cookie dough raw rev bar. But my wife loves the caramel and nuts, which is my second favorite !“",
+            "title": "Dennis M",
+            "rating": 5
+          }
+        },
+        "f8403bfb-a50a-45e0-a3a5-a572d9e82e0c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/jake-nackos-IF9TK5Uy-KI-unsplash.jpg",
+            "copy": "“Absolutely love my Raw Rev bars and am on a subscription with the company so I do not lose a day of having them! Super delicious and very healthy.“",
+            "title": "Mary C",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "12fd4ff8-36d5-4a7c-8aa0-83b073aa93b4",
+        "68498f9c-543e-442d-a50a-056eae705d9f",
+        "f8403bfb-a50a-45e0-a3a5-a572d9e82e0c"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "Product-template",
+    "1661846017ed168f68",
+    "1661933424f9cfaa22",
+    "16613324904654e935",
+    "16612391403f08c8c9",
+    "16612501019a25045f",
+    "16612535502b27c951",
+    "1661406470a9c10690",
+    "1661758221f82981fb"
+  ]
+}

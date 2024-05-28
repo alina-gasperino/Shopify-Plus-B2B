@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "1662716738cfa66e9d": {
+      "type": "ExternalNewsFeatured",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Blog-img.png",
+        "date": "January 29, 2022",
+        "title": "Variety Fun Features Raw Rev For Snack Subscription Box",
+        "copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur",
+        "button_text": "Learn More",
+        "button_url": "#"
+      }
+    },
+    "1662707689179db6a6": {
+      "type": "ExternalNews",
+      "blocks": {
+        "3e2ff832-26b7-43c6-8725-a2f3dee48c4a": {
+          "type": "news",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Best-Low-Carb-Foods-Amazon.webp",
+            "date": "July 8, 2020",
+            "title": "I Eat Low-Carb, and These Are My 20 Favorite Foods on Amazon",
+            "url": "https:\/\/www.popsugar.com\/fitness\/Best-Low-Carb-Foods-Amazon-46433827"
+          }
+        },
+        "43d62622-38da-4d44-812f-945e02ba5945": {
+          "type": "news",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RR_Bar_Render_CreamyPB_2048x2048_jpg.webp",
+            "date": "October 02, 2020",
+            "title": "Variety Fun Features Raw Rev For Snack Subscription Box",
+            "url": "https:\/\/www.businesswire.com\/news\/home\/20201002005002\/en\/Variety-Fun-Features-Raw-Rev-For-Snack-Subscription-Box"
+          }
+        },
+        "905203e3-47a6-4bd8-917e-cea905abef9a": {
+          "type": "news",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RR_Bar_Render_CreamyPB_2048x2048_jpg.webp",
+            "date": "July 30, 2020",
+            "title": "Here's 14 of the Easiest Plant-Based Snacks You Can Incorporate Into Your Pantry ASAP",
+            "url": "https:\/\/www.popsugar.com\/fitness\/photo-gallery\/47080059\/image\/47080165\/Raw-Rev-Glo-Vegan-Gluten-Free-Protein-Bars"
+          }
+        },
+        "545bf2de-ab40-4f90-9863-2ec9cbc74229": {
+          "type": "news",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/protein-bar-granola-1296x728-header.jpg",
+            "date": "",
+            "title": "Are Protein Bars Good for You?",
+            "url": "https:\/\/www.healthline.com\/nutrition\/are-protein-bars-good-for-you"
+          }
+        }
+      },
+      "block_order": [
+        "3e2ff832-26b7-43c6-8725-a2f3dee48c4a",
+        "43d62622-38da-4d44-812f-945e02ba5945",
+        "905203e3-47a6-4bd8-917e-cea905abef9a",
+        "545bf2de-ab40-4f90-9863-2ec9cbc74229"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "1662716738cfa66e9d",
+    "1662707689179db6a6"
+  ]
+}

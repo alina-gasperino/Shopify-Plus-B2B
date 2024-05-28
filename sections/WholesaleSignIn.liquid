@@ -1,0 +1,100 @@
+{% if customer and customer.tags contains "b2b" %}
+  <section class="SignIn">
+    <div class="SignIn__Container">
+      <h2 class="SignIn__Head">Welcome {{ customer.name }}!</h2>
+      <div class="price_tiers">
+        <b><h4>Quantity Discounts</h4></b>
+        <p>1-23 boxes at $18.83</p>
+        <p>24-59 boxes at $18.66</p>
+        <p>60+ boxes at $18.49</p>
+      </div>
+      <div class="collection-main__list product__list btb_collection_container">
+        {% if customer.tags contains "wholesale" %}
+          {% for product in collections['wholesale-b2b-products'].products %}
+            {% capture forIndex %}
+              {{ forloop.index }}
+            {% endcapture %}  
+            {% render 'Product-grid_item', product: product, all_prods: all_prods, foreach: forIndex %}
+          {% endfor %}
+        {% elsif customer.tags contains "ecommerce" %}
+          {% for product in collections['ecommerce-b2b-products'].products %}
+            {% capture forIndex %}
+              {{ forloop.index }}
+            {% endcapture %}
+            {% render 'Product-grid_item', product: product, all_prods: all_prods, foreach: forIndex %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <style>
+    .btb_collection_container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .price_tiers {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+  </style>
+{% else %}
+  <section class="SignIn">
+    <div class="SignIn__Container">
+      <div class="wholesale__layout-main">
+        <div class="register_inner">
+          <h3 class="">Are You a New B2B Wholesale Customer?</h3>
+          <div class="form-after">
+            <a class="form-link form-link--signup" href="/pages/wholesale-sign-up"><span class="underline">Get Started</span></a>
+          </div>
+        </div>
+        <div class="login_inner">
+          <h3>Already a B2B Wholesale Customer?</h3>
+          <div class="form-after">
+            <a class="form-link form-link--signup" href="https://shopify.com/18031651/account"><span class="underline">Sign In!</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .wholesale__layout-main {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .register_inner, .login_inner {
+      width: 50%;
+      text-align: center;
+    }
+    .wholesale__layout-main h3 {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 500px) {
+      .wholesale__layout-main {
+        display: block;
+      }
+      .register_inner, .login_inner {
+        width: 100%;
+      }
+      .login_inner {
+        margin-top: 50px;
+      }
+    }
+  </style>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Sale Sign In",
+    "tag": "section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Sale Sign In",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

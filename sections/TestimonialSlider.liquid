@@ -1,0 +1,62 @@
+<div class="testimonial-slider__container-custom js-testimonial-slider">
+  <h2 class="testimonial-slider__title heading-stars">{{ section.settings.title }}</h2>
+  
+  <div class="testimonial-slider__copy-gallery">
+    <div class="testimonial-slider__copy-track">
+      {% for block in section.blocks %}
+        <p class="testimonial-slider__copy">{{ block.settings.copy }}</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="testimonial-slider__gallery">
+    <div class="testimonial-slider__track">
+      {% for block in section.blocks %}
+        <div class="testimonial-slider__item {% if forloop.index == 1%}testimonial-slider__item--active{% endif %}">
+          <img src="{{ block.settings.image | img_url: '300x' }}" alt="logo">
+
+          <div class="hide js-testimonials-slider__copy">{{ block.settings.copy }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "class": "testimonial-slider",
+  "tag": "section",
+  "settings": [
+   {
+    "type": "text",
+    "id": "title",
+    "label": "Title"
+   }
+  ],
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

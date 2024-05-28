@@ -1,0 +1,27 @@
+<div class="collection-header__container {% if collection.metafields.huemor.background_image == blank %}collection-header__container--nobg{% endif %}">
+  {% if collection.metafields.huemor.background_image != blank %}
+    <div class="collection-header__image">
+      <picture>
+        <source media="(max-width:649px)" srcset="{{ collection.metafields.huemor.background_image_mobile | img_url: '650x325', crop: 'center' }}">
+        <source media="(min-width:650px)" srcset="{{ collection.metafields.huemor.background_image | img_url: '1920x1080', crop: 'center' }}">
+        <img src="{{ collection.metafields.huemor.background_image | img_url: '1920x1080', crop: 'center' }}" alt="background">
+      </picture>
+    </div>
+  {% endif %}
+
+  <div class="collection-header__content">
+    <h1 class="collection-header__title h3">{{ collection.title }}</h1>
+
+    <p class="collection-header__copy">{{ collection.description | strip_html }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Header",
+  "class": "collection-header",
+  "tag": "section",
+  "settings": [
+  ]
+}
+{% endschema %}

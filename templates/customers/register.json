@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "Register",
+      "settings": {
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor consectetur adipisicing elit."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

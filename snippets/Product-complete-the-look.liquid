@@ -1,0 +1,171 @@
+{% if product.metafields.huemor.complete_the_look.value.products %}
+  <div class="complete-the-look">
+    <h2 class="ctl__title h5">COMPLETE THE LOOK</h2>
+
+    <div class="ctl__list">
+      
+      {% for item in product.metafields.huemor.complete_the_look.value.products %}
+        
+        <div class="ctl__list-item">
+          <a class="ctl__list-item-image" href="{{ all_products[item.slug].url }}">
+            <img src="{{ all_products[item.slug].featured_image | img_url:'212x264', crop: 'center' }}" alt="{{ all_products[item.slug].title }}">
+          </a>
+          
+          <div class="ctl__list-product-content">
+            <a class="ctl__list-title-and-price" href="{{ all_products[item.slug].url }}">
+              <h3>{{ all_products[item.slug].title }}</h3>
+
+              <span class="ctl__list-price">
+                {{ all_products[item.slug].selected_or_first_available_variant.price | money }}
+              </span>
+            </a>
+
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="form_buy_{{- forloop.index -}}" class="pdp__form">
+              <div class="pdp__form-wrap">
+                <div class="select__options-dropdown" {% if all_products[item.slug].variants.size==1 and all_products[item.slug].variants.first.title
+                  contains 'Default' %}style="display:none" {% endif %}>
+
+                  {% for tag in product.tags %}
+                    {% if tag == '#final-sale' %}
+                      <input type="hidden" id="FinalSale{{- forloop.index -}}" name="properties[_finalsale]" value="Final Sale">
+                    {% endif %}
+                  {% endfor %}
+
+                  <input type="hidden" id="Eta{{- forloop.index -}}" name="properties[_eta]" value="">
+        
+                  <select name="id" id="productSelect{{- forloop.index -}}" class="pdp__form-select" style="display: none;">
+                    {% for variant in all_products[item.slug].variants %}
+                      {% if variant.available %}
+                        {% assign available_variantS = variant %}
+              
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% for variant in all_products[item.slug].variants %}
+
+                      {% if variant.available %}
+                        <option {% if variant==all_products[item.slug].selected_variant %} selected="selected" {% endif %}
+                          data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price |
+                          money_with_currency }}</option>
+                      {% else %}
+                        <option disabled="disabled">
+                          {{ variant.title }} - {{ 'products.all_products[item.slug].sold_out' | t }}
+                        </option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+
+                  {% capture classPrefix %}ctl-{{- forloop.index -}}-{% endcapture %}
+                  
+                  <div class="swatch__wrapper">
+                    {% if all_products[item.slug].variants.size >= 1 %}
+                      {% for option in all_products[item.slug].options %}
+                        {% include 'Product-swatch' with option, product: all_products[item.slug], classPrefix: classPrefix %}
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+
+                  <p style="display: none" class="pdp__eta js-eta{{- forloop.index -}}"></p>
+                
+                </div>
+            
+                <div class="pdp__bottom">
+            
+                  {% if all_products[item.slug].available %}
+            
+                  <button type="submit" name="add" class="pdp__btn btn btn--black btn--full_width pdp__submit">Add to Cart</button>
+            
+                  {% else %}
+            
+                    <button type="submit" name="add" {% unless current_variant.available %}disabled="disabled"
+                      {% endunless %}
+                      class="pt--btn btn btn--add-to-cart btn--disabled btn--full_width pdp__submit {% unless current_variant.available %} btn--secondary-accent{% endunless %}"
+                      data-loading-text="{{ 'products.product.loading' | t }}">
+                        {% unless current_variant.available %}
+                        {{ 'products.product.sold_out' | t }}
+                        {% else %}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {% endunless %}
+                    </button>
+            
+                  {% endif %}
+        
+            
+                </div>
+              </div>
+            </form>
+
+            <script>
+              var selectCallback{{- forloop.index }} = function (variant, selector) {
+                //console.log(selector.domIdPrefix);
+                var $addToCart = $(`#${selector.domIdPrefix}`).closest('form').find('.pdp__submit'),
+                    metaData = '{{ variant.metafields.preorder.message }}';
+                
+                if (variant) {
+                  Shopify.money_format = '{{shop.money_format }}';
+                  var a11yPrice = Shopify.formatMoney(variant.price, Shopify.money_format);
+
+                  // Select a valid variant if available
+                  if (variant.available) {
+                    // We have a valid product variant, so enable the submit button
+                    $addToCart.removeClass('btn--disabled').prop('disabled', false);
+                    $addToCart.html({{ 'products.product.add_to_cart' | t | json }});
+                  } else {
+                    // Variant is sold out, disable the submit button
+                    $addToCart.addClass('btn--disabled').prop('disabled', true);
+                    $addToCart.html({{ 'products.product.sold_out' | t | json }});
+                  }
+
+                  var form = $(`#${selector.domIdPrefix}`).closest('form');
+                  
+                  for (var i = 0, length = variant.options.length; i < length; i++) {
+                    var variantValue = variant.options[i].replace(/"/g, "&quot;");
+                    var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variantValue + '"]');
+                    if (radioButton.length) {
+                      //radioButton.get(0).checked = true;
+                    }
+                  }
+
+                  if (metaData) {
+                    document.querySelector('.js-eta{{- forloop.index -}}').innerHTML = metaData;
+                    document.querySelector('#Eta{{- forloop.index -}}').value = metaData;
+                  }else{
+                    document.querySelector('.js-eta{{- forloop.index -}}').innerHTML = '';
+                    document.querySelector('#Eta{{- forloop.index -}}').value = '';
+                  }
+
+                } else {
+                  // The variant doesn't exist, disable submit button.
+                  // This may be an error or notice that a specific variant is not available.
+                  $addToCart.addClass('btn--disabled').prop('disabled', true);
+                  $addToCart.html({{ 'products.product.unavailable' | t | json }});
+                }
+              }
+
+              jQuery(function ($) {
+                var product = {{ all_products[item.slug] | json }};
+          
+                new Shopify.OptionSelectors('productSelect{{- forloop.index }}', {
+                  product: product,
+                  onVariantSelected: selectCallback{{- forloop.index -}}
+                });
+              });
+
+              // Select first available variant and disable pre selected radio
+              window.addEventListener('DOMContentLoaded', (event) => {
+                let firstAvailableOption = {{ available_variantS.option2 | json }};
+                if (firstAvailableOption != '' && firstAvailableOption != 'null') {
+                  document.querySelector(`#form_buy_{{- forloop.index }} input[type=radio][value="${firstAvailableOption}"]`).click();
+                  document.querySelector(`#form_buy_{{- forloop.index }} input[type=radio][value="${firstAvailableOption}"]`).checked = false;
+                }
+              });
+            </script>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+{% endif %}
+  

@@ -1,0 +1,57 @@
+<div id="key-benefits">
+  <div class="key-benefits__container">
+    <h2 class="key-benefits__title heading-stars">{{ section.settings.title }}</h2>
+    
+    <div class="key-benefits__content">
+      <div class="key-benefits__list key-benefits__list--first">
+        {% for item in product.metafields.huemor.key_benefits.value.benefits limit:3 %}
+          <div class="key-benefits__list-item">
+            <h3 class="key-benefits__list-title h4">{{ item.title }}</h3>
+
+            <p class="key-benefits__list-copy text-small">{{ item.copy }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="key-benefits__image-wrapper">
+        <img src="{{ section.settings.image | img_url: '1010x920' }}" alt="{{ section.settings.title }}" class="key-benefits__image" width="505" height="460" loading="lazy">
+      </div>
+
+      <div class="key-benefits__list key-benefits__list--second">
+        {% for item in product.metafields.huemor.key_benefits.value.benefits offset:3 %}
+          <div class="key-benefits__list-item">
+            <h3 class="key-benefits__list-title h4">{{ item.title }}</h3>
+
+            <p class="key-benefits__list-copy text-small">{{ item.copy }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %} 
+{ 
+  "name": "Key Benefits",  
+  "tag": "section", 
+  "class": "key-benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [ 
+    { 
+      "name": "Key Benefits",
+      "category": "Section" 
+    } 
+  ] 
+} 
+{% endschema %}

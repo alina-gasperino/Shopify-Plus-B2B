@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "082408cf-8e11-440b-9b81-f1ba47bc8110": {
+      "type": "BlogBanner",
+      "settings": {
+        "date": "January 30, 2022",
+        "author": "By Jack Morgan",
+        "title": "9 Life Changing Sources of Plant-based Protein",
+        "copy": "One of the biggest questions when going plant-based is how to get enough protein. Plant-based cuts all meats, eggs, and dairy out of a diet, which contain a substantial amount of protein in much of the population. However, when done correctly, people can get the same amount of protein, if not more, with a plant-based diet.",
+        "button_text": "READ MORE",
+        "button_url": "shopify:\/\/blogs\/news\/sources-of-plant-based-protein",
+        "image": "shopify:\/\/shop_images\/creamypeanut_2.jpg"
+      }
+    },
+    "main": {
+      "type": "Blog",
+      "settings": {}
+    },
+    "16627302284a66cacd": {
+      "type": "RelatedBlogs",
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "082408cf-8e11-440b-9b81-f1ba47bc8110",
+    "main",
+    "16627302284a66cacd"
+  ]
+}

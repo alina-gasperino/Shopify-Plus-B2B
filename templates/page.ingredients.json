@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16615100463aec354f": {
+      "type": "IngredientsBanner",
+      "settings": {
+        "ingredientshead": "Ingredients",
+        "ingredientsdetails": "No artificial fillers or sweeteners here–every bite of our bars contains delicious flavors you’ll recognize.",
+        "ingredientsbtn_name": "Shop Now",
+        "ingredientsbtn_url": ""
+      }
+    },
+    "16615106304f6e8437": {
+      "type": "IngredientsGrid",
+      "blocks": {
+        "f027b6ab-d7e3-4267-8ea8-70c8e22cef9d": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "c6689c16-7b4f-4373-bbdd-e50fdb5c2a64": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "f53a6e20-dedd-418b-9a91-194a862304ab": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "1eccfda6-e16b-417c-956e-9e6965b1be44": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "1458152c-0316-4d18-a7ef-eafa7c0a30f8": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "75c69728-a934-43ed-95c6-1ec322eb024a": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "14a85dea-ec7c-4468-82ec-072d5a61c5ff": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "8bf78fb4-256d-4f7a-baf0-81bc28bd002b": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        },
+        "053fe131-957c-48be-b238-3843ca0fc15a": {
+          "type": "block",
+          "settings": {
+            "ingredientimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "ingredientstitle": "Ingredient",
+            "ingredientsdetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        }
+      },
+      "block_order": [
+        "f027b6ab-d7e3-4267-8ea8-70c8e22cef9d",
+        "c6689c16-7b4f-4373-bbdd-e50fdb5c2a64",
+        "f53a6e20-dedd-418b-9a91-194a862304ab",
+        "1eccfda6-e16b-417c-956e-9e6965b1be44",
+        "1458152c-0316-4d18-a7ef-eafa7c0a30f8",
+        "75c69728-a934-43ed-95c6-1ec322eb024a",
+        "14a85dea-ec7c-4468-82ec-072d5a61c5ff",
+        "8bf78fb4-256d-4f7a-baf0-81bc28bd002b",
+        "053fe131-957c-48be-b238-3843ca0fc15a"
+      ],
+      "settings": {}
+    },
+    "1661942723b96c2697": {
+      "type": "GlutenFree",
+      "blocks": {
+        "3f4c720d-e038-40f4-8866-40cb7748fce0": {
+          "type": "block",
+          "settings": {
+            "glutenimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "glutentitle": "Gluten Free",
+            "glutendetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dout labore et dolore magna."
+          }
+        },
+        "40c243a6-7c3d-41b3-b458-b993af2b8739": {
+          "type": "block",
+          "settings": {
+            "glutenimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "glutentitle": "Gluten Free",
+            "glutendetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dout labore et dolore magna."
+          }
+        },
+        "e16d713a-22f9-4ad1-b8bd-af0b1ac4ece1": {
+          "type": "block",
+          "settings": {
+            "glutenimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "glutentitle": "Gluten Free",
+            "glutendetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dout labore et dolore magna."
+          }
+        },
+        "2099d263-6c7d-494f-a66a-5025fb5ebab4": {
+          "type": "block",
+          "settings": {
+            "glutenimage": "shopify:\/\/shop_images\/bg-almond_png.webp",
+            "glutentitle": "Gluten Free",
+            "glutendetails": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dout labore et dolore magna."
+          }
+        }
+      },
+      "block_order": [
+        "3f4c720d-e038-40f4-8866-40cb7748fce0",
+        "40c243a6-7c3d-41b3-b458-b993af2b8739",
+        "e16d713a-22f9-4ad1-b8bd-af0b1ac4ece1",
+        "2099d263-6c7d-494f-a66a-5025fb5ebab4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "16615100463aec354f",
+    "16615106304f6e8437",
+    "1661942723b96c2697"
+  ]
+}

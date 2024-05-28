@@ -1,0 +1,136 @@
+<div class="accordion__list accordion__list--product">
+  {% if product.description != blank %}
+    <div class="accordion__item">
+      <div class="accordion__title">
+        <p class="accordion__paragraph">Description</p>
+        
+        <i class="accordion__icon"></i>
+      </div>
+
+      <div class="accordion__body">
+        <div class="accordion__body-text js-description">{{ product.description }}</div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="accordion__item">
+    <div class="accordion__title">
+      <p class="accordion__paragraph">Size Chart</p>
+      
+      <i class="accordion__icon"></i>
+    </div>
+
+    <div class="accordion__body">
+      <div class="accordion__body-text js-description">
+        <div id="KiwiSizingChart" data-display-mode="0"></div>
+      </div>
+    </div>
+  </div>
+
+  {% for tag in product.tags %}
+    {% if tag contains '_tab' %}
+      {%- assign include_page_handle = tag | split: '_' -%}
+      {%- assign include_page = pages[include_page_handle.last] -%}
+      {% if include_page.title != blank %}
+        <div class="accordion__item">
+          <div class="accordion__title">
+            <p class="accordion__paragraph">{{ include_page.title }}</p>
+            
+            <i class="accordion__icon"></i>
+          </div>
+    
+          <div class="accordion__body">
+            <div class="accordion__body-text js-description">{{ include_page.content }}</div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if product.metafields.product_meta.shipping_return %}
+    <div class="accordion__item">
+      <div class="accordion__title">
+        <p class="accordion__paragraph">Shipping/Returns</p>
+        
+        <i class="accordion__icon"></i>
+      </div>
+
+      <div class="accordion__body">
+        <div class="accordion__body-text js-description">{{ product.metafields.product_meta.shipping_return }}</div>
+      </div>
+    </div>
+  {% endif %}
+   <div class="accordion__item">
+      <div class="accordion__title">
+        <p class="accordion__paragraph">Share</p>
+        
+        <i class="accordion__icon"></i>
+      </div>
+
+      <div class="accordion__body">
+      
+      
+        <div class="share-desk">
+          <a class="facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u={{shop.url | append: product.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}" target="_blank"><span class="sr-only">Share on Facebook</span>
+      </a>
+          <a class="twitter" href="https://twitter.com/share?url={{shop.url | append: product.url | replace: ' ', ' %20' |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27"}}{% if settings.twittercard_handle !="" %}&via={{settings.twittercard_handle}}{% endif %}" target="_blank"><span class="sr-only">Share on Twitter</span>
+      </a>
+          <a href="https://pinterest.com/pin/create/link/?url={{shop.url | append: product.url | replace: ' ', ' %20' |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27"}}" class="pv-details__share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on pinterest">
+            <img src="{{"pinterest.svg" | asset_url}}">
+          </a>
+        </div>
+        <style>
+          @media(min-width:768px){
+            .share-hook{
+              display: none;
+            }
+            .share-mob{
+              display: none;
+            }
+          }
+          @media (max-width:768px){
+            .share-desk{
+            display: none;
+          }
+          .accordion__list--product .accordion__item:nth-of-type(4){
+            display: none !important;
+          }
+          .share-mob{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #222;
+            padding-top: 10px;
+
+            display: flex;
+          }
+          .share-hook{
+            padding-left: 20px;
+          }
+          }
+     
+        </style>
+       
+      </div>
+     
+    </div>
+    <div class="share-mob">
+      Share :
+      <div class="share-hook">
+        <img width="20px" height="20px" src="https://cdn.shopify.com/s/files/1/0024/5936/9523/files/share2.png?v=1655746936" alt="share icon">
+      </div>
+    </div>
+    <script>
+      let a = document.querySelector(".share-hook");
+      let url = window.location.href;
+      a.addEventListener("click", async () => {
+        try {
+          await navigator.share({ title: "{{product.title}}", url: "{{shop.url | append: product.url | replace: ' ', ' %20' |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27"}}"})
+          //console.log("Data was shared successfully");
+        } catch (err) {
+          //console.error("Share failed:", err.message);
+        }
+      });
+    </script>
+</div>

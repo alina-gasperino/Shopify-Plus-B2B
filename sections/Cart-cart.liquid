@@ -1,0 +1,118 @@
+<div class="cart-page__container">  
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate class="cart-page__form">
+
+      <h1 class="cart-page__title">{{ section.settings.title }}</h1>
+
+      <div class="cart-header">
+        <div class="cart-header__product">Products</div>
+
+        <div class="cart-header__qty mobile-display-none">Quantity</div>
+
+        <div class="cart-header__price mobile-display-none">Price</div>
+      </div>
+      
+      <div class="cart-items">
+        {%- assign wcp_total_price = 0 -%} 
+        {% for item in cart.items %}
+        {%- include 'wcp_discount' with item.product -%}
+        {%- include 'wcp_variant' with item.variant -%}
+        {%- include 'wcp_vd_discount' with item -%}  
+        {%- assign  wcp_custom_final_Price = item.final_price  -%} 
+        {%- if wcp_v_price < wcp_custom_final_Price -%}
+        {%- assign wcp_line_price = wcp_v_price | floor | minus: 0 | times: item.quantity -%}
+        {%- else -%}
+        {%- assign wcp_line_price = wcp_custom_final_Price | floor | minus: 0 | times: item.quantity -%}
+        {%- assign wcp_v_price = wcp_custom_final_Price | floor | minus: 0 -%}
+        {%- endif -%}
+        {%- assign wcp_total_price = wcp_total_price | plus: wcp_line_price -%}	
+
+          {% include 'Cart-line-item' %}
+        {% endfor %}
+      </div>
+          
+      <div class="cart-actions">
+        {% if settings.cart_notes %}
+          <div class="cart-notes">
+            <label for="cartSpecialInstructions" class="FormItem-label">Note</label>
+            <textarea name="note" class="input-full FormItem-textarea" id="cartSpecialInstructions">{{ cart.note }}</textarea>
+          </div>
+        {% endif %}
+          
+        <div class="cart-totalslist">
+        <div class="cart-subtotal">
+        <span class="cart-subtotal-text">Subtotal</span><span class="cart-subtotal-unit"><span class="wcp-original-cart-total">{{ cart.total_price | money}}</span>
+        <span class="wcp-cart-total"></span></span>
+        </div>
+    
+          <div class="cart-subtotal">
+            <span class="cart-subtotal-text">Shipping</span><span class="cart-subtotal-unit">-</span>
+          </div>
+
+          <!-- <div class="cart-subtotal">
+            <span class="cart-subtotal-text">Sales Tax <i>Calculated in checkout</i></span><span class="cart-subtotal-unit">-</span>
+          </div> -->
+
+              <div class="cart-subtotal cart-subtotal--final 11">
+              <span class="cart-subtotal-text">Total</span><span class="cart-subtotal-unit"><span class="wcp-original-cart-total">{{ cart.total_price | money}}</span>
+              <span class="wcp-cart-total"></span></span>
+              </div>
+              <div class="additional-notes">
+              <span class="wcp-minimums-note"></span>
+              <span class="wcp-extra-note "></span>
+              </div>{% render "wcp_multi_currency_msg" %}
+
+          <div class="cart-actionslist">
+            <button type="submit" name="checkout" class="cart-actionslist__submit btn btn--black btn--full-width" value="Check out">Checkout</button
+          </div>
+
+          <p class="sales-note hide">{{ section.settings.tax }}</p>
+        </div>
+      </div> 
+    </form>
+  {% else %}
+    <div class="cart-page__form">
+      <h1 class="cart-page__title">Your Cart is empty</h1>
+    </div>
+  {% endif %}
+</div>     
+
+
+<div class="wpdwrapper">             
+  {% if customer.tags contains 'wpdnet' %}
+  {% if shop.metafields.wcp_net.isNetEnabled == 'true' or shop.metafields.wcp_net.isNetEnabled == '1' %}
+  <div style="margin-top:30px;float: right;">
+  <p>{{shop.metafields.wcp_net.netCartMsg}}</p>
+  <button id="wcp-30-open" class="btn">
+  {{shop.metafields.wcp_net.netBtnMsg}}
+  </button>
+  </div>
+  {% endif %}
+  {% endif %}  
+ </div>    
+
+<script>
+   document.addEventListener('DOMContentLoaded', function(){
+  $(".wpdwrapper").insertAfter(".cart-actionslist__submit");
+   }, false);
+</script>
+
+{% schema %}
+  {
+    "name": "Cart Page",
+    "tag": "section",
+    "class": "cart-page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "tax",
+        "label": "Sales Tax"
+      }
+    ]
+  }
+{% endschema %}

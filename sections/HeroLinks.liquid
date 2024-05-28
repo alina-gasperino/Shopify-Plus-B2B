@@ -1,0 +1,80 @@
+<div class="hero-links__container">
+  <div class="hero-links__image-wrapper">
+    <picture>
+      <source media="(max-width:649px)" srcset="{{ section.settings.image_mobile | img_url: '650x' }}">
+
+      <img
+        class="hero-links__image"
+        src="{{ section.settings.image | img_url: '1920x', crop: 'center'}}"
+        alt="hero">
+    </picture>
+  </div>
+
+  <h1 class="hero-links__title  heading-stars heading-stars-yellow">{{ section.settings.title }}</h1>
+
+  <p class="hero-links__copy">{{ section.settings.copy }}</p>
+
+  <div class="hero-links__blocks">
+    {% for block in section.blocks %}
+      <div class="hero-links__block">
+        <p class="hero-links__block-title">{{ block.settings.title }}</p>
+
+        <a href="{{ block.settings.link_url }}" class="hero-links__block-link">{{ block.settings.link_text }}</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Link",
+    "class": "hero-links",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      }, {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Background Image Mobile"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text"
+          }, {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Links",
+        "category": "Section"
+      }
+    ]
+  }
+{% endschema %}

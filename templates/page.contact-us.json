@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "main": {
+      "type": "Page",
+      "disabled": true,
+      "settings": {}
+    },
+    "166150493682dac68c": {
+      "type": "ContactForm",
+      "settings": {
+        "title": "Contact Us",
+        "copy": "Want to learn more about Raw Rev or our latest products? Fill out the form below to reach out to our team!"
+      }
+    },
+    "1661949264f6284d61": {
+      "type": "ContactBlock",
+      "blocks": {
+        "6f2c3c23-e872-4438-838d-b0af8317594c": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Event Sponsorship",
+            "contactblockdetails": "Love our bars? Feature Raw Rev at your next big event!",
+            "contactblockbutton": "Learn More",
+            "contactblockurl": "shopify:\/\/pages\/event-sponsorship"
+          }
+        },
+        "3d1324f5-8e0a-4a98-bea5-69718118a81e": {
+          "type": "block",
+          "settings": {
+            "contactblocktitle": "Become An Affiliate",
+            "contactblockdetails": "Partner with Raw Rev to spread our mission toward a more all-natural, vegan lifestyle.",
+            "contactblockbutton": "Learn More",
+            "contactblockurl": "shopify:\/\/pages\/become-an-affiliate-new"
+          }
+        },
+        "36ae426b-c2e6-44cd-90f2-32ec44597431": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "contactblocktitle": "Live Chat",
+            "contactblockdetails": "For immediate customer service, connect through our chat to discuss any questions you may have. ",
+            "contactblockbutton": "Chat Now",
+            "contactblockurl": ""
+          }
+        }
+      },
+      "block_order": [
+        "6f2c3c23-e872-4438-838d-b0af8317594c",
+        "3d1324f5-8e0a-4a98-bea5-69718118a81e",
+        "36ae426b-c2e6-44cd-90f2-32ec44597431"
+      ],
+      "settings": {
+        "title": "",
+        "hovercolor": "#1e8386"
+      }
+    },
+    "166201285188ffea0b": {
+      "type": "SupportDetails",
+      "settings": {
+        "supportheading": "Want to Learn More?",
+        "supportdetails": "Your question may already be answered in our Support Center! There, you’ll find plenty of frequently asked questions on a number of topics about our business.",
+        "support_button": "Support Center",
+        "support_button_url": "shopify:\/\/pages\/support-center-new"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "166150493682dac68c",
+    "1661949264f6284d61",
+    "166201285188ffea0b"
+  ]
+}

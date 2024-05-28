@@ -1,0 +1,71 @@
+<section class="StorySustainability">
+    <div class="StorySustainability__container">
+        <div class="StorySustainability__Con-inner">
+                <div class="StorySustainability__Heading">
+                    <h2 class="StorySustainability__Title">{{section.settings.storysustainabilityhead}}</h2>
+                </div>
+                <p class="StorySustainability__Sub-title">{{section.settings.storysustainabilitydetails}}</p>
+            </div>
+            <div class="StorySustainability__Layout-main">
+            {% for block in section.blocks %}
+                <a class="StorySustainability__Layout-inner" href="{{ block.settings.link }}" target="_blank">
+                    <div class="StorySustainability__Box-block">
+                         <div class="StorySustainability__Box-img">
+                            <img class="StorySustainability__Img" loading="lazy" src="{{ block.settings.storysustainabilityimage | img_url:'240x240' }}">
+                         </div>
+                         <div class="StorySustainability__Box-content">
+                            <h3 class="StorySustainability__Box-title">{{block.settings.storysustainabilitytitle}}</h3>
+                            <p class="StorySustainability__Box-sub-title">{{block.settings.storysustainabilitydetails}} </p>
+                         </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Story Sustainability", "tag": "section",
+"settings": [
+{
+    "type": "text",
+    "id": "storysustainabilityhead",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "storysustainabilitydetails",
+    "label": "Details"
+   }
+],
+"blocks": [
+{
+"type": "block",
+"name": "Block",
+"settings": 
+[
+{
+    "type": "image_picker",
+    "id": "storysustainabilityimage",
+    "label": "Image"
+  },
+     {
+    "type": "text",
+    "id": "storysustainabilitytitle",
+    "label": "title"
+   },
+   {
+    "type": "richtext", 
+    "id": "storysustainabilitydetails",
+    "label": "Details"
+    },
+    {
+        "type": "url",
+        "id": "link",
+        "label": "link"
+    }
+   ]
+}
+],
+"presets": [ { "name": "Story Sustainability", "category": "Section" } ] } {%
+endschema %}

@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "16630497034b72070e": {
+      "type": "BannerV2",
+      "settings": {
+        "shopheading": "{{ collection.title }}",
+        "images": "shopify:\/\/shop_images\/Creamy_Peanut.png"
+      }
+    },
+    "collection": {
+      "type": "Collection",
+      "settings": {
+        "tab_menu": ""
+      }
+    },
+    "1696610888343eebcd": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "16630497034b72070e",
+    "collection",
+    "1696610888343eebcd"
+  ]
+}

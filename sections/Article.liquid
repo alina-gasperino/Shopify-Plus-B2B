@@ -1,0 +1,55 @@
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  <header class="article__header">
+    <h1 class="article__title h2">{{ article.title }}</h1>
+
+    <div class="article__meta">
+      <time class="article__postdate" pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b %d, %Y' }}</time>&nbsp;|&nbsp;<span class="article__author">{{ article.author }}</span>
+
+      <span class="article__share">
+        <span class="article__share-content">
+          <a class="article__share-item article__share-item--facebook"
+            href="https://www.facebook.com/sharer/sharer.php?u={{shop.url | append: product.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}" target="_blank" aria-label="Share on Facebook">
+            <img src="{{"icon-facebook.png" | asset_url }}" width="22px" height="22px">
+          </a>
+          
+          <a class="article__share-item article__share-item--twitter" href="https://twitter.com/share?url={{shop.url | append: product.url | replace: ' ', ' %20' |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27"}}{% if settings.twittercard_handle !="" %}&via={{settings.twittercard_handle}}{% endif %}" target="_blank" aria-label="Share on Twitter">
+            <img src="{{"icon-twitter.png" | asset_url }}" width="22px" height="22px">
+          </a>
+              
+          <a class="article__share-item article__share-item--pinterest" href="https://pinterest.com/pin/create/link/?url={{shop.url | append: product.url | replace: ' ', ' %20' |replace: '&' , '%26' | replace: '?' , '%3F' | replace: '!' , '%21' | replace: ',' , '%2C' | replace: "'" , "%27"}}" class="pv-details__share-link" target="_blank" rel="noopener noreferrer" aria-label="Share on pinterest">
+            <img src="{{"icon-pinterest.png" | asset_url }}" width="22px" height="22px">
+          </a>
+        </span>
+      </span>
+    </div>
+  </header>
+
+  {% if article.image %}
+    <div class="article__image-wrapper">
+      <img src="{{ article.image | img_url: '1024x600', crop: 'center' }}" alt="featuerd image" class="article__image" width="1024px" height="600px">
+
+      {% assign category = article.tags | first %}
+      <div class="article__tag">{{ category }}</div>
+    </div>
+  {% endif %}
+
+  <div class="article__copy" itemprop="articleBody">
+    {{ article.content }}
+  </div>
+
+
+</article>
+
+
+
+{% schema %}
+  {
+    "name": "Article Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,44 @@
+<section class="ContactForm">
+    <div class="ContactForm__container">
+        <div class="ContactForm__content">
+            <h1 class="ContactForm__Head">{{ section.settings.title }}</h1>
+
+            <p class="ContactForm__Details">{{ section.settings.copy }}</p>
+            
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "22481551",
+    formId: "1333455b-dd5c-4395-9753-0d4752668fcc"
+  });
+</script>
+        </div>
+    </div>
+</section>
+
+
+{% schema %} 
+{ 
+    "name": "Contact Form", 
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "copy",
+            "label": "Copy"
+        }
+    ], 
+    "presets": [ 
+        { 
+            "name": "Contact Form", 
+            "category": "Section" 
+        } 
+    ] 
+} 
+{% endschema %}

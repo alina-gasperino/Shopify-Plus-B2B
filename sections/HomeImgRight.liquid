@@ -1,0 +1,48 @@
+<section class="OurStory">
+    <div class="OurStory__Container">
+        <div class="OurStory__Layout-main">
+            <div class="OurStory__Layout-inner">
+                <h2 class="OurStory__Head">{{section.settings.storyheading}}</h2>
+                <p class="OurStory__Details">{{section.settings.storydetails}}</p>
+                <div class="OurStory__ButtonWrap">
+                    <a href="{{section.settings.btn_url}}" class="btn OurStory__Button">{{section.settings.btn_name}}</a>
+                </div>
+            </div>
+            <div class="OurStory__Layout-inner">
+                <img src="{{ section.settings.images | img_url:'600x600' }}" alt="Story Right" class="HomeImgRight__Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %} { "name": "Our Story", "tag":
+"section", "settings": 
+[
+     {
+    "type": "text",
+    "id": "storyheading",
+    "label": "Heading"
+   },
+   {
+    "type": "text",
+    "id": "storydetails",
+    "label": "Details"
+   },
+   {
+    "type": "image_picker",
+    "id": "images",
+    "label": "Background Image"
+  },
+  {
+    "type": "text",
+    "id": "btn_name",
+    "label": "Button Name"
+   },
+   {
+    "type": "url",
+    "id": "btn_url",
+    "label": "Button URL"
+   }
+], "presets": [ { "name": "Our Story",
+"category": "Section" } ] } {% endschema %}

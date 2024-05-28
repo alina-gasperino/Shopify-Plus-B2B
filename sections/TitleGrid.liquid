@@ -1,0 +1,36 @@
+<div class="title-grid__container js-title-grid">
+  <div class="title-grid__list">
+    {% for block in section.blocks %}
+      <div class="title-grid__list-item">
+        <p class="title-grid__list-item-title text-small">{{ block.settings.title }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Title Grid",
+  "class": "title-grid",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Item",
+      "type": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title Grid",
+      "category": "Section"
+    }
+  ]
+}
+{% endschema %}

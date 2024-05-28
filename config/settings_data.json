@@ -1,0 +1,166 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/Raw-Rev-Monogram-on-Disk_6beb948a-fe40-4c1f-95f3-84aea1e847a8.png",
+    "color_primary": "#52339b",
+    "checkout_logo_image": "shopify:\/\/shop_images\/header-logo-checkout.png",
+    "checkout_accent_color": "#000",
+    "checkout_button_color": "#000",
+    "sections": {
+      "filter-menu-settings": {
+        "type": "filter-menu-settings",
+        "settings": {}
+      },
+      "SiteHeader": {
+        "type": "SiteHeader",
+        "blocks": {
+          "59311ab7-326d-4b57-96f3-35170cedea9e": {
+            "type": "link",
+            "settings": {
+              "title": "Shop",
+              "url": "shopify:\/\/collections\/all"
+            }
+          },
+          "862e9aa5-7211-49e4-9c76-f2a6dc8bb348": {
+            "type": "link",
+            "disabled": true,
+            "settings": {
+              "title": "Holiday Bundles",
+              "url": "https:\/\/rawrev.com\/pages\/black-friday-2023"
+            }
+          },
+          "9b40941c-b8b5-4e02-bc0c-5b051283b233": {
+            "type": "link",
+            "disabled": true,
+            "settings": {
+              "title": "Bundles",
+              "url": "shopify:\/\/pages\/black-friday-2023"
+            }
+          },
+          "46114085-2b67-4b1f-b939-659f05e103c3": {
+            "type": "link",
+            "settings": {
+              "title": "Wholesale",
+              "url": "shopify:\/\/pages\/wholesale-new"
+            }
+          },
+          "d22a9642-384d-4af0-8b0f-e8ca2ba5f2c0": {
+            "type": "link",
+            "disabled": true,
+            "settings": {
+              "title": "Store Locator",
+              "url": "shopify:\/\/pages\/store-locator-new"
+            }
+          },
+          "59029bfc-c1bf-41cf-ac6c-37241f3f9e8e": {
+            "type": "link",
+            "disabled": true,
+            "settings": {
+              "title": "Story",
+              "url": "shopify:\/\/pages\/story-new"
+            }
+          },
+          "06935e86-be6b-4955-835f-0c6f4b9ae7e5": {
+            "type": "link",
+            "settings": {
+              "title": "Become An Affiliate",
+              "url": "https:\/\/rawrevinfluencer.superfiliate.com\/portal"
+            }
+          },
+          "cc4ff2e3-a44a-4681-a5e8-893fa9d8218e": {
+            "type": "link",
+            "settings": {
+              "title": "Support",
+              "url": "shopify:\/\/pages\/support-center-new"
+            }
+          }
+        },
+        "block_order": [
+          "59311ab7-326d-4b57-96f3-35170cedea9e",
+          "862e9aa5-7211-49e4-9c76-f2a6dc8bb348",
+          "9b40941c-b8b5-4e02-bc0c-5b051283b233",
+          "46114085-2b67-4b1f-b939-659f05e103c3",
+          "d22a9642-384d-4af0-8b0f-e8ca2ba5f2c0",
+          "59029bfc-c1bf-41cf-ac6c-37241f3f9e8e",
+          "06935e86-be6b-4955-835f-0c6f4b9ae7e5",
+          "cc4ff2e3-a44a-4681-a5e8-893fa9d8218e"
+        ],
+        "settings": {
+          "enable_ann": false,
+          "background_color": "#000000",
+          "text_color": "#ffffff",
+          "ann_copy": "<p>Lorem Ipsum Dolor Sit Amet<\/p>",
+          "logo": "shopify:\/\/shop_images\/header-logo-whire.png"
+        }
+      },
+      "SiteFooter": {
+        "type": "SiteFooter",
+        "settings": {
+          "copyright-text": "©2023 - Raw Rev | All Right Reserved",
+          "title-col1": "Support & Resources",
+          "footer_linklist_one": "footer-col1",
+          "title-col2": "About",
+          "footer_linklist_two": "footer-col-2",
+          "title-col3": "Connect",
+          "footer_linklist_three": "footer-col-3",
+          "link-text1": "Terms and Conditions",
+          "link1": "shopify:\/\/pages\/terms-conditions",
+          "link-text2": "Privacy Policy",
+          "link2": "shopify:\/\/pages\/privacy-policy",
+          "link-text3": "Mobile Terms of Service",
+          "link3": "shopify:\/\/pages\/mobile-terms-of-service"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "17151115064775110295": {
+        "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/recharge-theme\/371eed76-0b44-4869-9813-730372ea378e",
+        "disabled": false,
+        "settings": {
+          "color_brand": "#467C99",
+          "contrast_color": "#FFFFFF",
+          "color_brand_secondary": "#467C99",
+          "corners": "8px",
+          "app_background": "#f9f8f4",
+          "app_container": 1200,
+          "app_vertical_padding": 32,
+          "images_aspect_ratio": "1",
+          "cards_background": "#FFFFFF",
+          "cards_border_color": "rgba(0,0,0,0)"
+        }
+      },
+      "5918445685253060206": {
+        "type": "shopify:\/\/apps\/bundler\/blocks\/bundler-script-append\/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hello! Welcome to Raw Rev! If you have a question that is not covered in our Q&A section or down below, you can message us here and we'll get back to you as soon as we can via email!\nHave an awesome day!"
+        }
+      },
+      "3577669850698438243": {
+        "type": "shopify:\/\/apps\/pre-order-now-wod\/blocks\/app-embed\/fdf17d17-ef12-4a7b-8383-20cc1fc2a4b6",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".ProductDescription__Details a {color: #fff;}"
+    ]
+  }
+}

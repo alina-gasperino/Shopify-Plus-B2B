@@ -1,0 +1,303 @@
+{
+  "sections": {
+    "1660641531a4f39c46": {
+      "type": "Hero",
+      "disabled": true,
+      "settings": {
+        "title": "Powerful Plant-Based Protein",
+        "button_text": "Shop Now",
+        "button_url": "shopify:\/\/pages\/black-friday-2023",
+        "image_mobile": "shopify:\/\/shop_images\/Glo_is_back.jpg"
+      }
+    },
+    "ec21fc44-74ba-4a73-83b1-7cb22cb56574": {
+      "type": "HeroStatic",
+      "settings": {
+        "title": "Memorial Day Sale! 25% OFF. Use code Memorial 24",
+        "color": "#fdf1f4",
+        "button_text": "Shop Now!",
+        "button_url": "https:\/\/rawrev.com\/collections\/all",
+        "image": "shopify:\/\/shop_images\/MoM_sale_2f635e9f-e212-48fc-9c51-438b54d7a538.png",
+        "image_mobile": "shopify:\/\/shop_images\/MoM_sale_2f635e9f-e212-48fc-9c51-438b54d7a538.png",
+        "overlay": false,
+        "overlay_range": 22
+      }
+    },
+    "28f90163-b687-4994-93c9-68ed2a5574d8": {
+      "type": "WholesaleProducts",
+      "settings": {}
+    },
+    "ae50e8da-815f-4bd9-9659-3dea505bc1e3": {
+      "type": "ImageGrid",
+      "blocks": {
+        "26ab8bef-b5d7-48f6-8f0b-b06df58d7860": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sugar.png"
+          }
+        },
+        "8deb7854-041a-4a84-81fc-736dc95368f7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/protein.png"
+          }
+        },
+        "00452542-762a-42bd-8720-5915e1c69af5": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OU_250.png"
+          }
+        },
+        "344e223a-955f-4c1a-856b-a531883f385c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NFC-Gluten-color.png"
+          }
+        },
+        "0f5b3ce7-c260-430f-89e0-d2342350c7a1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vegan.png"
+          }
+        },
+        "4f3520f7-36bd-46c1-a1f3-5902ec466304": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Clean_Food_Logo_Final-01_1.jpg"
+          }
+        },
+        "4de91a0b-78b0-438c-922a-7039787848cf": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SteviaF.png"
+          }
+        },
+        "eba3f1fc-8aab-4d48-baac-5b20155d8022": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WomenOwned_Logo_Black_Resize.png"
+          }
+        },
+        "77bc3ca4-72ef-439d-a0c6-66581bc23b82": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/repurpose-plastic-neutral-badge_Resize.png"
+          }
+        },
+        "fa10f6e3-45ac-49b1-bcbf-5ed451681264": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/non-gmo-logo_resize4272023.jpg"
+          }
+        },
+        "81addb2d-8456-4852-bad2-939b9f1a8866": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wind_energy.png"
+          }
+        },
+        "680af177-475d-4097-9b18-a866a2a3651d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Recyclable-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "26ab8bef-b5d7-48f6-8f0b-b06df58d7860",
+        "8deb7854-041a-4a84-81fc-736dc95368f7",
+        "00452542-762a-42bd-8720-5915e1c69af5",
+        "344e223a-955f-4c1a-856b-a531883f385c",
+        "0f5b3ce7-c260-430f-89e0-d2342350c7a1",
+        "4f3520f7-36bd-46c1-a1f3-5902ec466304",
+        "4de91a0b-78b0-438c-922a-7039787848cf",
+        "eba3f1fc-8aab-4d48-baac-5b20155d8022",
+        "77bc3ca4-72ef-439d-a0c6-66581bc23b82",
+        "fa10f6e3-45ac-49b1-bcbf-5ed451681264",
+        "81addb2d-8456-4852-bad2-939b9f1a8866",
+        "680af177-475d-4097-9b18-a866a2a3651d"
+      ],
+      "settings": {}
+    },
+    "16608173575014e517": {
+      "type": "TitleGrid",
+      "blocks": {
+        "87f9411d-7fca-4ea2-a1a9-6a5e821c7371": {
+          "type": "item",
+          "settings": {
+            "title": "Vegan"
+          }
+        },
+        "fead54a0-318c-4d23-badb-cf66da453da9": {
+          "type": "item",
+          "settings": {
+            "title": "Gluten Free"
+          }
+        },
+        "76c378af-9eb1-470d-9879-f2f8d57d64f0": {
+          "type": "item",
+          "settings": {
+            "title": "Stevia Free"
+          }
+        },
+        "cf73cc18-b6dd-4bc6-8c88-cb5535cdbffe": {
+          "type": "item",
+          "settings": {
+            "title": "All Natural"
+          }
+        },
+        "adecb222-6a88-42f2-9ced-ad51483174c1": {
+          "type": "item",
+          "settings": {
+            "title": "Low In Sugar"
+          }
+        },
+        "c132d26d-dc54-4e7d-93e5-7b58e90bcb94": {
+          "type": "item",
+          "settings": {
+            "title": "High In Protein"
+          }
+        },
+        "ae26681d-9695-46c0-90d5-07bb53271e46": {
+          "type": "item",
+          "settings": {
+            "title": "Made by a Mom"
+          }
+        }
+      },
+      "block_order": [
+        "87f9411d-7fca-4ea2-a1a9-6a5e821c7371",
+        "fead54a0-318c-4d23-badb-cf66da453da9",
+        "76c378af-9eb1-470d-9879-f2f8d57d64f0",
+        "cf73cc18-b6dd-4bc6-8c88-cb5535cdbffe",
+        "adecb222-6a88-42f2-9ced-ad51483174c1",
+        "c132d26d-dc54-4e7d-93e5-7b58e90bcb94",
+        "ae26681d-9695-46c0-90d5-07bb53271e46"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "16608244521bb05b55": {
+      "type": "ProductSlider",
+      "settings": {
+        "title": "Our Products",
+        "copy": "Raw Rev’s irresistible protein bars are 100% vegan and 100% delicious. Discover your next snack obsession.",
+        "collection": "all"
+      }
+    },
+    "a0f70e68-7c45-4435-87ac-787211dac2dc": {
+      "type": "HomeImgRight",
+      "settings": {
+        "storyheading": "Our Story",
+        "storydetails": "Even though our customers can order and enjoy our products across the country today, Raw Rev got its start in the kitchen of Alice Benedetto, our founder and CEO and the source of every great new flavor. That’s a pretty big leap, but that’s just the start of what makes Raw Rev special.",
+        "images": "shopify:\/\/shop_images\/Our_Story_Illustration_c8c73d1c-0b41-4daf-a77f-bd79d56cc052.png",
+        "btn_name": "Who We Are",
+        "btn_url": "shopify:\/\/pages\/story-new"
+      }
+    },
+    "5751a440-cd23-4d12-8b09-eab5a878a9fd": {
+      "type": "ChooseUs",
+      "blocks": {
+        "8dcd546e-67cb-4b75-80c8-52fb1c502737": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/i1.png",
+            "title": "Vegan",
+            "content": "Enjoy all of our products guilt-free: every Raw Rev bar is 100% vegan and high in plant-based protein."
+          }
+        },
+        "d6640ae4-bb43-4cc6-9fa0-e88e7a4650ec": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/i2.png",
+            "title": "One Of A Kind",
+            "content": "Raw Rev is the only place you’ll find snack bars that have it all: only 1-4g of sugar, great macros, and of course great flavors like Peanut Butter Dark Chocolate & Sea Salt and Double Chocolate Brownie Batter."
+          }
+        },
+        "1e64be88-5e04-4cd8-ab23-e8727548e459": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/i3.png",
+            "title": "No Chalky Powdery Taste",
+            "content": "We never add any chalky, whey protein powders to our bars -- ever!! Raw Rev bars are 100% vegan. We are the protein bar that doesn't taste like one."
+          }
+        }
+      },
+      "block_order": [
+        "8dcd546e-67cb-4b75-80c8-52fb1c502737",
+        "d6640ae4-bb43-4cc6-9fa0-e88e7a4650ec",
+        "1e64be88-5e04-4cd8-ab23-e8727548e459"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/cashew_1_06af0e08-9717-443a-9c43-b378b0b4222c.jpg",
+        "image1": "shopify:\/\/shop_images\/creamypeanut_2_48ab2c6e-fde6-4bf2-964f-d09e6ac2727f.jpg"
+      }
+    },
+    "54f81741-b9df-467a-bb0d-4a125a71305b": {
+      "type": "StoreNear",
+      "disabled": true,
+      "settings": {
+        "storeheading": "Find Us In A Store Near You",
+        "storedetails": "Love? Finding the nearest store that carries your favorite bar has never been easier.\n<br>\n<a style=\"font-size: 14px;\" href=\"https:\/\/www.trustpilot.com\/review\/rawrev.com\" target=\"_blank\">4.5  stars - based on  208 reviews on Trustpilot.<\/a>",
+        "bottomimage": "shopify:\/\/shop_images\/home-bottom-img.png",
+        "btn_store": "Start Shopping",
+        "btn_store_url": "shopify:\/\/pages\/store-locator-new"
+      }
+    },
+    "16612508771c8e8d61": {
+      "type": "TestimonialSlider",
+      "blocks": {
+        "8f96d32d-d9df-4b74-baa0-108ccad45d7e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Asset_7.png",
+            "copy": "“How many times have you been looking for a product, and seen a couple of options on a website, and thought, ‘what’s the difference?’. I’d guess many of you have. I’d also guess that many of you haven’t been able, or haven’t easily been able to find…”"
+          }
+        },
+        "d2e3d4b1-e6fe-4201-a17d-a4f734e2a2e5": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_2.png",
+            "copy": "“Ut mollitia voluptatem eos omnis quia ut suscipit sunt qui rerum consequatur non deserunt totam a dolorum alias. Non incidunt rerum aut placeat commodi ea autem sunt ea veritatis mollitia et obcaecati excepturi”"
+          }
+        },
+        "f52d0abf-5104-4ad7-a1a6-6d57a59956fc": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_3_fc8e9c3a-3527-4304-8135-730781e52fab.png",
+            "copy": "“Dynamic mollitia voluptatem eos omnis quia ut suscipit sunt qui rerum consequatur non deserunt totam a dolorum alias. Non incidunt rerum aut placeat commodi ea autem sunt ea veritatis mollitia”"
+          }
+        },
+        "f2f10b9a-52bc-4077-b0e1-8a25fb3c4b66": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Asset_6.png",
+            "copy": "“Fugiat mollitia voluptatem eos omnis quia ut suscipit sunt qui rerum consequatur non deserunt totam a dolorum alias. Non incidunt rerum aut placeat commodi”"
+          }
+        }
+      },
+      "block_order": [
+        "8f96d32d-d9df-4b74-baa0-108ccad45d7e",
+        "d2e3d4b1-e6fe-4201-a17d-a4f734e2a2e5",
+        "f52d0abf-5104-4ad7-a1a6-6d57a59956fc",
+        "f2f10b9a-52bc-4077-b0e1-8a25fb3c4b66"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Check out the latest about Raw Rev"
+      }
+    }
+  },
+  "order": [
+    "1660641531a4f39c46",
+    "ec21fc44-74ba-4a73-83b1-7cb22cb56574",
+    "28f90163-b687-4994-93c9-68ed2a5574d8",
+    "ae50e8da-815f-4bd9-9659-3dea505bc1e3",
+    "16608173575014e517",
+    "16608244521bb05b55",
+    "a0f70e68-7c45-4435-87ac-787211dac2dc",
+    "5751a440-cd23-4d12-8b09-eab5a878a9fd",
+    "54f81741-b9df-467a-bb0d-4a125a71305b",
+    "16612508771c8e8d61"
+  ]
+}
